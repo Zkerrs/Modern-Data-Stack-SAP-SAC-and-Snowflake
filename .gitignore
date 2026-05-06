@@ -1,0 +1,16 @@
+.venv/
+venv/
+ENV/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.Python
+.idea/
+.vscode/
+*.csv.bak
+
+# Regras Cursor locais (nao versionar / nao ir no push)
+.cursor/rules/

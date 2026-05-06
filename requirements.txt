@@ -1,0 +1,7 @@
+# Geradores CSV I_* (views standard SAP CDS)
+faker>=24.0.0
+tqdm>=4.65.0
+
+# Opcional para pipelines futuros (fatos ZI_*, pandas) alinhados a CDS/
+# numpy>=1.26.0
+# pandas>=2.0.0

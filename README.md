@@ -1,125 +1,114 @@
-# Modern-Data-Stack-SAC-Snowflake
+# Modern-Data-Stack-SAP-Snowflake
 
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white)](https://www.snowflake.com/)
 [![SAP](https://img.shields.io/badge/SAP-0FAAFF?style=for-the-badge&logo=sap&logoColor=white)](https://www.sap.com/)
 [![SAP Analytics Cloud](https://img.shields.io/badge/SAP%20Analytics%20Cloud-008FD3?style=for-the-badge&logo=sap&logoColor=white)](https://www.sap.com/products/technology-platform/cloud-analytics.html)
 
-> Projeto de portfólio integrante do **Desenvolvimento-Full-SAP-Labs** — demonstração de atuação ponta a ponta: **engenharia de dados**, **modelagem dimensional** e **analytics executivo** sobre um cenário FI/CO próximo ao SAP S/4HANA.
+> Projeto de portfólio integrante do **Desenvolvimento-Full-SAP-Labs**: engenharia de dados e analytics executivo (**SAP S/4HANA** × **Snowflake** × **SAP Analytics Cloud**), com **dados mestres sintéticos** espelhando views standard CDS onde faz sentido.
 
 ---
 
-## Visão Geral do Projeto
+## Estado atual deste repositório
 
-Consultorias e times de dados precisam frequentemente demonstrar cenários financeiros fiéis ao SAP antes de investir em integrações complexas ou em ambientes productivos caros.
+O foco imediato é **CSV sintético** alinhado às views standard `I_Customer`, `I_Supplier` e código empresa `I_CompanyCode`: os geradores conhecem a **lista completa** de campos CDS/OData; no ficheiro gravado **removem-se colunas que ficarem vazias em todas as linhas**. **Valores fictícios** e mestres canónicos em `sap_synthetic_masters.py`.
 
-Este repositório endereça esse problema ao **simular um ambiente SAP S/4HANA altamente realista**: dados transacionais e de relatórios padrão (incluindo perspectivas alinhadas a **CDS** e consultas típicas como **FBL1N** / **FBL5N**) são gerados por scripts Python, materializados em **Snowflake** como warehouse analítico e, em seguida, consumidos no **SAP Analytics Cloud (SAC)** para **painéis executivos** (DRE, Fluxo de Caixa, Balanço Patrimonial, Contas a Pagar / Contas a Receber).
+**Volume:** execução normal de `generate_i_customer_csv.py`: **entre 120 000 e 150 000** linhas (fora disto é ajustado com aviso); por defeito **120 000**. Para testes: **`python src/generate_i_customer_csv.py --quick`** ou **`python src/generate_all_i_views.py --quick`** (**600** linhas).
 
-**Solução arquitetada:** um pipeline claro — **mock SAP com regras de negócio** → **landing e modelagem no Snowflake** → **Stories e dashboards no SAC**.
-
----
-
-## Arquitetura de Dados
-
-O fluxo foi desenhado para refletir um **pipeline analítico moderno**, com separação entre origem simulada, armazenamento analítico e camada de consumo.
-
-```mermaid
-flowchart LR
-  subgraph geracao["Ingestão / Geração"]
-    PY["Scripts Python\n(Pandas, Faker, NumPy)"]
-  end
-  subgraph dw["Armazenamento / Processamento"]
-    SF["Snowflake\n(Data Warehouse)"]
-  end
-  subgraph viz["Visualização"]
-    SAC["SAP Analytics Cloud\n(Modelos + Stories)"]
-  end
-  PY -->|"Carga de tabelas\n(star schema)"| SF
-  SF -->|"Conexão live / import"| SAC
-```
-
-1. **Ingestão / geração (Python):** geração em volume de linhas que emulam granularidade de **documentos contábeis** e visões de negócio (FI e correlatos), com coerência entre campos e regras S/H, status de partida e cadastros mestres onde aplicável.
-2. **Snowflake:** atua como **data warehouse em nuvem**, recebendo dados transacionais e mestres modelados de forma **star schema** (fatos e dimensões) para consultas analíticas performáticas.
-3. **SAP SAC:** conexão ao Snowflake para **modelagem de dimensões**, definição de medidas e construção de **Stories** com foco em leitura executiva (DRE, caixa, balanço, AP/AR).
+A pasta **`CDS/`** guarda **definições CDS em ABAP** (`ZI_*`) como **contrato de dados** para evoluções futuros (fatos analíticos, DRE, caixa, estoque etc.). Este material **não é removido**; os geradores Python atuais regenam apenas os ficheiros **`data/I_*.csv`**.
 
 ---
 
-## Modelagem de Dados (SAP Mocking)
-
-O diferencial deste portfólio não é “gerar números aleatórios”, e sim **preservar a semântica SAP FI/CO** na geração linha a linha:
-
-| Aspecto | Abordagem |
-|--------|-----------|
-| **Débito / Crédito (S/H)** | Montantes e códigos alinhados: por exemplo, em **Contas a Pagar** (KR/RE/KZ) e **Contas a Receber** (RV/DR/DZ), o sinal do valor respeita a lógica de **débito positivo** e **crédito negativo** conforme o tipo de documento. |
-| **Partidas abertas e compensadas** | Campos como `DocumentStatus`, `ValorTotalAberto`, `ValorTotalCompensado`, `ClearingDate` e `ClearingDocument` são preenchidos de forma **mutuamente consistente** (aberto sem compensação; compensado com totais e datas coerentes). |
-| **Ledger e estrutura contábil** | Scripts de demonstração (ex.: DRE, Balanço) consideram **ledger**, período fiscal e contas com grupos e naturezas plausíveis para relatórios de BP e DRE. |
-| **Dados mestres** | Onde o caso de uso exige (AP/AR), **clientes e fornecedores** vêm de cadastros fixos com **CNPJ e nomes estáveis** por código, evitando ruído de `Faker` solto em campos chave. |
-| **Alinhamento a CDS** | Artefatos em `CDS/` documentam a intenção de mapeamento para **CDS Views** ZI\_* usadas como contrato conceitual entre o mock e o consumo analítico. |
-
-Essa disciplina reduz inconsistências típicas de dados sintéticos e aproxima o exercício do que arquitetos e consultores esperam ver em **provas de conceito** e **demos para C-level**.
-
----
-
-## Tecnologias Utilizadas
-
-| Camada | Tecnologia |
-|--------|------------|
-| Geração e qualidade dos dados | Python 3, **Pandas**, **NumPy**, **Faker**, **tqdm** |
-| Armazenamento e SQL analítico | **Snowflake** (tabelas fato/dimensão, star schema) |
-| Visualização executiva | **SAP Analytics Cloud** (modelo de dados, Stories) |
-| Contexto SAP | Semântica **S/4HANA FI/CO**, referência a CDS e relatórios operacionais (FBL1N, FBL5N) |
-
----
-
-## Estrutura do Repositório (resumo)
+## Estrutura do repositório
 
 | Caminho | Descrição |
 |---------|-----------|
-| `src/` | Scripts geradores `zi_*.py` (CSV de saída alinhados às views ZI) |
-| `CDS/` | Definições CDS (ABAP) como referência de contrato de dados |
-| `data/` | Saída dos CSV gerados (ex.: `DRE.csv`, `Contas_Pagar.csv`, …) |
-| `requerimenyts.py` | Lista auxiliar das dependências Python externas |
+| `src/sap_synthetic_masters.py` | Seed, mandantes (`Client`), empresas (`MASTER_COMPANY_CODES`), plantas, contas CO, grupos de cliente/fornecedor, faixas KUNNR/LIFNR |
+| `src/generate_i_customer_csv.py` | Gera `data/I_Customer.csv` (estrutura `I_CUSTOMER_CDS`) |
+| `src/generate_i_supplier_csv.py` | Gera `data/I_Supplier.csv` a partir de `I_Customer` (estrutura `I_SUPPLIER_CDS`) |
+| `src/generate_i_companycode_csv.py` | Gera `data/I_CompanyCode.csv` a partir dos mestres de empresa |
+| `src/generate_all_i_views.py` | Corre os três na ordem correta de dependências |
+| `data/` | Saída: `I_Customer.csv`, `I_Supplier.csv`, `I_CompanyCode.csv` |
+| `CDS/` | Views ZI_* em ABAP para uso posterior no pipeline Snowflake / SAC |
+| `requirements.txt` | Dependências Python dos geradores atuais |
+| `.cursor/rules/` (opcional local) | Convenções do projeto para o agente; pasta **ignorada pelo Git** (`git push` não inclui regras) |
 
 ---
 
-## Como Executar
+## Pré-requisitos e instalação
 
-**Pré-requisitos:** Python 3 instalado.
+Python 3.10 ou superior recomendado.
 
-1. Clone o repositório e entre na pasta raiz do projeto.
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+```
 
-2. Crie um ambiente virtual (recomendado) e instale as dependências:
-
-   ```bash
-   python -m venv .venv
-   .venv\Scripts\activate
-   pip install numpy pandas faker tqdm
-   ```
-
-   (Opcional: `python requerimenyts.py` lista os pacotes esperados.)
-
-3. Execute os geradores desejados a partir da **raiz** do repositório. Exemplos:
-
-   ```bash
-   python src/zi_dre.py
-   python src/zi_balanco_patrimonial.py
-   python src/zi_fluxo_caixa.py
-   python src/zi_contas_pagar.py
-   python src/zi_contas_receber.py
-   ```
-
-4. Os arquivos CSV são gravados em **`data/`** (a pasta é criada automaticamente se não existir).
-
-Por padrão, vários scripts geram volumes elevados (da ordem de **cem mil linhas** ou mais) para simular carga analítica; ajuste o parâmetro `linhas` na função `gerar_*` do script, se quiser execuções mais rápidas para testes locais.
+Dependências diretas dos scripts atuais: **Faker**, **tqdm**. Comentários em `requirements.txt` indicam pacotes opcionais (por exemplo NumPy/Pandas) para cenários futuros alinhados às CDS em `CDS/`.
 
 ---
 
-## Próximos Passos (evolução natural do portfólio)
+## Gerar todos os CSVs `I_*`
 
-- Documentar o **modelo star schema** no Snowflake (nomes de tabelas, chaves e grain).
-- Incluir diagramas de **linhagem** (fonte mock → Snowflake → SAC).
-- Automatizar carga (ex.: Snowpipe / tasks) e versionamento de **modelos SAC**.
+Na **raiz** do projeto:
+
+```bash
+python src/generate_all_i_views.py
+```
+
+- Produção (**sempre 120 000–150 000** linhas): `python src/generate_all_i_views.py` (default **120 000**) ou `--rows N` dentro da faixa.
+
+- Teste rápido (**600** linhas):
+
+```bash
+python src/generate_all_i_views.py --quick
+```
+
+Também pode correr cada script individualmente (`--help` em cada um).
 
 ---
 
-**Autor:** portfólio **Desenvolvimento-Full-SAP-Labs** — Modern-Data-Stack-SAC-Snowflake.
+## Arquitetura alvo (visão global)
+
+Fluxo típico de um modern data stack ligado ao SAP Analytics Cloud:
+
+```mermaid
+flowchart LR
+  subgraph geracao["Geração / extração"]
+    PY["Scripts Python ou API SAP"]
+  end
+  subgraph dw["Data warehouse"]
+    SF["Snowflake"]
+  end
+  subgraph viz["Consumo"]
+    SAC["SAP Analytics Cloud"]
+  end
+  PY --> SF
+  SF --> SAC
+```
+
+Neste repo, a camada **`data/I_*.csv`** simula extracções de mestres FI / BP coerentes; as **`CDS/ZI_*`** documentam métricas e grãos esperados quando os fatos forem implementados.
+
+---
+
+## Convenções SAP no mock
+
+| Aspeto | Abordagem |
+|--------|-----------|
+| Views `I_*` | Sem colunas fora da view CDS oficial; valores sintéticos; ver regra Cursor em `.cursor/rules/` |
+| Coerência `I_Supplier` ↔ `I_Customer` | O fornecedor reutiliza, quando aplicável, a primeira linha de cliente com aquele campo `Supplier` (LIFNR) |
+| `I_CompanyCode` | Derivado de `MASTER_COMPANY_CODES` + campos OData/enterprise típicos; validar elementos por release contra `$metadata` se necessário |
+| Fatos ZI_* | Contrato definido nos ficheiros `CDS/*.abap`; integração Snowflake/SAC é evolução natural do portefólio |
+
+---
+
+## Ideias de próximos passos
+
+- Pipelines ou scripts que materializem as **ZI_*** definidas em `CDS/` em CSV ou tabelas Snowflake.
+- Modelo dimensional e documentação da carga (**star schema**, chaves).
+- Automation (tasks, ingestions) e modelos SAC.
+
+---
+
+**Autor:** portfólio **Desenvolvimento-Full-SAP-Labs** — Modern-Data-Stack-SAP-Snowflake.
