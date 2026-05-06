@@ -1,0 +1,31 @@
+Finanças e Controladoria (FI/CO)
+Empresa: I_CompanyCode
+
+Conta Contábil: I_GLAccount
+
+Centro de Custo: I_CostCenter
+
+Centro de Lucro: I_ProfitCenter
+
+Área Funcional: I_FunctionalArea
+
+Segmento: I_Segment
+
+Parceiros de Negócios (Business Partners)
+Cliente: I_Customer
+
+Fornecedor: I_Supplier
+
+Logística, Materiais e Produção (MM/PP)
+Centro (Fábrica/Filial física): I_Plant
+
+Material / Produto: I_Product
+
+Tipo de Material: I_ProductType
+
+Vendas e Distribuição (SD)
+Organização de Vendas: I_SalesOrganization
+
+Canal de Distribuição: I_DistributionChannel
+
+Setor de Atividade: I_Division
