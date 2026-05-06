@@ -1,0 +1,501 @@
+CompanyCode,Plant,Material,FiscalYear,FiscalPeriod,TipoMaterial,TipoMaterialText,PlantName,ContaContabil,ContaContabilText,ProfitCenter,CompanyCodeCurrency,BaseUnit,QtdBruta,ValorTotalCalculado,PrecoUnitarioBruto
+US10,P001,RM-012,2023,7,FERT,Produto Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-3000,EUR,TON,4293.131,14970761.71,3487.143
+BR01,P003,MAT-1003,2025,10,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-2000,USD,M,2252.479,4177490.35,1854.619
+UK01,P003,MAT-1005,2025,4,HALB,Produto Semi-Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-2000,BRL,TON,2773.369,887539.09,320.022
+FR01,P003,SKU-8891,2023,5,ROH,Materia Prima,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-2000,USD,KG,4465.712,17381171.84,3892.139
+DE10,P003,FERT-3001,2023,11,FERT,Produto Acabado,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-2000,BRL,L,3724.066,18015470.92,4837.581
+DE10,P004,MAT-1003,2025,12,HALB,Produto Semi-Acabado,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-2000,BRL,M,2379.049,2700981.91,1135.32
+UK01,P003,MAT-1015,2024,11,ROH,Materia Prima,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,BRL,TON,4161.467,16745813.95,4024.017
+FR01,P003,MAT-1005,2024,6,HAWA,Mercadoria de Revenda,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-3000,USD,TON,37.804,148752.5,3934.835
+DE10,P003,RM-045,2025,8,FERT,Produto Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-2000,GBP,L,699.845,401386.3,573.536
+FR01,P001,HALB-2002,2023,8,FERT,Produto Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-1000,USD,L,2768.343,7741607.53,2796.477
+UK01,P004,RM-005,2023,11,HALB,Produto Semi-Acabado,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-1000,GBP,PC,4267.162,4994555.24,1170.463
+DE10,P002,RM-045,2024,6,ROH,Materia Prima,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,USD,KG,3919.707,13020886.44,3321.903
+FR01,P002,MAT-1002,2023,11,ROH,Materia Prima,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,GBP,KG,3612.074,8343616.42,2309.924
+FR01,P002,RM-012,2024,8,HALB,Produto Semi-Acabado,Filial RJ,510110,Consumo de Materia Prima,PC-2000,GBP,KG,1905.725,2874326.88,1508.259
+DE10,P002,SKU-8891,2023,10,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-3000,USD,TON,4542.995,15895194.45,3498.836
+DE10,P002,RM-012,2025,2,HAWA,Mercadoria de Revenda,Filial RJ,510110,Consumo de Materia Prima,PC-2000,EUR,PC,1361.936,657621.69,482.858
+BR01,P003,HALB-2001,2025,6,HAWA,Mercadoria de Revenda,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-3000,EUR,L,884.687,3789304.63,4283.215
+FR01,P002,HALB-2001,2024,10,ROH,Materia Prima,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-1000,BRL,L,3249.583,1375018.8,423.137
+FR01,P001,MAT-1004,2023,4,FERT,Produto Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-3000,GBP,L,517.911,1521951.39,2938.635
+DE10,P002,HALB-2001,2024,6,FERT,Produto Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,BRL,KG,114.997,551161.99,4792.838
+DE10,P002,RM-023,2024,10,FERT,Produto Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-1000,GBP,PC,4689.194,13406729.2,2859.069
+BR01,P003,RM-012,2025,7,HAWA,Mercadoria de Revenda,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-1000,USD,L,109.039,450509.13,4131.633
+FR01,P002,FERT-3001,2025,12,FERT,Produto Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-3000,USD,KG,1406.888,4639148.46,3297.454
+DE10,P003,MAT-1005,2024,4,HAWA,Mercadoria de Revenda,Fabrica Berlim,510110,Consumo de Materia Prima,PC-3000,USD,M,188.025,521714.28,2774.707
+UK01,P004,SKU-8891,2023,12,ROH,Materia Prima,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-3000,BRL,KG,1455.298,3748514.38,2575.771
+BR01,P003,RM-012,2025,11,HALB,Produto Semi-Acabado,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-3000,BRL,M,4961.885,22122539.46,4458.495
+DE10,P001,MAT-1015,2024,11,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-1000,EUR,TON,3860.29,12772329.21,3308.645
+BR01,P002,MP-BETA,2025,11,ROH,Materia Prima,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,EUR,KG,1205.612,741049.91,614.667
+UK01,P002,MP-ALPHA,2025,4,FERT,Produto Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,USD,L,982.977,1525883.06,1552.308
+BR01,P002,MAT-1001,2025,12,HAWA,Mercadoria de Revenda,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,USD,L,1149.05,758348.87,659.979
+BR01,P004,HALB-2001,2025,2,HAWA,Mercadoria de Revenda,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-3000,GBP,KG,999.678,4019524.3,4020.819
+BR01,P002,MP-BETA,2024,7,FERT,Produto Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,USD,M,1988.493,2993562.87,1505.443
+BR01,P003,MP-BETA,2024,11,HAWA,Mercadoria de Revenda,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-1000,EUR,KG,125.273,347812.34,2776.435
+FR01,P003,SKU-8891,2025,6,ROH,Materia Prima,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-2000,EUR,TON,2980.617,13905123.76,4665.183
+DE10,P004,MAT-1003,2023,5,FERT,Produto Acabado,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-2000,GBP,TON,4147.314,16524097.55,3984.289
+UK01,P004,HALB-2001,2024,2,HAWA,Mercadoria de Revenda,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-2000,GBP,M,2063.445,3861832.24,1871.546
+UK01,P002,MAT-1010,2025,12,FERT,Produto Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-1000,GBP,KG,1184.075,4416984.57,3730.325
+UK01,P002,MAT-1004,2023,11,HALB,Produto Semi-Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,EUR,KG,4123.496,6401162.62,1552.363
+FR01,P001,MAT-1004,2023,3,FERT,Produto Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-1000,GBP,KG,578.335,61719.33,106.719
+UK01,P002,FERT-3001,2024,9,FERT,Produto Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,GBP,M,1968.759,3131580.91,1590.637
+FR01,P003,MAT-1004,2024,12,HALB,Produto Semi-Acabado,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-2000,USD,KG,1184.488,1477871.46,1247.688
+BR01,P001,RM-023,2023,5,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-3000,EUR,KG,509.258,2122311.84,4167.459
+DE10,P004,MP-ALPHA,2025,8,HAWA,Mercadoria de Revenda,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-2000,EUR,TON,4897.874,19642076.34,4010.327
+UK01,P003,RM-045,2024,10,HAWA,Mercadoria de Revenda,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-2000,EUR,TON,2571.6,11027028.51,4288.003
+FR01,P001,MAT-1003,2023,5,ROH,Materia Prima,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-2000,EUR,PC,2389.908,4983029.88,2085.03
+FR01,P003,MAT-1020,2025,9,HALB,Produto Semi-Acabado,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-3000,GBP,L,3429.031,5092402.5,1485.085
+US10,P004,RM-045,2025,7,HALB,Produto Semi-Acabado,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-2000,GBP,TON,4242.954,13845963.9,3263.284
+DE10,P001,FERT-3002,2025,12,ROH,Materia Prima,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-1000,GBP,TON,1012.821,3518839.95,3474.296
+FR01,P003,FERT-3002,2023,12,FERT,Produto Acabado,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-3000,BRL,M,423.382,1981327.42,4679.763
+BR01,P002,FERT-3003,2023,9,HALB,Produto Semi-Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-2000,BRL,KG,3975.779,18806186.09,4730.189
+DE10,P003,MAT-1004,2024,9,ROH,Materia Prima,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-2000,EUR,TON,2825.188,8087326.67,2862.58
+UK01,P004,RM-023,2023,10,FERT,Produto Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-1000,EUR,KG,2998.368,13961151.0,4656.25
+FR01,P002,RM-005,2024,9,FERT,Produto Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,GBP,TON,3871.833,12995753.26,3356.486
+UK01,P003,MAT-1020,2023,2,HAWA,Mercadoria de Revenda,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-3000,EUR,L,1572.885,1240850.55,788.901
+US10,P003,FERT-3002,2025,8,ROH,Materia Prima,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-2000,BRL,PC,2765.412,12944240.93,4680.764
+US10,P003,FERT-3002,2025,11,ROH,Materia Prima,Fabrica Berlim,510110,Consumo de Materia Prima,PC-2000,BRL,KG,4756.022,2821624.2,593.274
+FR01,P002,FERT-3001,2025,6,ROH,Materia Prima,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-1000,GBP,L,62.501,142010.71,2272.135
+DE10,P002,MAT-1015,2023,5,ROH,Materia Prima,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,BRL,M,4592.291,17940652.73,3906.689
+BR01,P003,HAWA-4001,2024,2,HAWA,Mercadoria de Revenda,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-2000,EUR,KG,532.991,2662569.87,4995.525
+UK01,P003,MAT-1001,2025,10,HAWA,Mercadoria de Revenda,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,BRL,M,1204.899,862666.72,715.966
+UK01,P002,MAT-1001,2024,12,HAWA,Mercadoria de Revenda,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,GBP,PC,28.144,7295.99,259.238
+BR01,P002,MAT-1002,2025,11,ROH,Materia Prima,Filial RJ,510110,Consumo de Materia Prima,PC-3000,GBP,M,4005.018,18579474.75,4639.049
+DE10,P002,MAT-1005,2025,7,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,BRL,M,625.493,1578212.66,2523.15
+BR01,P002,FERT-3002,2025,7,HAWA,Mercadoria de Revenda,Filial RJ,130100,Conta de Estoque Materiais,PC-3000,EUR,TON,966.014,1308488.18,1354.523
+DE10,P003,HALB-2001,2025,5,ROH,Materia Prima,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-1000,USD,KG,212.71,940357.73,4420.844
+US10,P004,SKU-8891,2024,11,HALB,Produto Semi-Acabado,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-2000,USD,KG,2293.345,8991336.57,3920.621
+US10,P001,MAT-1015,2024,6,FERT,Produto Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-3000,BRL,KG,2890.508,10114407.78,3499.18
+UK01,P002,RM-005,2023,12,FERT,Produto Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-1000,BRL,PC,2371.369,1415631.41,596.968
+BR01,P003,HALB-2001,2024,11,HAWA,Mercadoria de Revenda,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-1000,GBP,L,3173.511,6536299.72,2059.643
+BR01,P003,MAT-1001,2023,2,HAWA,Mercadoria de Revenda,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-2000,USD,L,2092.582,4961907.42,2371.189
+US10,P003,HALB-2002,2025,5,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-2000,BRL,L,3262.513,5160496.25,1581.755
+DE10,P003,MAT-1020,2025,2,FERT,Produto Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-3000,GBP,L,2564.183,9445916.82,3683.792
+US10,P003,FERT-3003,2024,1,HALB,Produto Semi-Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-1000,BRL,KG,1572.939,6586011.99,4187.074
+DE10,P004,MAT-1002,2023,9,HAWA,Mercadoria de Revenda,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-1000,BRL,TON,1403.777,2346154.96,1671.316
+FR01,P004,HAWA-4001,2023,3,HALB,Produto Semi-Acabado,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-2000,EUR,KG,4282.884,7974455.9,1861.936
+DE10,P003,SKU-8891,2023,10,FERT,Produto Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-3000,BRL,TON,4977.327,19216225.17,3860.752
+FR01,P004,HALB-2002,2024,6,HAWA,Mercadoria de Revenda,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-1000,EUR,KG,54.627,57144.16,1046.079
+UK01,P002,SKU-8891,2025,8,HAWA,Mercadoria de Revenda,Filial RJ,510110,Consumo de Materia Prima,PC-1000,EUR,L,2780.291,11664738.69,4195.51
+DE10,P004,MAT-1002,2024,12,HALB,Produto Semi-Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-1000,USD,KG,3776.896,8193828.57,2169.461
+BR01,P001,MAT-1001,2024,12,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-2000,EUR,L,1165.029,1702113.19,1461.005
+DE10,P001,MAT-1010,2024,5,HALB,Produto Semi-Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-3000,GBP,TON,4218.098,13448587.16,3188.306
+UK01,P003,MAT-1020,2025,4,FERT,Produto Acabado,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-2000,EUR,TON,2698.098,4567728.82,1692.944
+BR01,P003,RM-023,2025,5,HALB,Produto Semi-Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-2000,EUR,L,4547.852,13352643.55,2936.033
+FR01,P004,MAT-1003,2024,5,FERT,Produto Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-1000,BRL,PC,1993.364,9143104.19,4586.771
+DE10,P002,MAT-1001,2023,2,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,EUR,KG,4637.375,10395084.15,2241.588
+UK01,P002,FERT-3001,2024,11,ROH,Materia Prima,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,GBP,TON,3169.215,15557828.56,4909.048
+DE10,P003,FERT-3002,2025,1,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,EUR,TON,4816.093,18832098.76,3910.244
+BR01,P004,RM-045,2025,2,FERT,Produto Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-1000,GBP,TON,3270.858,15860737.15,4849.106
+DE10,P004,MAT-1020,2025,12,FERT,Produto Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-2000,GBP,M,620.225,127576.56,205.694
+FR01,P004,SKU-8891,2023,3,HALB,Produto Semi-Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-2000,EUR,M,2058.468,8169271.1,3968.617
+UK01,P002,HAWA-4001,2023,5,HALB,Produto Semi-Acabado,Filial RJ,510110,Consumo de Materia Prima,PC-1000,GBP,TON,185.817,346388.72,1864.139
+US10,P004,FERT-3003,2025,5,FERT,Produto Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-1000,GBP,PC,4327.417,16000269.51,3697.418
+US10,P001,MP-ALPHA,2025,7,ROH,Materia Prima,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-1000,GBP,L,23.496,60470.06,2573.632
+DE10,P003,FERT-3001,2024,10,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-3000,GBP,PC,1189.054,5070189.28,4264.053
+UK01,P003,RM-005,2023,9,HALB,Produto Semi-Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-1000,EUR,PC,1374.85,6094573.94,4432.901
+FR01,P002,FERT-3003,2024,7,HALB,Produto Semi-Acabado,Filial RJ,510110,Consumo de Materia Prima,PC-1000,BRL,L,4993.718,7403256.85,1482.514
+DE10,P001,FERT-3001,2025,3,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-2000,USD,KG,2976.469,5841180.52,1962.453
+US10,P001,MAT-1002,2024,12,ROH,Materia Prima,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-2000,GBP,PC,1010.693,90281.16,89.326
+UK01,P002,SKU-8891,2023,5,HAWA,Mercadoria de Revenda,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,USD,PC,3760.064,10170003.02,2704.742
+US10,P003,MP-BETA,2024,8,HAWA,Mercadoria de Revenda,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-2000,BRL,PC,2648.181,9829642.7,3711.847
+BR01,P004,MAT-1015,2023,1,HALB,Produto Semi-Acabado,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-2000,USD,TON,778.052,3401408.37,4371.698
+DE10,P003,RM-012,2025,4,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-3000,EUR,M,2381.81,11845965.38,4973.514
+DE10,P002,MAT-1004,2024,4,HALB,Produto Semi-Acabado,Filial RJ,510110,Consumo de Materia Prima,PC-3000,GBP,L,2811.291,1434795.78,510.369
+US10,P004,MAT-1001,2023,1,ROH,Materia Prima,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-1000,EUR,KG,4798.913,2475807.21,515.91
+UK01,P004,RM-023,2023,8,HALB,Produto Semi-Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-2000,GBP,KG,1563.537,399876.15,255.751
+US10,P004,MAT-1005,2024,2,HALB,Produto Semi-Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-1000,USD,KG,1511.056,2978646.47,1971.235
+BR01,P002,MAT-1001,2023,5,ROH,Materia Prima,Filial RJ,510110,Consumo de Materia Prima,PC-2000,EUR,TON,2541.329,6221226.76,2448.021
+UK01,P002,MAT-1010,2024,11,FERT,Produto Acabado,Filial RJ,510110,Consumo de Materia Prima,PC-3000,USD,PC,1613.13,1957004.15,1213.172
+UK01,P003,MP-BETA,2025,3,ROH,Materia Prima,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-1000,EUR,KG,243.798,561804.94,2304.387
+UK01,P002,MP-BETA,2023,2,ROH,Materia Prima,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,EUR,TON,47.29,44567.14,942.422
+DE10,P002,RM-045,2023,4,ROH,Materia Prima,Filial RJ,130100,Conta de Estoque Materiais,PC-3000,EUR,TON,2951.387,12535505.69,4247.327
+US10,P002,FERT-3003,2025,7,HAWA,Mercadoria de Revenda,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,GBP,TON,4277.602,5441379.23,1272.063
+DE10,P004,MAT-1020,2025,2,ROH,Materia Prima,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-2000,USD,PC,4065.984,6475799.2,1592.677
+FR01,P003,MAT-1015,2024,5,FERT,Produto Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-1000,EUR,KG,391.464,58775.97,150.144
+BR01,P003,FERT-3001,2025,2,HAWA,Mercadoria de Revenda,Fabrica Berlim,510110,Consumo de Materia Prima,PC-2000,BRL,KG,3693.163,5859014.75,1586.449
+BR01,P004,FERT-3001,2025,4,FERT,Produto Acabado,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-1000,GBP,KG,865.547,2195854.65,2536.956
+BR01,P003,HALB-2001,2025,5,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-2000,BRL,TON,635.423,2850897.73,4486.614
+US10,P001,MAT-1002,2024,12,FERT,Produto Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-3000,BRL,KG,2973.243,4383990.31,1474.481
+FR01,P001,MAT-1005,2024,3,ROH,Materia Prima,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-2000,EUR,PC,4369.569,5545284.56,1269.069
+FR01,P004,FERT-3002,2025,2,FERT,Produto Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-2000,GBP,L,2835.122,10751783.42,3792.353
+UK01,P004,FERT-3003,2023,10,ROH,Materia Prima,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-3000,EUR,PC,2601.63,5308363.25,2040.399
+FR01,P001,MAT-1004,2023,12,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-3000,GBP,M,4807.787,4293498.02,893.03
+FR01,P001,RM-012,2024,5,HALB,Produto Semi-Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-2000,BRL,TON,3667.741,16108535.08,4391.95
+FR01,P003,FERT-3003,2025,9,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-3000,GBP,TON,2850.099,1493369.22,523.971
+US10,P003,MAT-1005,2025,12,ROH,Materia Prima,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-2000,GBP,TON,3718.258,433835.19,116.677
+DE10,P004,RM-005,2024,5,FERT,Produto Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-2000,BRL,TON,1596.343,4859422.94,3044.097
+US10,P003,RM-012,2024,10,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,USD,KG,984.514,1857436.29,1886.653
+BR01,P002,MAT-1020,2023,6,ROH,Materia Prima,Filial RJ,510110,Consumo de Materia Prima,PC-3000,EUR,M,4774.537,5818919.22,1218.74
+BR01,P002,MAT-1005,2024,6,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,BRL,KG,929.645,2426874.53,2610.539
+UK01,P001,SKU-8891,2023,3,ROH,Materia Prima,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-1000,BRL,PC,3262.943,8085693.48,2478.037
+FR01,P002,MP-ALPHA,2025,5,HALB,Produto Semi-Acabado,Filial RJ,510110,Consumo de Materia Prima,PC-3000,EUR,KG,4508.308,22193760.1,4922.858
+UK01,P002,MAT-1015,2025,9,HAWA,Mercadoria de Revenda,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,USD,L,2764.938,1343184.76,485.792
+US10,P003,MAT-1010,2024,7,ROH,Materia Prima,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-3000,EUR,PC,802.4,3418074.75,4259.814
+BR01,P004,RM-005,2023,8,HAWA,Mercadoria de Revenda,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-3000,USD,KG,3800.315,14676789.93,3861.993
+FR01,P001,MAT-1003,2023,8,FERT,Produto Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-2000,BRL,L,1323.435,5601499.52,4232.546
+FR01,P001,FERT-3001,2024,7,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-2000,EUR,PC,4256.822,18615086.86,4373.001
+BR01,P002,MAT-1004,2025,4,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,USD,L,4700.155,20868951.41,4440.056
+US10,P002,RM-045,2023,3,HALB,Produto Semi-Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,BRL,L,2173.381,1433653.39,659.642
+BR01,P004,MAT-1004,2023,11,ROH,Materia Prima,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-1000,USD,KG,2772.528,2881707.38,1039.379
+UK01,P001,MAT-1015,2024,7,ROH,Materia Prima,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-2000,EUR,KG,3041.038,7072256.22,2325.606
+UK01,P004,HAWA-4001,2023,10,ROH,Materia Prima,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-3000,EUR,PC,3708.332,8693546.54,2344.328
+BR01,P003,MAT-1020,2025,8,HAWA,Mercadoria de Revenda,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-3000,GBP,PC,3972.491,12370023.15,3113.921
+DE10,P001,RM-012,2025,4,FERT,Produto Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-1000,GBP,KG,3195.429,40077.07,12.542
+DE10,P002,MAT-1003,2024,2,HAWA,Mercadoria de Revenda,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,EUR,PC,762.481,2410798.7,3161.782
+BR01,P002,RM-012,2024,8,FERT,Produto Acabado,Filial RJ,510110,Consumo de Materia Prima,PC-3000,EUR,PC,3300.097,9896584.99,2998.877
+UK01,P003,FERT-3001,2024,4,ROH,Materia Prima,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-3000,EUR,TON,4230.192,855463.27,202.228
+US10,P002,RM-045,2025,9,HALB,Produto Semi-Acabado,Filial RJ,510110,Consumo de Materia Prima,PC-2000,EUR,TON,3300.319,4993709.38,1513.099
+FR01,P002,RM-045,2025,4,HAWA,Mercadoria de Revenda,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-2000,BRL,TON,3599.193,9160529.25,2545.162
+UK01,P002,RM-005,2023,4,FERT,Produto Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,BRL,TON,2200.81,1386310.03,629.909
+BR01,P003,MAT-1001,2025,12,HALB,Produto Semi-Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-3000,GBP,PC,1633.408,1616830.54,989.851
+US10,P004,MAT-1003,2023,4,ROH,Materia Prima,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-3000,GBP,M,1376.487,955466.43,694.134
+DE10,P003,RM-045,2024,9,HAWA,Mercadoria de Revenda,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-1000,USD,TON,3507.254,16710869.34,4764.659
+DE10,P001,SKU-8891,2023,7,FERT,Produto Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-2000,EUR,M,1998.981,6851413.43,3427.453
+US10,P004,RM-012,2023,11,HALB,Produto Semi-Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-2000,EUR,L,4679.752,19982859.26,4270.068
+UK01,P002,MAT-1020,2025,4,HAWA,Mercadoria de Revenda,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,GBP,M,1221.781,5575532.84,4563.447
+FR01,P001,FERT-3003,2024,9,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-1000,EUR,TON,3813.188,9165218.52,2403.558
+US10,P003,MAT-1010,2023,8,HALB,Produto Semi-Acabado,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-3000,USD,M,2930.221,6008424.02,2050.502
+BR01,P003,MAT-1001,2025,3,HALB,Produto Semi-Acabado,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-1000,EUR,TON,1681.314,6704671.67,3987.757
+UK01,P003,RM-005,2023,1,ROH,Materia Prima,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-2000,USD,TON,4993.049,4812110.89,963.762
+DE10,P004,SKU-8891,2025,3,HALB,Produto Semi-Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-1000,USD,M,349.134,241199.22,690.85
+BR01,P001,MAT-1003,2024,7,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-2000,BRL,L,4162.814,3674124.61,882.606
+BR01,P002,HALB-2002,2024,2,HAWA,Mercadoria de Revenda,Filial RJ,510110,Consumo de Materia Prima,PC-1000,EUR,TON,4960.218,24786754.97,4997.11
+US10,P001,MAT-1015,2023,5,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-3000,GBP,PC,2306.583,4900243.32,2124.46
+US10,P002,HAWA-4001,2023,3,FERT,Produto Acabado,Filial RJ,510110,Consumo de Materia Prima,PC-3000,EUR,M,4106.333,8557240.72,2083.913
+UK01,P001,MP-ALPHA,2023,4,ROH,Materia Prima,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-1000,USD,L,720.4,3166492.99,4395.465
+UK01,P002,MAT-1002,2025,2,FERT,Produto Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,USD,TON,3.593,7840.45,2182.147
+US10,P003,MAT-1004,2025,7,HALB,Produto Semi-Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-2000,USD,M,735.172,3164286.15,4304.144
+US10,P001,RM-005,2025,3,HALB,Produto Semi-Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-2000,EUR,TON,3689.25,4751761.38,1288.002
+FR01,P003,MAT-1020,2025,12,HALB,Produto Semi-Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-1000,GBP,KG,1096.727,1143544.08,1042.688
+FR01,P002,MAT-1004,2025,11,ROH,Materia Prima,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,GBP,TON,4115.715,8203175.62,1993.135
+UK01,P001,RM-005,2025,6,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-1000,EUR,PC,4375.546,21343926.51,4878.003
+FR01,P002,MAT-1015,2024,5,HAWA,Mercadoria de Revenda,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,USD,TON,3673.891,10406432.19,2832.537
+FR01,P002,MAT-1002,2023,4,FERT,Produto Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,USD,TON,3008.191,7314338.2,2431.474
+BR01,P001,RM-045,2024,2,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-1000,USD,L,1927.462,2610194.1,1354.213
+DE10,P003,MAT-1002,2025,10,HAWA,Mercadoria de Revenda,Fabrica Berlim,510110,Consumo de Materia Prima,PC-2000,GBP,KG,6.336,6729.93,1062.173
+DE10,P004,RM-012,2023,5,ROH,Materia Prima,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-1000,USD,L,2380.983,11137700.37,4677.774
+DE10,P002,FERT-3001,2023,2,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,EUR,KG,1071.247,532073.39,496.686
+US10,P001,MP-ALPHA,2023,7,FERT,Produto Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-2000,USD,PC,1602.666,2891903.42,1804.433
+FR01,P004,MAT-1005,2023,10,HALB,Produto Semi-Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-1000,BRL,KG,4441.939,20647922.57,4648.403
+BR01,P002,MAT-1003,2025,9,HALB,Produto Semi-Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-2000,BRL,M,4262.059,16074794.51,3771.603
+BR01,P002,RM-005,2024,11,ROH,Materia Prima,Filial RJ,130100,Conta de Estoque Materiais,PC-3000,GBP,KG,1620.359,7685814.82,4743.279
+UK01,P004,RM-023,2024,10,HALB,Produto Semi-Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-2000,GBP,L,2468.867,11984998.81,4854.453
+FR01,P002,MAT-1015,2025,1,FERT,Produto Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,EUR,PC,966.848,500164.01,517.314
+UK01,P003,RM-012,2025,9,HALB,Produto Semi-Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-2000,GBP,PC,3166.113,14671514.35,4633.92
+US10,P002,RM-045,2024,5,HAWA,Mercadoria de Revenda,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-1000,GBP,PC,2309.628,7608164.07,3294.108
+UK01,P001,MAT-1002,2024,11,FERT,Produto Acabado,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-1000,GBP,L,831.147,3005299.56,3615.846
+BR01,P004,MAT-1010,2024,2,FERT,Produto Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-3000,GBP,KG,4134.123,19172396.42,4637.597
+UK01,P003,RM-005,2023,8,HAWA,Mercadoria de Revenda,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,GBP,TON,4619.578,13375105.76,2895.309
+US10,P004,MAT-1001,2024,3,ROH,Materia Prima,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-2000,USD,KG,3717.556,15840041.42,4260.875
+UK01,P003,MAT-1015,2024,1,HAWA,Mercadoria de Revenda,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,EUR,KG,4393.939,8198782.6,1865.93
+BR01,P002,RM-023,2025,10,ROH,Materia Prima,Filial RJ,510110,Consumo de Materia Prima,PC-3000,GBP,KG,2682.903,12950678.63,4827.114
+US10,P004,MP-ALPHA,2025,7,HAWA,Mercadoria de Revenda,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-2000,BRL,L,1872.945,948515.54,506.43
+BR01,P003,HALB-2001,2024,2,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,GBP,TON,2125.472,3933296.46,1850.552
+BR01,P001,MAT-1010,2023,12,ROH,Materia Prima,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-2000,EUR,L,1519.679,6643728.09,4371.797
+FR01,P002,MAT-1004,2024,2,FERT,Produto Acabado,Filial RJ,510110,Consumo de Materia Prima,PC-1000,EUR,L,3341.985,6297278.94,1884.293
+DE10,P004,MAT-1005,2024,3,HAWA,Mercadoria de Revenda,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-1000,EUR,M,698.979,659265.11,943.183
+DE10,P001,FERT-3003,2024,12,ROH,Materia Prima,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-3000,GBP,TON,4872.111,1971236.62,404.596
+US10,P002,RM-012,2025,6,ROH,Materia Prima,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,EUR,KG,180.459,482451.54,2673.469
+US10,P001,MAT-1015,2025,10,FERT,Produto Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-3000,GBP,KG,4515.043,1022788.18,226.529
+BR01,P002,HAWA-4001,2025,11,ROH,Materia Prima,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,EUR,PC,779.633,2085483.97,2674.956
+FR01,P004,MAT-1002,2023,7,HAWA,Mercadoria de Revenda,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-1000,BRL,M,4843.793,7527060.57,1553.96
+BR01,P001,MP-ALPHA,2025,8,FERT,Produto Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-3000,USD,M,3539.512,14689916.31,4150.266
+UK01,P003,FERT-3003,2025,3,HAWA,Mercadoria de Revenda,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-3000,USD,TON,2728.833,7416787.99,2717.934
+BR01,P004,RM-012,2024,2,HALB,Produto Semi-Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-1000,EUR,KG,1932.321,3494861.46,1808.634
+BR01,P003,RM-012,2023,4,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,GBP,PC,4653.492,14246633.18,3061.493
+UK01,P002,MAT-1005,2025,1,HAWA,Mercadoria de Revenda,Filial RJ,510110,Consumo de Materia Prima,PC-1000,EUR,KG,2579.263,12073395.98,4680.948
+US10,P002,MAT-1002,2025,4,HAWA,Mercadoria de Revenda,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,EUR,TON,976.426,2776252.52,2843.28
+FR01,P004,FERT-3003,2025,2,FERT,Produto Acabado,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-2000,BRL,KG,3089.327,13348425.89,4320.82
+US10,P002,RM-012,2025,2,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,USD,KG,4728.523,8947174.09,1892.171
+UK01,P003,HALB-2002,2023,10,ROH,Materia Prima,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-3000,GBP,KG,3364.594,7315852.07,2174.364
+DE10,P003,MAT-1004,2024,1,HAWA,Mercadoria de Revenda,Fabrica Berlim,510110,Consumo de Materia Prima,PC-2000,GBP,L,537.455,1337586.29,2488.741
+UK01,P002,RM-023,2023,9,ROH,Materia Prima,Filial RJ,510110,Consumo de Materia Prima,PC-2000,BRL,PC,2390.255,5042025.41,2109.409
+DE10,P003,MAT-1002,2025,4,FERT,Produto Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-2000,EUR,KG,4906.954,11509535.4,2345.556
+DE10,P004,HALB-2002,2024,3,FERT,Produto Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-3000,GBP,TON,3909.003,8370821.11,2141.421
+FR01,P002,HALB-2002,2024,8,HALB,Produto Semi-Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-2000,EUR,M,3359.599,16136066.65,4802.974
+DE10,P002,FERT-3002,2025,5,ROH,Materia Prima,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-1000,USD,KG,2299.088,2479014.63,1078.26
+DE10,P002,FERT-3002,2023,2,ROH,Materia Prima,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,GBP,KG,4473.545,6100394.37,1363.66
+FR01,P002,MAT-1015,2025,3,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-3000,GBP,KG,2647.427,11686391.4,4414.245
+US10,P004,RM-023,2023,5,HAWA,Mercadoria de Revenda,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-1000,EUR,L,737.982,1009467.13,1367.875
+DE10,P004,MAT-1002,2025,2,ROH,Materia Prima,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-3000,BRL,L,2406.134,9411049.35,3911.274
+US10,P002,MAT-1010,2024,5,HALB,Produto Semi-Acabado,Filial RJ,510110,Consumo de Materia Prima,PC-2000,EUR,PC,1804.692,1592824.77,882.602
+BR01,P004,MAT-1015,2024,9,ROH,Materia Prima,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-1000,GBP,PC,1364.749,894348.68,655.321
+FR01,P004,FERT-3003,2024,1,FERT,Produto Acabado,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-3000,EUR,M,4650.087,11579465.29,2490.161
+US10,P002,MP-ALPHA,2024,10,HALB,Produto Semi-Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-1000,EUR,KG,4543.133,17979294.38,3957.466
+FR01,P003,RM-023,2024,8,HALB,Produto Semi-Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-3000,GBP,KG,2037.405,5788815.67,2841.269
+FR01,P003,FERT-3003,2025,2,ROH,Materia Prima,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-3000,BRL,PC,4239.336,21086991.42,4974.126
+DE10,P001,MAT-1010,2024,12,FERT,Produto Acabado,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-2000,EUR,PC,3031.891,14231963.16,4694.088
+FR01,P001,MAT-1005,2024,1,ROH,Materia Prima,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-3000,BRL,TON,290.669,1379665.64,4746.518
+UK01,P003,MAT-1004,2025,10,FERT,Produto Acabado,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-1000,USD,TON,4060.129,5376804.47,1324.294
+DE10,P004,MAT-1005,2023,1,HALB,Produto Semi-Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-2000,GBP,L,1381.761,6663722.05,4822.63
+FR01,P003,FERT-3003,2025,11,HAWA,Mercadoria de Revenda,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-1000,EUR,KG,3859.475,7302944.91,1892.212
+UK01,P003,SKU-8891,2024,9,HALB,Produto Semi-Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-3000,GBP,KG,194.183,202102.17,1040.782
+BR01,P001,FERT-3002,2023,7,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-2000,USD,L,1858.344,1756122.07,944.993
+BR01,P003,HALB-2002,2024,8,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-2000,BRL,M,3452.319,16967985.63,4914.953
+DE10,P001,FERT-3002,2024,2,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-1000,BRL,KG,3773.111,1848228.24,489.842
+DE10,P002,MAT-1015,2025,8,ROH,Materia Prima,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-1000,EUR,PC,3980.506,18064001.95,4538.117
+UK01,P001,MAT-1003,2023,5,HALB,Produto Semi-Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-3000,EUR,PC,4719.048,9489236.32,2010.837
+BR01,P002,MAT-1004,2023,5,ROH,Materia Prima,Filial RJ,130100,Conta de Estoque Materiais,PC-3000,EUR,M,3196.612,12513914.45,3914.743
+DE10,P001,MAT-1005,2023,2,ROH,Materia Prima,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-2000,EUR,TON,253.629,1100052.38,4337.25
+UK01,P003,FERT-3003,2024,1,ROH,Materia Prima,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-3000,BRL,L,4692.619,17091203.52,3642.146
+DE10,P004,HAWA-4001,2023,12,ROH,Materia Prima,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-1000,USD,L,3747.015,5395652.89,1439.987
+UK01,P003,HALB-2001,2025,10,FERT,Produto Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-1000,GBP,TON,1976.114,7775356.47,3934.67
+DE10,P002,RM-023,2025,1,HALB,Produto Semi-Acabado,Filial RJ,510110,Consumo de Materia Prima,PC-3000,GBP,M,943.463,3751554.2,3976.366
+BR01,P001,MAT-1020,2025,3,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-1000,EUR,L,3191.48,7564413.98,2370.19
+FR01,P003,MAT-1010,2025,6,ROH,Materia Prima,Fabrica Berlim,510110,Consumo de Materia Prima,PC-3000,GBP,PC,3939.176,7541682.44,1914.533
+UK01,P001,MAT-1020,2025,12,ROH,Materia Prima,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-1000,USD,PC,3032.208,9984287.73,3292.745
+DE10,P004,RM-045,2024,10,HALB,Produto Semi-Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-3000,GBP,KG,2478.53,686540.42,276.995
+DE10,P004,MP-BETA,2023,7,HALB,Produto Semi-Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-3000,BRL,TON,255.353,957261.96,3748.779
+FR01,P003,MAT-1005,2023,10,HALB,Produto Semi-Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,USD,KG,2656.932,10352921.52,3896.57
+UK01,P002,FERT-3001,2024,2,HALB,Produto Semi-Acabado,Filial RJ,510110,Consumo de Materia Prima,PC-2000,BRL,L,3178.166,11823508.5,3720.23
+BR01,P001,MAT-1005,2024,12,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-2000,BRL,KG,4440.405,18023381.87,4058.95
+UK01,P002,MP-ALPHA,2023,4,ROH,Materia Prima,Filial RJ,510110,Consumo de Materia Prima,PC-1000,BRL,KG,4609.566,7658715.55,1661.483
+BR01,P001,MAT-1002,2023,7,HALB,Produto Semi-Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-3000,EUR,L,4949.126,1837184.86,371.214
+DE10,P001,HALB-2002,2024,12,ROH,Materia Prima,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-3000,USD,L,4410.993,14082972.94,3192.699
+FR01,P003,RM-012,2023,6,ROH,Materia Prima,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-1000,GBP,PC,849.401,3383216.85,3983.062
+UK01,P004,MAT-1015,2023,11,FERT,Produto Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-3000,BRL,PC,3430.563,14690329.43,4282.192
+UK01,P004,FERT-3001,2024,3,HALB,Produto Semi-Acabado,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-1000,USD,L,4549.073,6713526.48,1475.801
+US10,P002,HALB-2001,2025,8,HALB,Produto Semi-Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,EUR,TON,3118.108,2108664.19,676.264
+UK01,P003,RM-012,2023,4,HAWA,Mercadoria de Revenda,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-2000,GBP,TON,2045.767,888826.43,434.471
+UK01,P004,HAWA-4001,2024,7,HAWA,Mercadoria de Revenda,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-2000,BRL,TON,2729.446,10378303.54,3802.348
+UK01,P003,RM-023,2025,2,HAWA,Mercadoria de Revenda,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,USD,L,2643.759,7958727.15,3010.383
+UK01,P003,MP-BETA,2025,7,FERT,Produto Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-2000,EUR,KG,2468.039,5780478.06,2342.134
+US10,P002,MAT-1002,2025,7,ROH,Materia Prima,Filial RJ,130100,Conta de Estoque Materiais,PC-3000,EUR,KG,3.84,8295.54,2160.296
+DE10,P001,MAT-1004,2024,3,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-1000,USD,TON,4705.44,3941549.46,837.658
+UK01,P002,FERT-3002,2024,2,HALB,Produto Semi-Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,USD,M,1154.165,5227274.46,4529.053
+FR01,P002,MAT-1005,2023,8,HAWA,Mercadoria de Revenda,Filial RJ,510110,Consumo de Materia Prima,PC-2000,GBP,M,1435.175,1798152.29,1252.915
+DE10,P001,RM-045,2025,4,ROH,Materia Prima,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-1000,USD,L,3195.497,13740614.73,4299.993
+DE10,P003,MAT-1015,2025,12,ROH,Materia Prima,Fabrica Berlim,510110,Consumo de Materia Prima,PC-3000,EUR,TON,2199.605,10839917.39,4928.12
+BR01,P004,MAT-1015,2024,7,ROH,Materia Prima,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-2000,USD,L,2736.867,7675067.29,2804.326
+DE10,P003,MAT-1020,2023,7,HAWA,Mercadoria de Revenda,Fabrica Berlim,510110,Consumo de Materia Prima,PC-3000,GBP,L,1654.054,1053637.36,637.003
+UK01,P001,FERT-3002,2023,2,ROH,Materia Prima,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-1000,USD,TON,2770.352,295760.01,106.759
+UK01,P004,MAT-1002,2023,1,FERT,Produto Acabado,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-3000,BRL,KG,275.62,801793.74,2909.055
+DE10,P003,RM-012,2025,8,ROH,Materia Prima,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-3000,BRL,KG,2214.815,797142.93,359.914
+UK01,P003,MP-ALPHA,2023,10,FERT,Produto Acabado,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-2000,BRL,TON,2747.919,2063819.07,751.048
+UK01,P001,SKU-8891,2024,10,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-2000,EUR,PC,2470.824,3711323.43,1502.059
+US10,P003,MAT-1020,2024,7,ROH,Materia Prima,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-2000,BRL,TON,3557.335,331440.46,93.171
+UK01,P003,HAWA-4001,2024,8,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-2000,EUR,PC,3558.817,1832385.05,514.886
+BR01,P001,MAT-1005,2023,2,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-3000,EUR,M,2275.017,4709826.64,2070.238
+DE10,P002,MP-BETA,2025,7,FERT,Produto Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,GBP,TON,90.287,417567.17,4624.887
+FR01,P003,MP-BETA,2023,1,ROH,Materia Prima,Fabrica Berlim,510110,Consumo de Materia Prima,PC-3000,BRL,TON,4853.58,13357377.35,2752.067
+FR01,P004,RM-005,2025,9,HALB,Produto Semi-Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-1000,EUR,TON,2859.638,2198332.41,768.745
+UK01,P001,RM-012,2025,2,FERT,Produto Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-3000,BRL,PC,2549.642,3981926.34,1561.759
+DE10,P004,MAT-1005,2025,2,HALB,Produto Semi-Acabado,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-1000,GBP,M,2320.148,10934623.19,4712.899
+DE10,P003,HAWA-4001,2025,2,ROH,Materia Prima,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-1000,BRL,TON,1209.256,3741055.94,3093.684
+UK01,P003,MAT-1004,2024,4,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,USD,L,442.923,1493227.2,3371.302
+FR01,P004,MAT-1010,2024,4,ROH,Materia Prima,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-3000,BRL,L,1675.899,7086791.98,4228.651
+FR01,P004,HALB-2002,2024,4,HALB,Produto Semi-Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-1000,USD,KG,580.378,2568509.27,4425.58
+US10,P001,MAT-1001,2024,9,ROH,Materia Prima,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-2000,EUR,L,1433.682,1003287.8,699.798
+US10,P002,MAT-1001,2024,10,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,USD,KG,3072.316,5742822.22,1869.216
+BR01,P002,RM-012,2024,11,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,BRL,L,1970.966,7985766.88,4051.702
+FR01,P001,RM-023,2023,2,FERT,Produto Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-3000,GBP,M,1724.811,3634140.56,2106.979
+FR01,P002,HALB-2001,2025,7,HAWA,Mercadoria de Revenda,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,USD,M,3819.456,5441781.39,1424.753
+DE10,P004,MAT-1001,2023,10,FERT,Produto Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-2000,BRL,M,2225.244,6086914.64,2735.392
+BR01,P001,RM-012,2024,2,ROH,Materia Prima,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-3000,USD,L,4213.43,6826523.44,1620.182
+FR01,P001,MAT-1002,2024,1,ROH,Materia Prima,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-1000,EUR,L,4727.137,6286056.97,1329.781
+UK01,P001,RM-023,2024,9,FERT,Produto Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-3000,BRL,L,4855.705,6287744.66,1294.919
+UK01,P001,HAWA-4001,2025,3,HALB,Produto Semi-Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-1000,EUR,PC,1950.057,5175618.98,2654.086
+DE10,P001,RM-005,2023,7,HALB,Produto Semi-Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-3000,USD,PC,1001.717,3406333.65,3400.495
+FR01,P003,MAT-1020,2024,2,HALB,Produto Semi-Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-3000,BRL,L,3584.042,8361856.71,2333.08
+DE10,P002,MP-ALPHA,2024,7,ROH,Materia Prima,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,GBP,PC,1713.909,335682.79,195.858
+US10,P003,MAT-1003,2024,2,HALB,Produto Semi-Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-3000,USD,TON,4034.914,18901958.12,4684.6
+UK01,P003,MAT-1020,2024,10,HALB,Produto Semi-Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,USD,TON,815.12,2116309.91,2596.317
+UK01,P002,MP-BETA,2023,10,ROH,Materia Prima,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,USD,PC,1323.607,263081.45,198.761
+DE10,P004,MAT-1010,2024,12,HALB,Produto Semi-Acabado,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-2000,USD,PC,965.516,1828422.75,1893.726
+DE10,P002,MAT-1001,2025,5,FERT,Produto Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-3000,BRL,L,1011.369,3826504.5,3783.49
+FR01,P004,MAT-1015,2025,6,HAWA,Mercadoria de Revenda,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-3000,BRL,L,3869.923,14798659.08,3824.019
+DE10,P001,FERT-3003,2023,12,FERT,Produto Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-3000,USD,TON,1542.99,7169166.66,4646.282
+FR01,P001,HALB-2002,2025,10,HALB,Produto Semi-Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-2000,EUR,M,171.863,661872.77,3851.165
+FR01,P002,MAT-1010,2024,6,HAWA,Mercadoria de Revenda,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,GBP,PC,2071.473,441735.4,213.247
+UK01,P004,MP-ALPHA,2024,10,ROH,Materia Prima,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-1000,EUR,L,1352.435,6043791.28,4468.822
+FR01,P001,MAT-1010,2024,8,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-2000,EUR,L,2513.894,1910199.95,759.857
+DE10,P002,MAT-1010,2025,7,HAWA,Mercadoria de Revenda,Filial RJ,510110,Consumo de Materia Prima,PC-3000,BRL,KG,4848.888,19026187.96,3923.825
+US10,P004,MAT-1004,2023,2,FERT,Produto Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-3000,GBP,KG,4091.319,11951671.53,2921.227
+BR01,P002,FERT-3002,2025,1,HALB,Produto Semi-Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-1000,EUR,L,295.184,882506.29,2989.682
+US10,P002,HALB-2002,2025,4,ROH,Materia Prima,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,USD,PC,594.268,2784335.75,4685.32
+FR01,P001,FERT-3002,2023,9,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-3000,GBP,L,2213.837,1731884.69,782.3
+UK01,P002,RM-023,2023,8,HALB,Produto Semi-Acabado,Filial RJ,510110,Consumo de Materia Prima,PC-3000,EUR,M,4611.866,2027878.99,439.709
+US10,P002,MAT-1020,2023,7,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-3000,GBP,PC,2262.799,4709771.74,2081.392
+BR01,P002,MAT-1002,2024,8,FERT,Produto Acabado,Filial RJ,510110,Consumo de Materia Prima,PC-2000,USD,KG,194.718,636532.95,3268.999
+UK01,P004,FERT-3002,2023,12,HAWA,Mercadoria de Revenda,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-2000,GBP,L,4381.46,2993483.58,683.216
+FR01,P002,MAT-1002,2024,3,HAWA,Mercadoria de Revenda,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,EUR,PC,1845.023,2349622.03,1273.492
+UK01,P002,RM-005,2025,1,HALB,Produto Semi-Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-2000,USD,L,1727.572,4612606.87,2669.994
+US10,P002,RM-023,2023,9,HALB,Produto Semi-Acabado,Filial RJ,510110,Consumo de Materia Prima,PC-2000,GBP,TON,4549.078,18053329.93,3968.569
+BR01,P003,RM-012,2023,9,HAWA,Mercadoria de Revenda,Fabrica Berlim,510110,Consumo de Materia Prima,PC-3000,BRL,L,464.834,1306408.52,2810.484
+DE10,P001,MP-ALPHA,2025,8,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-3000,EUR,M,3145.111,9632166.63,3062.584
+FR01,P001,RM-045,2024,6,ROH,Materia Prima,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-2000,BRL,KG,1082.13,4655181.5,4301.869
+DE10,P004,FERT-3001,2025,9,FERT,Produto Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-3000,BRL,KG,1022.593,479413.07,468.821
+US10,P002,SKU-8891,2023,8,ROH,Materia Prima,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,EUR,KG,3541.214,10811322.8,3052.999
+UK01,P001,MAT-1001,2025,4,FERT,Produto Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-3000,BRL,L,25.282,92222.31,3647.746
+DE10,P001,RM-012,2024,4,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-2000,EUR,M,1623.894,4236819.02,2609.049
+FR01,P003,MAT-1002,2024,2,HAWA,Mercadoria de Revenda,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,USD,KG,1924.033,1739999.24,904.35
+UK01,P001,RM-023,2023,1,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-2000,EUR,KG,4596.309,753472.93,163.93
+BR01,P002,SKU-8891,2024,6,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,GBP,L,1045.589,1036587.52,991.391
+BR01,P001,HAWA-4001,2025,3,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-3000,GBP,PC,693.764,1486413.65,2142.535
+DE10,P003,MAT-1002,2025,12,FERT,Produto Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-1000,BRL,TON,852.425,295469.26,346.622
+US10,P001,MP-ALPHA,2023,11,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-1000,EUR,M,4177.815,1861446.36,445.555
+UK01,P003,RM-045,2024,1,HALB,Produto Semi-Acabado,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-2000,GBP,M,2131.795,8479922.37,3977.832
+BR01,P002,HAWA-4001,2025,2,FERT,Produto Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,GBP,TON,259.697,620355.36,2388.766
+US10,P004,RM-005,2024,6,HAWA,Mercadoria de Revenda,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-1000,EUR,PC,1833.539,4781310.48,2607.695
+US10,P004,MAT-1020,2024,7,HAWA,Mercadoria de Revenda,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-1000,USD,TON,750.557,3272915.63,4360.649
+BR01,P004,MAT-1005,2023,4,ROH,Materia Prima,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-3000,BRL,M,753.852,33228.29,44.078
+US10,P002,FERT-3002,2025,11,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,EUR,KG,360.239,1066693.62,2961.072
+DE10,P002,SKU-8891,2023,5,ROH,Materia Prima,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-2000,EUR,L,1288.829,1222154.01,948.267
+US10,P001,FERT-3002,2023,7,FERT,Produto Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-2000,EUR,PC,4462.815,17980940.48,4029.058
+DE10,P004,MP-BETA,2024,3,FERT,Produto Acabado,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-2000,GBP,L,3409.798,16615867.23,4872.977
+UK01,P002,MAT-1005,2025,10,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,BRL,KG,2638.654,891347.88,337.804
+BR01,P004,MAT-1003,2023,1,HAWA,Mercadoria de Revenda,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-3000,GBP,TON,4501.49,16334912.38,3628.779
+DE10,P002,HAWA-4001,2023,12,ROH,Materia Prima,Filial RJ,510110,Consumo de Materia Prima,PC-3000,BRL,M,3592.034,10529311.3,2931.295
+US10,P001,HALB-2002,2025,6,ROH,Materia Prima,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-1000,BRL,PC,2186.203,8265701.24,3780.848
+DE10,P003,RM-023,2024,11,HALB,Produto Semi-Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-2000,GBP,L,2858.277,704053.65,246.321
+FR01,P002,FERT-3002,2024,12,FERT,Produto Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-2000,BRL,TON,3208.094,12676546.04,3951.426
+DE10,P004,MAT-1010,2025,4,ROH,Materia Prima,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-1000,USD,L,2637.472,11512731.44,4365.063
+UK01,P001,FERT-3002,2024,4,ROH,Materia Prima,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-2000,EUR,L,4137.377,12278444.07,2967.688
+US10,P004,FERT-3002,2023,10,ROH,Materia Prima,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-1000,USD,KG,2599.249,4787281.21,1841.794
+UK01,P001,MP-BETA,2023,3,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-2000,BRL,M,2526.262,2968271.96,1174.966
+UK01,P004,FERT-3003,2024,11,HAWA,Mercadoria de Revenda,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-3000,BRL,L,4013.722,2227587.61,554.993
+UK01,P001,MP-BETA,2024,8,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-1000,EUR,M,4418.448,11537385.14,2611.185
+DE10,P003,MAT-1001,2025,9,ROH,Materia Prima,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-1000,GBP,KG,3415.392,16231756.36,4752.531
+UK01,P003,MP-BETA,2024,9,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-2000,GBP,KG,2662.544,8551944.89,3211.945
+BR01,P002,MAT-1005,2023,11,FERT,Produto Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,GBP,PC,4183.367,3053924.84,730.016
+US10,P002,RM-045,2025,6,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,GBP,M,1841.098,5764790.82,3131.17
+FR01,P001,HAWA-4001,2024,7,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-3000,EUR,KG,3156.798,9789587.32,3101.113
+US10,P001,HALB-2001,2023,10,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-2000,USD,L,3907.548,7373668.12,1887.032
+UK01,P001,MAT-1020,2024,1,FERT,Produto Acabado,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-3000,USD,KG,1249.881,3297432.3,2638.197
+BR01,P003,MAT-1015,2024,10,HAWA,Mercadoria de Revenda,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-3000,USD,PC,2717.003,6784090.22,2496.902
+UK01,P003,MAT-1001,2023,10,HAWA,Mercadoria de Revenda,Fabrica Berlim,510110,Consumo de Materia Prima,PC-2000,EUR,TON,1312.68,3044282.13,2319.135
+DE10,P001,RM-023,2023,9,ROH,Materia Prima,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-1000,USD,TON,3020.119,5982644.33,1980.93
+DE10,P001,MAT-1001,2025,5,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-2000,BRL,TON,2788.36,10471108.79,3755.293
+US10,P002,MP-ALPHA,2023,4,HAWA,Mercadoria de Revenda,Filial RJ,510110,Consumo de Materia Prima,PC-3000,USD,KG,612.325,2835667.89,4630.985
+US10,P003,MAT-1001,2023,3,HALB,Produto Semi-Acabado,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-2000,BRL,L,2226.838,3724301.94,1672.462
+UK01,P004,MP-ALPHA,2023,9,FERT,Produto Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-3000,USD,KG,3263.184,2032728.68,622.928
+UK01,P002,MP-BETA,2025,7,HAWA,Mercadoria de Revenda,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-2000,EUR,TON,4753.374,9775812.74,2056.605
+FR01,P002,MAT-1004,2024,1,ROH,Materia Prima,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,USD,M,3071.38,3573639.7,1163.529
+BR01,P004,RM-023,2024,4,FERT,Produto Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-1000,USD,M,3864.703,5242152.71,1356.418
+US10,P003,MP-ALPHA,2023,8,HAWA,Mercadoria de Revenda,Fabrica Berlim,510110,Consumo de Materia Prima,PC-3000,GBP,L,4387.507,21051355.11,4798.022
+FR01,P001,RM-045,2023,12,FERT,Produto Acabado,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-1000,EUR,L,1713.669,2473640.07,1443.476
+US10,P004,HALB-2002,2024,8,FERT,Produto Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-1000,BRL,M,2605.357,5584676.52,2143.536
+US10,P002,FERT-3002,2025,4,FERT,Produto Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,GBP,M,3800.165,10924600.34,2874.77
+BR01,P002,FERT-3003,2025,3,HAWA,Mercadoria de Revenda,Filial RJ,510110,Consumo de Materia Prima,PC-2000,BRL,M,3323.234,14063490.94,4231.869
+DE10,P002,RM-012,2024,7,ROH,Materia Prima,Filial RJ,510110,Consumo de Materia Prima,PC-1000,GBP,PC,4634.818,9143267.69,1972.735
+BR01,P002,RM-005,2024,7,FERT,Produto Acabado,Filial RJ,510110,Consumo de Materia Prima,PC-3000,USD,M,1971.026,2425660.89,1230.659
+DE10,P003,HALB-2001,2024,4,FERT,Produto Acabado,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-2000,USD,L,2336.9,7178477.74,3071.795
+FR01,P002,RM-023,2025,1,ROH,Materia Prima,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-2000,EUR,M,2361.25,9655998.94,4089.359
+FR01,P003,MAT-1004,2025,5,HALB,Produto Semi-Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,EUR,TON,2913.83,4158836.71,1427.275
+BR01,P001,RM-023,2025,3,HALB,Produto Semi-Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-3000,USD,M,4743.284,9046182.54,1907.156
+UK01,P001,HAWA-4001,2025,11,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-3000,EUR,L,161.715,318112.16,1967.116
+DE10,P001,HAWA-4001,2025,4,FERT,Produto Acabado,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-1000,USD,KG,3548.082,8311587.87,2342.558
+UK01,P003,SKU-8891,2023,1,HAWA,Mercadoria de Revenda,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-3000,GBP,PC,1237.036,1545184.14,1249.102
+DE10,P002,SKU-8891,2024,12,FERT,Produto Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,USD,PC,61.692,171681.06,2782.874
+US10,P003,MAT-1004,2023,2,HALB,Produto Semi-Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-2000,EUR,M,3704.335,14534921.5,3923.76
+DE10,P004,MAT-1015,2023,8,FERT,Produto Acabado,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-2000,GBP,KG,2775.656,4638495.89,1671.135
+US10,P001,FERT-3001,2025,7,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-1000,BRL,TON,2876.899,1341941.05,466.454
+FR01,P004,FERT-3003,2024,12,HALB,Produto Semi-Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-1000,GBP,PC,1032.158,964163.56,934.124
+DE10,P001,HAWA-4001,2025,11,FERT,Produto Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-3000,EUR,TON,404.846,1785575.71,4410.506
+FR01,P003,RM-045,2023,8,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,BRL,KG,3264.283,15001433.62,4595.629
+UK01,P003,RM-012,2025,4,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,USD,TON,3377.047,14203045.81,4205.759
+FR01,P001,MAT-1002,2024,7,ROH,Materia Prima,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-2000,BRL,PC,3770.699,6690245.66,1774.272
+US10,P003,MAT-1003,2024,4,HALB,Produto Semi-Acabado,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-1000,GBP,TON,517.511,1650504.04,3189.312
+DE10,P001,RM-045,2025,9,FERT,Produto Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-1000,USD,TON,4674.854,9011650.61,1927.686
+UK01,P001,HAWA-4001,2024,7,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-3000,GBP,TON,2898.744,9085255.04,3134.204
+FR01,P002,RM-023,2023,4,ROH,Materia Prima,Filial RJ,510110,Consumo de Materia Prima,PC-1000,EUR,PC,307.459,916133.74,2979.694
+US10,P003,MAT-1004,2025,3,HAWA,Mercadoria de Revenda,Fabrica Berlim,510110,Consumo de Materia Prima,PC-3000,USD,KG,829.599,187303.54,225.776
+US10,P002,RM-045,2024,2,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-3000,GBP,PC,1413.389,4217602.24,2984.035
+UK01,P003,MAT-1002,2025,1,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-2000,BRL,PC,4779.347,23436995.27,4903.807
+DE10,P004,FERT-3002,2024,3,FERT,Produto Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-3000,GBP,TON,1110.548,2506090.38,2256.625
+FR01,P002,HALB-2002,2023,3,HAWA,Mercadoria de Revenda,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,USD,L,1353.08,2515626.04,1859.185
+UK01,P003,MAT-1010,2023,8,HAWA,Mercadoria de Revenda,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-1000,BRL,TON,1047.927,3080404.47,2939.522
+DE10,P003,MAT-1020,2023,7,FERT,Produto Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-3000,USD,M,2157.16,8791309.28,4075.409
+UK01,P002,RM-012,2024,9,HAWA,Mercadoria de Revenda,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-2000,BRL,PC,3739.201,8562878.73,2290.029
+FR01,P003,RM-005,2024,4,HALB,Produto Semi-Acabado,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-3000,BRL,KG,620.161,1273064.64,2052.797
+UK01,P004,RM-012,2023,11,HAWA,Mercadoria de Revenda,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-1000,BRL,PC,102.285,127701.9,1248.491
+BR01,P001,RM-045,2023,4,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-2000,USD,PC,5.949,4819.79,810.185
+US10,P002,MAT-1005,2023,9,HALB,Produto Semi-Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-1000,BRL,KG,122.123,574819.89,4706.893
+FR01,P004,HALB-2001,2023,5,FERT,Produto Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-3000,USD,PC,3051.839,15056259.91,4933.504
+US10,P004,RM-005,2023,6,FERT,Produto Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-3000,USD,PC,1920.375,8941813.31,4656.285
+US10,P003,SKU-8891,2024,8,HALB,Produto Semi-Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-3000,GBP,KG,288.948,1333321.36,4614.399
+UK01,P003,FERT-3001,2023,4,ROH,Materia Prima,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-3000,GBP,KG,2281.78,1770138.75,775.771
+BR01,P002,SKU-8891,2025,8,HAWA,Mercadoria de Revenda,Filial RJ,510110,Consumo de Materia Prima,PC-1000,BRL,L,38.407,30958.62,806.067
+DE10,P002,HALB-2001,2024,7,HALB,Produto Semi-Acabado,Filial RJ,510110,Consumo de Materia Prima,PC-1000,GBP,L,1826.558,6368685.35,3486.714
+FR01,P003,FERT-3001,2023,11,HAWA,Mercadoria de Revenda,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,EUR,KG,2359.486,3795466.82,1608.599
+FR01,P001,MAT-1005,2023,9,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-2000,BRL,PC,4074.565,3439161.04,844.056
+BR01,P003,SKU-8891,2025,3,ROH,Materia Prima,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,USD,M,4376.597,3364447.67,768.736
+US10,P004,MAT-1020,2023,9,ROH,Materia Prima,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-3000,BRL,TON,785.97,47184.92,60.034
+UK01,P003,MAT-1003,2024,5,HAWA,Mercadoria de Revenda,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,GBP,PC,2961.302,3809700.22,1286.495
+US10,P001,MAT-1004,2023,4,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-3000,GBP,L,2346.198,7635492.58,3254.411
+FR01,P002,HALB-2002,2025,3,ROH,Materia Prima,Filial RJ,510110,Consumo de Materia Prima,PC-2000,GBP,PC,3550.295,12713389.83,3580.939
+DE10,P003,HALB-2001,2023,12,FERT,Produto Acabado,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-2000,GBP,KG,332.698,401641.68,1207.226
+UK01,P001,FERT-3003,2024,11,FERT,Produto Acabado,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-2000,BRL,L,4109.582,6363309.65,1548.408
+FR01,P004,MAT-1005,2025,8,ROH,Materia Prima,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-2000,USD,PC,4896.237,2405526.13,491.301
+DE10,P002,MAT-1002,2023,4,ROH,Materia Prima,Filial RJ,510110,Consumo de Materia Prima,PC-1000,GBP,TON,3872.315,11424630.35,2950.336
+DE10,P002,MP-ALPHA,2023,11,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-3000,GBP,M,3810.603,13303779.16,3491.253
+US10,P001,MAT-1015,2025,8,FERT,Produto Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-2000,BRL,L,1174.127,2309339.91,1966.857
+BR01,P001,MAT-1003,2024,8,HALB,Produto Semi-Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-2000,USD,TON,1335.401,5740277.29,4298.542
+BR01,P002,MAT-1010,2025,9,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,GBP,KG,1151.286,5672198.46,4926.837
+FR01,P002,HALB-2002,2025,6,FERT,Produto Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,USD,TON,1899.217,8777189.58,4621.478
+FR01,P001,RM-012,2023,3,ROH,Materia Prima,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-3000,USD,KG,3212.987,14758547.34,4593.404
+DE10,P004,FERT-3003,2024,3,ROH,Materia Prima,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-1000,GBP,PC,3073.416,7616471.92,2478.178
+BR01,P003,HALB-2001,2025,4,ROH,Materia Prima,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-2000,BRL,L,2210.063,2703205.41,1223.135
+US10,P004,MAT-1004,2023,7,FERT,Produto Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-3000,BRL,M,3658.403,8205223.56,2242.843
+BR01,P003,MP-ALPHA,2024,2,ROH,Materia Prima,Fabrica Berlim,510110,Consumo de Materia Prima,PC-2000,GBP,PC,4534.129,7654113.04,1688.111
+UK01,P001,MAT-1003,2025,7,ROH,Materia Prima,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-1000,GBP,PC,3296.912,12873828.13,3904.814
+BR01,P002,RM-045,2025,3,FERT,Produto Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,USD,M,4595.517,20101898.88,4374.241
+FR01,P001,MAT-1001,2023,2,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-1000,GBP,M,418.727,817350.92,1951.99
+BR01,P001,SKU-8891,2025,7,ROH,Materia Prima,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-1000,EUR,TON,3804.433,12193538.75,3205.087
+US10,P002,MP-BETA,2025,8,ROH,Materia Prima,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,BRL,L,1509.665,1927354.58,1276.677
+UK01,P002,MAT-1004,2023,8,ROH,Materia Prima,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-1000,GBP,PC,3366.968,4558144.04,1353.783
+US10,P004,RM-012,2024,4,HAWA,Mercadoria de Revenda,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-1000,EUR,TON,952.907,920360.46,965.845
+FR01,P003,RM-005,2023,4,ROH,Materia Prima,Fabrica Berlim,510110,Consumo de Materia Prima,PC-3000,EUR,TON,4505.625,2218952.73,492.485
+BR01,P003,MAT-1002,2023,8,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-1000,USD,M,3884.758,7316230.78,1883.317
+BR01,P001,HAWA-4001,2025,2,HALB,Produto Semi-Acabado,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-3000,USD,KG,3197.833,11754169.23,3675.667
+US10,P002,HALB-2001,2023,6,ROH,Materia Prima,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,BRL,KG,1769.939,1097031.2,619.813
+BR01,P004,MP-BETA,2025,12,HAWA,Mercadoria de Revenda,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-1000,BRL,TON,1561.202,7667329.99,4911.171
+DE10,P001,FERT-3001,2023,10,ROH,Materia Prima,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-2000,USD,M,481.859,454687.93,943.612
+US10,P003,FERT-3001,2023,2,ROH,Materia Prima,Fabrica Berlim,510110,Consumo de Materia Prima,PC-3000,EUR,PC,4922.941,16690640.71,3390.38
+UK01,P003,RM-023,2024,10,ROH,Materia Prima,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-1000,BRL,KG,4685.138,6031627.92,1287.396
+DE10,P004,FERT-3002,2023,4,HAWA,Mercadoria de Revenda,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-1000,EUR,KG,4320.508,3099320.73,717.351
+US10,P001,FERT-3001,2024,7,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-1000,EUR,KG,3239.74,6287946.57,1940.88
+FR01,P003,FERT-3002,2024,7,FERT,Produto Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-3000,GBP,L,4613.773,21147159.34,4583.485
+FR01,P001,MAT-1002,2024,3,ROH,Materia Prima,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-3000,GBP,TON,548.327,261920.45,477.672
+FR01,P004,MAT-1004,2023,10,FERT,Produto Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-1000,BRL,PC,3739.76,6636783.78,1774.655
+BR01,P004,HAWA-4001,2023,10,FERT,Produto Acabado,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-3000,GBP,TON,3799.872,13216201.81,3478.065
+US10,P002,HALB-2002,2023,2,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-2000,USD,KG,2418.075,5313262.8,2197.311
+US10,P003,MAT-1003,2024,9,ROH,Materia Prima,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-1000,EUR,M,4770.587,6798272.53,1425.039
+UK01,P004,MP-BETA,2024,4,FERT,Produto Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-2000,USD,M,1500.325,862775.39,575.059
+DE10,P003,RM-012,2023,12,HALB,Produto Semi-Acabado,Fabrica Berlim,510110,Consumo de Materia Prima,PC-2000,EUR,KG,4856.824,13431605.05,2765.512
+BR01,P002,MAT-1003,2023,1,ROH,Materia Prima,Filial RJ,510110,Consumo de Materia Prima,PC-1000,BRL,TON,1544.434,4366141.17,2827.017
+DE10,P002,RM-023,2023,12,ROH,Materia Prima,Filial RJ,130100,Conta de Estoque Materiais,PC-3000,USD,M,1694.139,1933298.91,1141.169
+FR01,P002,SKU-8891,2025,7,HAWA,Mercadoria de Revenda,Filial RJ,130100,Conta de Estoque Materiais,PC-3000,EUR,M,2974.218,9543254.33,3208.66
+FR01,P001,RM-045,2024,6,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-1000,BRL,PC,1619.811,853936.82,527.183
+BR01,P001,MAT-1005,2024,1,ROH,Materia Prima,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-1000,BRL,L,3194.016,10038009.75,3142.755
+US10,P002,FERT-3002,2024,1,FERT,Produto Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,USD,TON,2895.554,7118247.53,2458.337
+DE10,P004,RM-023,2023,6,HAWA,Mercadoria de Revenda,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-1000,GBP,M,133.369,628515.28,4712.604
+DE10,P001,MAT-1001,2024,4,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-1000,BRL,M,310.365,39876.32,128.482
+DE10,P004,RM-045,2023,3,FERT,Produto Acabado,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-3000,GBP,KG,3083.578,4502578.92,1460.18
+FR01,P001,MAT-1015,2025,2,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-3000,EUR,TON,63.316,137442.83,2170.744
+DE10,P001,RM-005,2023,1,HAWA,Mercadoria de Revenda,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-3000,USD,PC,4244.012,10749488.23,2532.86
+US10,P003,MAT-1010,2024,7,ROH,Materia Prima,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-3000,GBP,PC,1834.071,3223190.87,1757.397
+BR01,P004,MAT-1020,2023,9,ROH,Materia Prima,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-2000,USD,TON,4109.044,3241419.36,788.85
+UK01,P004,HALB-2001,2023,7,ROH,Materia Prima,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-1000,GBP,KG,3869.475,7600260.28,1964.158
+UK01,P001,RM-023,2024,7,ROH,Materia Prima,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-3000,BRL,TON,1782.231,4996372.33,2803.437
+BR01,P004,MAT-1020,2023,9,ROH,Materia Prima,Centro Distribuicao US,130100,Conta de Estoque Materiais,PC-1000,EUR,TON,2926.154,8727447.43,2982.566
+DE10,P002,MAT-1003,2023,11,HALB,Produto Semi-Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,BRL,KG,2205.768,9845749.86,4463.638
+DE10,P002,RM-005,2024,4,FERT,Produto Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,BRL,PC,51.637,236346.11,4577.069
+DE10,P001,MP-BETA,2025,12,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-2000,GBP,M,2784.605,2824107.41,1014.186
+US10,P003,MAT-1010,2025,8,ROH,Materia Prima,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-1000,BRL,TON,692.297,2418518.11,3493.469
+DE10,P004,MAT-1002,2024,11,HAWA,Mercadoria de Revenda,Centro Distribuicao US,510110,Consumo de Materia Prima,PC-1000,EUR,M,551.74,1909072.26,3460.094
+DE10,P002,MP-BETA,2024,5,HALB,Produto Semi-Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-1000,GBP,L,4390.076,17835675.91,4062.726
+DE10,P003,HALB-2002,2023,6,HAWA,Mercadoria de Revenda,Fabrica Berlim,130100,Conta de Estoque Materiais,PC-1000,EUR,PC,670.752,1714679.56,2556.354
+US10,P002,FERT-3003,2025,6,ROH,Materia Prima,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-2000,USD,TON,287.457,1222142.98,4251.568
+UK01,P001,MAT-1004,2025,9,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510100,Custo de Mercadoria Vendida (CMV),PC-3000,USD,M,2643.783,1143996.63,432.712
+FR01,P003,RM-045,2023,2,ROH,Materia Prima,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-2000,GBP,PC,4923.052,6105869.4,1240.261
+FR01,P002,MAT-1001,2023,1,HALB,Produto Semi-Acabado,Filial RJ,130100,Conta de Estoque Materiais,PC-1000,GBP,PC,2981.601,3938408.69,1320.904
+US10,P001,MAT-1020,2023,12,ROH,Materia Prima,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-3000,BRL,TON,3395.692,12845828.13,3782.978
+FR01,P004,MAT-1001,2025,4,FERT,Produto Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-3000,BRL,M,176.419,874039.36,4954.338
+US10,P001,FERT-3003,2023,5,ROH,Materia Prima,Fabrica Matriz SP,130100,Conta de Estoque Materiais,PC-1000,EUR,TON,2256.278,8907787.8,3948.001
+FR01,P001,HALB-2002,2025,10,ROH,Materia Prima,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-2000,EUR,L,1506.98,2339590.97,1552.503
+UK01,P004,RM-005,2025,6,HALB,Produto Semi-Acabado,Centro Distribuicao US,510100,Custo de Mercadoria Vendida (CMV),PC-3000,BRL,M,2763.805,5976023.54,2162.245
+UK01,P002,RM-012,2024,7,HALB,Produto Semi-Acabado,Filial RJ,510100,Custo de Mercadoria Vendida (CMV),PC-3000,BRL,TON,3526.495,14782291.21,4191.78
+US10,P001,FERT-3002,2024,12,HALB,Produto Semi-Acabado,Fabrica Matriz SP,510110,Consumo de Materia Prima,PC-1000,GBP,M,1044.018,2602083.32,2492.374
+FR01,P003,MAT-1003,2025,5,HALB,Produto Semi-Acabado,Fabrica Berlim,510100,Custo de Mercadoria Vendida (CMV),PC-2000,USD,M,4081.969,14636177.42,3585.568
