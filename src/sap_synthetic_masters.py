@@ -133,6 +133,30 @@ I_CUSTOMER_MAX_ROWS = 150_000
 # Smokes / testes locais (fora da faixa 120k–150k)
 I_CUSTOMER_QUICK_TEST_ROWS = 600
 
+# I_CostCenter (dimensao CO) — mesmo volume-alvo que I_Customer / I_GLAccount.
+I_COSTCENTER_MIN_ROWS = 120_000
+I_COSTCENTER_DEFAULT_ROWS = 120_000
+I_COSTCENTER_MAX_ROWS = 150_000
+I_COSTCENTER_QUICK_TEST_ROWS = 600
+
+# I_ProfitCenter — mesmo volume-alvo que I_Customer / I_GLAccount / I_CostCenter.
+I_PROFITCENTER_MIN_ROWS = 120_000
+I_PROFITCENTER_DEFAULT_ROWS = 120_000
+I_PROFITCENTER_MAX_ROWS = 150_000
+I_PROFITCENTER_QUICK_TEST_ROWS = 600
+
+# I_Product (material master) — volume tipicamente menor que dimensoes transacionais (cliente, GL, CO).
+I_PRODUCT_MIN_ROWS = 5_000
+I_PRODUCT_DEFAULT_ROWS = 28_000
+I_PRODUCT_MAX_ROWS = 65_000
+I_PRODUCT_QUICK_TEST_ROWS = 400
+
+MASTER_PRODUCT_TYPES: tuple[str, ...] = ("FERT", "HALB", "ROH", "HAWA", "NLAG", "DIEN", "ERSA")
+MASTER_PRODUCT_GROUPS: tuple[str, ...] = ("Z001", "Z002", "Z010", "Z020", "Z030", "ZMAT", "ZSRV")
+
+# Areas de contabilidade de custos (KOKRS) — rotacionar com CompanyCode nos geradores.
+MASTER_CONTROLLING_AREAS: tuple[str, ...] = ("0001", "A000", "CORP", "O100")
+
 
 def csv_cell_has_semantic_value(value: object) -> bool:
     """True se a celula nao e 'sem dado' (null, string vazia ou so espacos)."""

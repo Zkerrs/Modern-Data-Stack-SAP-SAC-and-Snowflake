@@ -1,6 +1,7 @@
 """
 Regenera, em sequencia, os CSV das views standard I_* deste repositorio:
-  I_Customer → I_Supplier (derivado do primeiro) → I_CompanyCode → I_GLAccount.
+  I_Customer → I_Supplier → I_CompanyCode → I_GLAccount → I_CostCenter → I_ProfitCenter → I_Product
+  (Product com volume MD proporcional, ver constantes I_PRODUCT_*).
 
 Executar na raiz do projeto:
   python src/generate_all_i_views.py
@@ -19,6 +20,8 @@ from sap_synthetic_masters import (
     I_CUSTOMER_DEFAULT_ROWS,
     I_CUSTOMER_MAX_ROWS,
     I_CUSTOMER_MIN_ROWS,
+    I_PRODUCT_MAX_ROWS,
+    I_PRODUCT_MIN_ROWS,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,7 +29,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Regenera I_Customer, I_Supplier, I_CompanyCode e I_GLAccount em data/."
+        description=(
+            "Regenera I_Customer, I_Supplier, I_CompanyCode, I_GLAccount, I_CostCenter, I_ProfitCenter e I_Product em data/."
+        )
     )
     parser.add_argument(
         "--quick",
@@ -50,6 +55,9 @@ def main() -> int:
             print("Aviso: --quick ignora --rows.", file=sys.stderr, flush=True)
         customer_cmd_tail = ["--quick"]
         glaccount_cmd_tail = ["--quick"]
+        costcenter_cmd_tail = ["--quick"]
+        profitcenter_cmd_tail = ["--quick"]
+        product_cmd_tail = ["--quick"]
     else:
         requested = args.rows if args.rows is not None else I_CUSTOMER_DEFAULT_ROWS
         if requested < I_CUSTOMER_MIN_ROWS:
@@ -67,6 +75,10 @@ def main() -> int:
         customer_rows = max(I_CUSTOMER_MIN_ROWS, min(requested, I_CUSTOMER_MAX_ROWS))
         customer_cmd_tail = ["--rows", str(customer_rows)]
         glaccount_cmd_tail = ["--rows", str(customer_rows)]
+        costcenter_cmd_tail = ["--rows", str(customer_rows)]
+        profitcenter_cmd_tail = ["--rows", str(customer_rows)]
+        product_scaled = max(I_PRODUCT_MIN_ROWS, min(customer_rows // 4, I_PRODUCT_MAX_ROWS))
+        product_cmd_tail = ["--rows", str(product_scaled)]
 
     exe = sys.executable
     data = ROOT / "data"
@@ -98,6 +110,27 @@ def main() -> int:
             *glaccount_cmd_tail,
             "--output",
             str(data / "I_GLAccount.csv"),
+        ],
+        [
+            exe,
+            str(ROOT / "src" / "generate_i_costcenter_csv.py"),
+            *costcenter_cmd_tail,
+            "--output",
+            str(data / "I_CostCenter.csv"),
+        ],
+        [
+            exe,
+            str(ROOT / "src" / "generate_i_profitcenter_csv.py"),
+            *profitcenter_cmd_tail,
+            "--output",
+            str(data / "I_ProfitCenter.csv"),
+        ],
+        [
+            exe,
+            str(ROOT / "src" / "generate_i_product_csv.py"),
+            *product_cmd_tail,
+            "--output",
+            str(data / "I_Product.csv"),
         ],
     ]
 
