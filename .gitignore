@@ -12,5 +12,6 @@ build/
 .vscode/
 *.csv.bak
 
-# Regras Cursor locais (nao versionar / nao ir no push)
-.cursor/rules/
+# Cursor: versionamos só as regras do projeto para GitHub; resto pode ficar local
+.cursor/*
+!.cursor/rules/

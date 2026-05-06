@@ -1,0 +1,20 @@
+---
+description: Convenções para geradores CSV tipo CDS S/4HANA (I_Customer, I_CostCenter, etc.)
+globs: src/generate_i_*.py
+alwaysApply: false
+---
+
+# CSVs sintéticos `I_*` (cara S/4HANA)
+
+1. **Nomes e ordem**: cabeçalhos em **PascalCase** iguais à exposição OData/CDS (VDM SAP Cloud SDK / views `I_*`). Primeira coluna **`Client`** (mandante), alinhado a `MASTER_CLIENT_IDS` em `sap_synthetic_masters.py`.
+2. **Mestres**: códigos de empresa, CRC, conta, centro de lucro etc. vêm **`sap_synthetic_masters`** — não inventar dimensões paralelas dentro de cada script.
+3. **Volume por tipo de dimensão**: 
+   - Alto cardinal (ex.: **I_Customer**, **I_GLAccount**, **I_CostCenter**, **I_ProfitCenter**): fora de `--quick`, **120 000–150 000** linhas (`--rows` fora disso → ajuste + aviso stderr).
+   - Mestre_MD com menos linhas típicas no SAP (ex.: **I_Product** / material): usar faixa em `sap_synthetic_masters` (**I_PRODUCT_***) e **não** forçar 120k; em `generate_all_i_views.py` o volume pode ser **derivado** do batch principal (ex.: `customer_rows // 4` limitado a **I_PRODUCT_MIN/MAX**).
+4. **Colunas vazias**: omitir do CSV apenas colunas em que **todas** as linhas estão semanticamente vazias (usar `csv_cell_has_semantic_value` ou `column_order_excluding_always_empty`).
+5. **Datas**: formato **`YYYYMMDD`** em strings nos CSV (como dados extraídos de SAP).
+6. **Flags checkbox SAP**: valores típicos `X` ou vazio (`""`), não `true`/`false`.
+7. **Estilo texto**: curtos/longos dentro dos **tamanhos máximos** do data element OData; texto limpo sem ruído de exemplos Markdown.
+8. **Orquestração**: novo `I_*` deve ser encadeado em `src/generate_all_i_views.py`; dimensões alto volume seguem o mesmo `--rows` que **I_Customer**; mestres menores seguem constantes próprias ou escala documentada no script.
+
+9. **Objetivo geral / encerramentos**: ler e manter atualizado **`project-overview.mdc`** (`alwaysApply: true`): descreve o propósito do repositório, o fluxo de scripts e histórico curto quando o utilizador encerra a sessão (“acabámos por hoje”).

@@ -1,0 +1,29 @@
+---
+description: Objetivo do repo, fluxo sintético S/4HANASAC/Snowflake, estado do projeto ao encerrar sessão
+alwaysApply: true
+---
+
+# Projeto — Modern Data Stack (SAP SAC · Snowflake) com dados sintéticos S/4
+
+## Objetivo
+
+Gerar **CSVs sintéticos** com cara de extratos **SAP S/4HANA** (CDS / OData, views **`I_*`**) para montar modelo e **carga no SAP Analytics Cloud** e preparar uso em **Snowflake** / pipelines “modern stack”, sem dados reais produtivos.  
+Direção acordada: no futuro um **facto tipo journal entry / razão único** que **referencie** estes mestres, reduzindo a necessidade de vários **`ZI_*`** só para POC de carga SAC.
+
+## Funcionamento (visão atual)
+
+| Área | Papel |
+|------|--------|
+| `src/sap_synthetic_masters.py` | Seed, mandantes, empresas, plantas, contas exemplo,CRC, tipos/material, faixas de volume (`I_PRODUCT_*`, `I_CUSTOMER_*`, …). |
+| `src/generate_i_*.py` | Um gerador por vista standard (`I_Customer`, `I_Supplier`, `I_CompanyCode`, `I_GLAccount`, `I_CostCenter`, `I_ProfitCenter`, `I_Product`, …). |
+| `src/generate_all_i_views.py` | Regenera a sequência de CSV em `data/`: alto volume segue **`--rows` / `--quick`** do cliente; **`I_Product`** escala proporcionalmente (ex.: `customer_rows / 4` dentro dos limites MD). |
+| `data/` | Saídas UTF-8, PascalCase; `Client` onde definido; colunas sempre vazias removidas. |
+| Convenções nos geradores | Ver regra **`sap-synthetic-i-views-csv.mdc`** (globs nos `generate_i_*.py`). |
+
+## Ao encerrar a sessão com “acabámos por hoje” / equivalente
+
+Se o utilizador **der por terminada** a sessão (“por hoje chega”, etc.), atualiza esta subsecção com **uma ou duas frases objetivas**: o que ficou decidido/implementado e o próximo passo óbvio (**data opcional** no início da linha). Mantém o histórico abaixo (mais recente em cima).
+
+### Estado / histórico
+
+- *[2026-05-06]* `.cursor/rules/` passou a estar **versionado no Git** (`.gitignore` ajustado: ignora `.cursor/*` mas **não** `rules/`). Criado este ficheiro para qualquer Cursor ler sempre o objetivo e o fluxo. Próximo: facto journal único alinhado aos `I_*` (planeado).
