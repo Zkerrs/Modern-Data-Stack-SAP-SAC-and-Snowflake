@@ -11,6 +11,10 @@
 define view ZI_DRE
   as select from ZI_GLAccountBalanceFlow as Geral
   
+  left outer join I_CompanyCode as Empresa            on  Geral.CompanyCode = Empresa.CompanyCode
+
+  left outer join I_Customer as Cliente               on  Geral.Customer    = Cliente.Customer
+
   left outer join t077z as TextoGrupo               on  Geral.ChartOfAccounts = TextoGrupo.ktopl
                                                     and Geral.GLAccountGroup  = TextoGrupo.ktoks
                                                     and TextoGrupo.spras      = 'P'
@@ -23,6 +27,8 @@ define view ZI_DRE
     
 {
   key Geral.CompanyCode,
+  Empresa.CompanyCodeName                  as CompanyCodeName,
+
   key Geral.Ledger,
   key Geral.AccountingDocument                 as DocumentNumber,
   key Geral.LedgerLineItem                     as DocumentItem,
@@ -35,6 +41,9 @@ define view ZI_DRE
   Geral.ChartOfAccounts,
   Geral.GLAccount,
   Geral.GLAccountName,
+
+  Geral.Customer,
+  coalesce( Geral.CustomerName, Cliente.CustomerName ) as CustomerName,
   
   Geral.GLAccountType,
   Geral.GLAccountTypeName,

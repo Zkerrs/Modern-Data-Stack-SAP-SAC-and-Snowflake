@@ -11,7 +11,7 @@
 
 ## Estado atual deste repositório
 
-O foco imediato é **CSV sintético** alinhado às views standard `I_Customer`, `I_Supplier` e código empresa `I_CompanyCode`: os geradores conhecem a **lista completa** de campos CDS/OData; no ficheiro gravado **removem-se colunas que ficarem vazias em todas as linhas**. **Valores fictícios** e mestres canónicos em `sap_synthetic_masters.py`.
+O foco imediato é **CSV sintético** alinhado às views standard `I_Customer`, `I_Supplier`, `I_CompanyCode` e `I_GLAccount`: os geradores conhecem a **lista completa** de campos CDS/OData; no ficheiro gravado **removem-se colunas que ficarem vazias em todas as linhas**. **Valores fictícios** e mestres canónicos em `sap_synthetic_masters.py`.
 
 **Volume:** execução normal de `generate_i_customer_csv.py`: **entre 120 000 e 150 000** linhas (fora disto é ajustado com aviso); por defeito **120 000**. Para testes: **`python src/generate_i_customer_csv.py --quick`** ou **`python src/generate_all_i_views.py --quick`** (**600** linhas).
 
@@ -27,8 +27,9 @@ A pasta **`CDS/`** guarda **definições CDS em ABAP** (`ZI_*`) como **contrato 
 | `src/generate_i_customer_csv.py` | Gera `data/I_Customer.csv` (estrutura `I_CUSTOMER_CDS`) |
 | `src/generate_i_supplier_csv.py` | Gera `data/I_Supplier.csv` a partir de `I_Customer` (estrutura `I_SUPPLIER_CDS`) |
 | `src/generate_i_companycode_csv.py` | Gera `data/I_CompanyCode.csv` a partir dos mestres de empresa |
-| `src/generate_all_i_views.py` | Corre os três na ordem correta de dependências |
-| `data/` | Saída: `I_Customer.csv`, `I_Supplier.csv`, `I_CompanyCode.csv` |
+| `src/generate_i_glaccount_csv.py` | Gera `data/I_GLAccount.csv` a partir dos mestres de contas |
+| `src/generate_all_i_views.py` | Corre os quatro na ordem correta de dependências |
+| `data/` | Saída: `I_Customer.csv`, `I_Supplier.csv`, `I_CompanyCode.csv`, `I_GLAccount.csv` |
 | `CDS/` | Views ZI_* em ABAP para uso posterior no pipeline Snowflake / SAC |
 | `requirements.txt` | Dependências Python dos geradores atuais |
 | `.cursor/rules/` (opcional local) | Convenções do projeto para o agente; pasta **ignorada pelo Git** (`git push` não inclui regras) |

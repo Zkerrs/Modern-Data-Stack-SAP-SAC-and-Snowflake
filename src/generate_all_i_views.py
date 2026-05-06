@@ -1,6 +1,6 @@
 """
 Regenera, em sequencia, os CSV das views standard I_* deste repositorio:
-  I_Customer → I_Supplier (derivado do primeiro) → I_CompanyCode.
+  I_Customer → I_Supplier (derivado do primeiro) → I_CompanyCode → I_GLAccount.
 
 Executar na raiz do projeto:
   python src/generate_all_i_views.py
@@ -26,7 +26,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Regenera I_Customer, I_Supplier e I_CompanyCode em data/."
+        description="Regenera I_Customer, I_Supplier, I_CompanyCode e I_GLAccount em data/."
     )
     parser.add_argument(
         "--quick",
@@ -49,6 +49,7 @@ def main() -> int:
         if args.rows is not None:
             print("Aviso: --quick ignora --rows.", file=sys.stderr, flush=True)
         customer_cmd_tail = ["--quick"]
+        glaccount_cmd_tail = ["--quick"]
     else:
         requested = args.rows if args.rows is not None else I_CUSTOMER_DEFAULT_ROWS
         if requested < I_CUSTOMER_MIN_ROWS:
@@ -65,6 +66,7 @@ def main() -> int:
             )
         customer_rows = max(I_CUSTOMER_MIN_ROWS, min(requested, I_CUSTOMER_MAX_ROWS))
         customer_cmd_tail = ["--rows", str(customer_rows)]
+        glaccount_cmd_tail = ["--rows", str(customer_rows)]
 
     exe = sys.executable
     data = ROOT / "data"
@@ -89,6 +91,13 @@ def main() -> int:
             str(ROOT / "src" / "generate_i_companycode_csv.py"),
             "--output",
             str(data / "I_CompanyCode.csv"),
+        ],
+        [
+            exe,
+            str(ROOT / "src" / "generate_i_glaccount_csv.py"),
+            *glaccount_cmd_tail,
+            "--output",
+            str(data / "I_GLAccount.csv"),
         ],
     ]
 
