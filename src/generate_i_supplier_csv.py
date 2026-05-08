@@ -260,7 +260,18 @@ def build_row_from_anchor(
         "AddressId": _clip(cr.get("AddressId", ""), 10),
         "Region": _clip(cr.get("Region", ""), 3),
         "OrganizationBpName1": _clip(_one_line(sname), 35),
-        "OrganizationBpName2": _clip(_one_line(cr.get("OrganizationBpName2", "") or "") or "Supply", 35),
+        "OrganizationBpName2": _clip(
+            _one_line(cr.get("OrganizationBpName2", "") or "")
+            or global_rng.choice(
+                [
+                    "Suprimentos Industriais",
+                    "Logistica e Distribuicao",
+                    "Componentes Tecnicos",
+                    "Operacoes Comerciais",
+                ]
+            ),
+            35,
+        ),
         "CityName": _clip(cr.get("CityName", ""), 35),
         "PostalCode": _clip(cr.get("PostalCode", ""), 10),
         "StreetName": _clip(cr.get("StreetName", ""), 35),
@@ -342,12 +353,27 @@ def build_synthetic_standalone_supplier(
 
     fk_cust = global_rng.choice(customer_pool) if customer_pool else ""
 
+    _city_by_country = {
+        "BR": "Campinas",
+        "US": "Chicago",
+        "DE": "Hamburg",
+        "FR": "Lyon",
+        "GB": "Manchester",
+    }
+    _street_by_country = {
+        "BR": "Avenida Industrial 1500",
+        "US": "Industrial Park Ave 250",
+        "DE": "Industriestrasse 44",
+        "FR": "Rue de l Industrie 18",
+        "GB": "Commerce Road 32",
+    }
+
     row_like: dict[str, str] = {
         "Country": country,
         "Customer": fk_cust,
         "PostalCode": _digits(global_rng, 8) if country == "BR" else _digits(global_rng, 5),
-        "CityName": "Standalone City",
-        "StreetName": "Rua Sintetica 100",
+        "CityName": _city_by_country.get(country, "Chicago"),
+        "StreetName": _street_by_country.get(country, "Industrial Park Ave 100"),
         "Region": "",
         "AddressId": _digits(global_rng, 10),
         "TaxJurisdiction": (country + _digits(global_rng, 10))[:15],

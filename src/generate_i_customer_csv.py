@@ -147,6 +147,32 @@ LANG_BY_COUNTRY: dict[str, str] = {
     "PT": "P",
 }
 
+_BUSINESS_TYPES: tuple[str, ...] = (
+    "Distribuicao Atacadista",
+    "Varejo Especializado",
+    "Industria de Embalagens",
+    "Industria Metalurgica",
+    "Industria Quimica",
+    "Alimentos e Bebidas",
+    "Farmaceutico e Saude",
+    "Logistica Integrada",
+    "Eletroeletronico",
+    "Construção e Infraestrutura",
+)
+
+_INDUSTRY_TYPES: tuple[str, ...] = (
+    "Manufatura Discreta",
+    "Processos Continuos",
+    "Comercio B2B",
+    "Comercio B2C",
+    "Servicos Industriais",
+    "Distribuicao Regional",
+    "Distribuicao Nacional",
+    "Exportacao",
+    "Importacao",
+    "Canal Digital",
+)
+
 
 def _digits(rng: random.Random, n: int) -> str:
     return "".join(rng.choice(string.digits) for _ in range(n))
@@ -441,9 +467,9 @@ def generate_row(ctx: FakeContext, customer_numeric: int) -> dict[str, str]:
     unloading = rng.choice(["", "X"]) if _maybe(rng, 0.15) else ""
     work_cal = rng.choice(["", "01", "02"]) if _maybe(rng, 0.08) else ""
     competitor = rng.choice(["", "X"]) if _maybe(rng, 0.02) else ""
-    repr_name = _alnum(rng, 10) if _maybe(rng, 0.06) else ""
-    biz_type = _one_line(" ".join(loc_f.words(nb=3)))[:30] if _maybe(rng, 0.25) else ""
-    ind_type = _one_line(" ".join(loc_f.words(nb=3)))[:30] if _maybe(rng, 0.25) else ""
+    repr_name = _one_line(loc_f.name())[:10] if _maybe(rng, 0.06) else ""
+    biz_type = rng.choice(_BUSINESS_TYPES)[:30] if _maybe(rng, 0.25) else ""
+    ind_type = rng.choice(_INDUSTRY_TYPES)[:30] if _maybe(rng, 0.25) else ""
 
     tw = rng.choice(["", "X"]) if _maybe(rng, 0.01) else ""
     alt_pay_allow = rng.choice(["", "", "X"]) if _maybe(rng, 0.1) else ""

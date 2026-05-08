@@ -99,6 +99,101 @@ _INDUSTRY_SECTORS: tuple[str, ...] = ("M", "P", "A", "C", "L", "O")
 _ITEM_CAT_GROUPS: tuple[str, ...] = ("NORM", "LUMF", "BANS", "LEER", "VERP")
 _DIVISIONS: tuple[str, ...] = ("00", "10", "20", "30", "40")
 
+_BASE_MATERIAL_TERMS_BY_TYPE: dict[str, tuple[str, ...]] = {
+    "ROH": (
+        "Aco Carbono",
+        "Aco Inox",
+        "Aluminio",
+        "Cobre",
+        "Latão",
+        "Polietileno",
+        "Polipropileno",
+        "Resina Epoxi",
+        "Papel Kraft",
+        "Papel Reciclado",
+        "Celulose",
+        "Borracha Nitrilica",
+        "Tecido Tecnico",
+        "Vidro Temperado",
+        "Granulado PVC",
+    ),
+    "HALB": (
+        "Chapa de Aco",
+        "Perfil Metalico",
+        "Bobina de Papel",
+        "Filme Plastico",
+        "Tubo de Aluminio",
+        "Bloco de Cobre",
+        "Placa de Polimero",
+        "Painel Laminado",
+        "Composto Quimico",
+        "Placa Tecnica",
+    ),
+    "FERT": (
+        "Painel Metalico",
+        "Embalagem Plastica",
+        "Caderno Corporativo",
+        "Garrafa PET",
+        "Caixa de Papel",
+        "Suporte de Aco",
+        "Conector de Cobre",
+        "Modulo Industrial",
+        "Kit de Montagem",
+        "Componente Eletrico",
+        "Bandeja de Aluminio",
+    ),
+    "HAWA": (
+        "Parafuso Galvanizado",
+        "Adesivo Industrial",
+        "Fita Tecnica",
+        "Manta Plastica",
+        "Papel Cartao",
+        "Valvula de Metal",
+        "Rolamento",
+        "Conector Universal",
+        "Filtro de Ar",
+    ),
+    "NLAG": (
+        "Material de Escritorio",
+        "Etiqueta Adesiva",
+        "Caixa Arquivo",
+        "Papel Sulfite",
+        "Pano de Limpeza",
+        "Insumo de Apoio",
+    ),
+    "DIEN": (
+        "Servico de Corte",
+        "Servico de Pintura",
+        "Servico de Embalagem",
+        "Servico de Inspecao",
+        "Servico de Montagem",
+        "Servico de Transporte",
+    ),
+    "ERSA": (
+        "Peca de Reposicao",
+        "Engrenagem Reserva",
+        "Sensor Reserva",
+        "Kit de Vedacao",
+        "Rolamento Reserva",
+        "Chave de Manutencao",
+    ),
+}
+
+_MATERIAL_QUALIFIERS: tuple[str, ...] = (
+    "Industrial",
+    "Premium",
+    "Standard",
+    "Reforcado",
+    "Leve",
+    "Flexivel",
+    "Alta Densidade",
+    "Baixa Densidade",
+    "Tecnico",
+    "Automotivo",
+    "Alimenticio",
+    "Farmaceutico",
+)
+
 
 def _pad(s: str | None, max_len: int) -> str:
     if s is None:
@@ -133,6 +228,15 @@ def _hierarchy(rng: random.Random) -> str:
     return "".join(parts)[:18]
 
 
+def _material_description(ptype: str, idx: int, plant: str, rng: random.Random) -> str:
+    base_terms = _BASE_MATERIAL_TERMS_BY_TYPE.get(ptype, ("Material Generico",))
+    base = rng.choice(base_terms)
+    qual = rng.choice(_MATERIAL_QUALIFIERS)
+    spec = f"{rng.randint(1, 99):02d}{rng.choice(('A', 'B', 'C', 'D'))}"
+    text = f"{base} {qual} {spec} {plant}"
+    return _pad(_normalize_text(text), 40)
+
+
 def build_row(company: dict[str, str], client: str, idx: int, rng: random.Random) -> dict[str, str]:
     bukrs = company["CompanyCode"]
     lang2 = _COMPANY_LANG2.get(bukrs, "EN")
@@ -143,10 +247,9 @@ def build_row(company: dict[str, str], client: str, idx: int, rng: random.Random
 
     matnr = _product_number(idx)
     plant = MASTER_PLANTS[idx % len(MASTER_PLANTS)]
-    words = _normalize_text(fk.catch_phrase()) or _normalize_text(fk.word())
-    desc = _pad(f"{words} {plant} {idx % 999:03d}", 40)
-
     ptype = MASTER_PRODUCT_TYPES[idx % len(MASTER_PRODUCT_TYPES)]
+    desc = _material_description(ptype, idx, plant, rng)
+
     if ptype in {"DIEN"}:
         base_u, po_u = "EA", "EA"
     elif ptype in {"FERT", "HALB"}:

@@ -55,6 +55,30 @@ _COMPANY_COUNTRY: dict[str, str] = {
 
 # Hierarquia / categorias CO com cara de producao/projeto/admin — letras KOART-tipicas curtas.
 _CC_CATEGORIES: tuple[str, ...] = ("F", "V", "W", "A", "S", "D", "C")
+_CC_AREA_NAMES: tuple[str, ...] = (
+    "Operacoes Industriais",
+    "Manutencao Fabril",
+    "Planejamento Producao",
+    "Logistica Interna",
+    "Qualidade Industrial",
+    "Engenharia Processos",
+    "Suprimentos Estrategicos",
+    "Controladoria Operacional",
+    "Tecnologia Industrial",
+    "Administracao Corporativa",
+)
+_CC_AREA_NAMES_SHORT: tuple[str, ...] = (
+    "Operacoes Ind.",
+    "Manutencao",
+    "Planejamento",
+    "Logistica",
+    "Qualidade",
+    "Engenharia",
+    "Suprimentos",
+    "Controladoria",
+    "Tecnologia",
+    "Administracao",
+)
 
 _COSTCENTER_COLUMNS: list[str] = [
     "Client",
@@ -136,20 +160,22 @@ def build_row(
     plant_code = list(MASTER_PLANT_NAMES.keys())[idx % len(MASTER_PLANT_NAMES)]
     plant_label = _normalize_text(MASTER_PLANT_NAMES.get(plant_code, plant_code))[:30]
 
-    short = f"CC {plant_code} {idx % 997:03d}"[:20]
-    long = f"Centro de custo {plant_label} - area {idx % 50:02d}"[:40]
+    area_name = _CC_AREA_NAMES[idx % len(_CC_AREA_NAMES)]
+    area_short = _CC_AREA_NAMES_SHORT[idx % len(_CC_AREA_NAMES_SHORT)]
+    short = _pad(_normalize_text(f"{area_short} {plant_code}"), 20)
+    long = _pad(_normalize_text(f"{area_name} - {plant_label}")[:40], 40)
 
     created = _sample_date_between(rng, datetime(2015, 1, 1), datetime(2026, 4, 1))
     valid_from = _sample_date_between(rng, datetime(2016, 1, 1), datetime(2021, 6, 1))
     xf = rng.choice(["", "", "X"])
 
     user_cb = rng.choice(["CB9980001010", "CB9980001020", "CB9980001030"])
-    resp_user = f"CC{user_cb[-6:]}"[:12]
+    resp_user = _pad(rng.choice(["CO_MANAGER1", "CO_ANALYST1", "CO_COORD01", "CO_SUPERV1"]), 12)
     person = _pad(fk.last_name().upper()[:1] + fk.first_name()[:18], 20)
 
     business_area = rng.choice(["1000", "2000", "3000", ""])
     func_area = rng.choice(["YB01", "YB02", "YB10", "YB20", ""])
-    dept = _pad(f"CO-{plant_code}-{idx % 120:03d}", 12)
+    dept = _pad(_normalize_text(area_name.replace(" ", ""))[:12], 12)
     hier = _pad(f"STD-{controlling_area}", 12)
     if country == "US":
         region = rng.choice(["CA", "TX", "NY", "FL", "IL", "WA", ""])

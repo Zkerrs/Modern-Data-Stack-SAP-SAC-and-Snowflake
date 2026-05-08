@@ -1,6 +1,6 @@
 """
 Regenera, em sequencia, os CSV das views standard I_* deste repositorio:
-  I_Customer → I_Supplier → I_CompanyCode → I_GLAccount → I_CostCenter → I_ProfitCenter → I_Product
+  I_Customer → I_Supplier → I_CompanyCode → I_GLAccount → I_CostCenter → I_ProfitCenter → I_ProductType → I_Product
   (Product com volume MD proporcional, ver constantes I_PRODUCT_*).
 
 Executar na raiz do projeto:
@@ -22,6 +22,8 @@ from sap_synthetic_masters import (
     I_CUSTOMER_MIN_ROWS,
     I_PRODUCT_MAX_ROWS,
     I_PRODUCT_MIN_ROWS,
+    I_PRODUCTTYPE_MAX_ROWS,
+    I_PRODUCTTYPE_MIN_ROWS,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -30,7 +32,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def main() -> int:
     parser = argparse.ArgumentParser(
         description=(
-            "Regenera I_Customer, I_Supplier, I_CompanyCode, I_GLAccount, I_CostCenter, I_ProfitCenter e I_Product em data/."
+            "Regenera I_Customer, I_Supplier, I_CompanyCode, I_GLAccount, I_CostCenter, I_ProfitCenter, I_ProductType e I_Product em data/."
         )
     )
     parser.add_argument(
@@ -57,6 +59,7 @@ def main() -> int:
         glaccount_cmd_tail = ["--quick"]
         costcenter_cmd_tail = ["--quick"]
         profitcenter_cmd_tail = ["--quick"]
+        producttype_cmd_tail = ["--quick"]
         product_cmd_tail = ["--quick"]
     else:
         requested = args.rows if args.rows is not None else I_CUSTOMER_DEFAULT_ROWS
@@ -77,6 +80,17 @@ def main() -> int:
         glaccount_cmd_tail = ["--rows", str(customer_rows)]
         costcenter_cmd_tail = ["--rows", str(customer_rows)]
         profitcenter_cmd_tail = ["--rows", str(customer_rows)]
+        producttype_rows = max(
+            I_PRODUCTTYPE_MIN_ROWS,
+            min(customer_rows, I_PRODUCTTYPE_MAX_ROWS),
+        )
+        if producttype_rows != customer_rows:
+            print(
+                f"Aviso: I_ProductType ajustado para {producttype_rows} (faixa [{I_PRODUCTTYPE_MIN_ROWS}, {I_PRODUCTTYPE_MAX_ROWS}]).",
+                file=sys.stderr,
+                flush=True,
+            )
+        producttype_cmd_tail = ["--rows", str(producttype_rows)]
         product_scaled = max(I_PRODUCT_MIN_ROWS, min(customer_rows // 4, I_PRODUCT_MAX_ROWS))
         product_cmd_tail = ["--rows", str(product_scaled)]
 
@@ -124,6 +138,13 @@ def main() -> int:
             *profitcenter_cmd_tail,
             "--output",
             str(data / "I_ProfitCenter.csv"),
+        ],
+        [
+            exe,
+            str(ROOT / "src" / "generate_i_producttype_csv.py"),
+            *producttype_cmd_tail,
+            "--output",
+            str(data / "I_ProductType.csv"),
         ],
         [
             exe,

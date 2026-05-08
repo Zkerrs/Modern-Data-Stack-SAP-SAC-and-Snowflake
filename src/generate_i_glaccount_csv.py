@@ -1,286 +1,239 @@
 """
-CSV sintetico espelho da view standard `I_GLAccount` (Conta Contabil).
+Gera I_GLAccount.csv com Plano de Contas SAP hierarquico (nivel 1-4).
 
-- Em codigo, mantem-se lista ampla de campos no padrao OData/CDS (PascalCase).
-- No CSV final, remove-se apenas coluna 100% vazia em todas as linhas.
-- Fora de --quick, volume e ajustado para faixa 120k-150k.
-
-Uso:
-  python src/generate_i_glaccount_csv.py [--rows N] --output data/I_GLAccount.csv
+Layout exportado:
+  ChartOfAccounts, GLAccount, GLAccountName, GLAccountGroup,
+  GLAccountType, IsBalanceSheetAccount, ParentAccount
 """
 
 from __future__ import annotations
 
 import argparse
 import csv
-import random
-import re
-import string
-import sys
-from datetime import datetime, timedelta
 from pathlib import Path
 
-from sap_synthetic_masters import (
-    MASTER_CLIENT_IDS,
-    MASTER_GL_ACCOUNTS,
-    SYNTHETIC_MASTER_SEED,
-    csv_cell_has_semantic_value,
-)
-
-# Ordem de campos mantida no padrao de view.
 GLACCOUNT_COLUMNS = [
-    "Client",
     "ChartOfAccounts",
     "GLAccount",
     "GLAccountName",
-    "GLAccountLongName",
-    "AlternativeGLAccount",
-    "CountryChartOfAccounts",
-    "AccountType",
-    "GLAccountType",
     "GLAccountGroup",
+    "GLAccountType",
     "IsBalanceSheetAccount",
-    "ProfitLossAccountType",
-    "RetainedEarningsAccount",
-    "CorporateGroupAccount",
-    "FunctionalArea",
-    "ConsolidationChartOfAccounts",
-    "ConsolidationAccount",
-    "ExchangeRateType",
-    "TranslationDateType",
-    "PlanningAccount",
-    "AccountCurrency",
-    "CashFlowStatementAccount",
-    "CreatedByUser",
-    "CreationDate",
-    "LastChangedByUser",
-    "LastChangeDate",
-    "AccountIsMarkedForDeletion",
-    "IsBlockedForCreation",
-    "IsBlockedForPosting",
-    "IsBlockedForPlanning",
-    "IsOpenItemManaged",
-    "IsLineItemDisplayed",
-    "LineItemTaxDisplayOnly",
-    "ReconciliationAccountIsReqd",
-    "ReconciliationAccountType",
-    "OpenItemClrngIsUsed",
-    "SortKey",
-    "FieldStatusGroup",
-    "PostAutomaticallyOnly",
-    "TaxCategory",
-    "TaxCodeRequired",
-    "CostElement",
-    "CostElementCategory",
-    "ControllingArea",
-    "DefaultProfitCenter",
-    "DefaultCostCenter",
-    "HouseBank",
-    "HouseBankAccount",
-    "AccountManagedInExtSystem",
-    "AuthorizationGroup",
-    "MinorityInterestAccount",
-    "PartnerCompany",
-    "IsNonOperatingExpenseOrIncome",
-    "IsProfitAndLossAccount",
+    "ParentAccount",
 ]
 
-I_GLACCOUNT_MIN_ROWS = 120_000
-I_GLACCOUNT_DEFAULT_ROWS = 120_000
-I_GLACCOUNT_MAX_ROWS = 150_000
-I_GLACCOUNT_QUICK_TEST_ROWS = 600
+CHART_OF_ACCOUNTS = "YCOA"
 
-_CHART_OF_ACCOUNTS = "INTL"
-
-
-def _digits(rng: random.Random, n: int) -> str:
-    return "".join(rng.choice(string.digits) for _ in range(n))
-
-
-def _sample_date(rng: random.Random) -> str:
-    start = datetime(2014, 1, 1)
-    end = datetime(2026, 5, 1)
-    day = start + timedelta(days=rng.randint(0, (end - start).days))
-    return day.strftime("%Y%m%d")
-
-
-def _first_digit(gl_account: str) -> str:
-    for c in gl_account:
-        if c.isdigit():
-            return c
-    return "3"
-
-
-def _account_type(gl_account: str) -> tuple[str, str, str]:
-    first = _first_digit(gl_account)
-    if first in {"1", "2"}:
-        return "S", "X", ""
-    if first in {"3", "4"}:
-        return "P", "", "X"
-    if first in {"5", "6"}:
-        return "P", "", "E"
-    return "P", "", "N"
-
-
-def _gl_group(gl_account: str) -> str:
-    first = _first_digit(gl_account)
-    mapping = {
-        "1": "ASST",
-        "2": "LIAB",
-        "3": "REVN",
-        "4": "REVN",
-        "5": "EXPN",
-        "6": "EXPN",
-        "7": "COGS",
-        "8": "OTHR",
-        "9": "OTHR",
-    }
-    return mapping.get(first, "OTHR")
-
-
-def _build_gl_number(base: str, idx: int) -> str:
-    b = "".join(ch for ch in base if ch.isdigit()) or "300000"
-    base_num = int(b[-6:])
-    return str(base_num + (idx * 7) % 900000).zfill(6)[:10]
-
-
-def _normalize_account_name(name: str) -> str:
-    # Mantem estilo "limpo" como os outros CSVs (sem parenteses/virgulas de exemplo).
-    s = re.sub(r"\([^)]*\)", " ", name or "")
-    s = s.replace(",", " ").replace(";", " ").replace("/", " ")
-    return " ".join(s.split()).strip()
-
-
-def build_row(master: dict[str, str], client: str, idx: int, rng: random.Random) -> dict[str, str]:
-    gl = _build_gl_number(master.get("GLAccount", ""), idx)
-    seed_name = _normalize_account_name(master.get("GLAccountName", "Conta contabil"))
-    name = f"{seed_name} {idx % 997:03d}"[:50]
-    account_type, is_bs, pl_type = _account_type(gl)
-    created = _sample_date(rng)
-    changed = _sample_date(rng)
-    is_pl = "X" if pl_type in {"X", "E", "N"} else ""
-
+def _node(gl: str, name: str, group: str, gl_type: str, parent: str) -> dict[str, str]:
     return {
-        "Client": client[:3],
-        "ChartOfAccounts": _CHART_OF_ACCOUNTS,
         "GLAccount": gl,
-        "GLAccountName": name[:30],
-        "GLAccountLongName": name[:50],
-        "AlternativeGLAccount": gl[-6:],
-        "CountryChartOfAccounts": rng.choice(["", "BRPC", "USCX", "INTL"]),
-        "AccountType": account_type,
-        "GLAccountType": "N",
-        "GLAccountGroup": _gl_group(gl),
-        "IsBalanceSheetAccount": is_bs,
-        "ProfitLossAccountType": pl_type,
-        "RetainedEarningsAccount": "X" if is_bs == "X" and rng.random() < 0.08 else "",
-        "CorporateGroupAccount": gl[-6:].rjust(6, "0"),
-        "FunctionalArea": rng.choice(["YB01", "YB02", "YB10", ""]),
-        "ConsolidationChartOfAccounts": rng.choice(["INTL", "GRP1", ""]),
-        "ConsolidationAccount": gl[-6:] if rng.random() < 0.35 else "",
-        "ExchangeRateType": rng.choice(["M", "B", "G", ""]),
-        "TranslationDateType": rng.choice(["1", "2", ""]),
-        "PlanningAccount": "X" if rng.random() < 0.3 else "",
-        "AccountCurrency": rng.choice(["", "BRL", "USD", "EUR", "GBP"]),
-        "CashFlowStatementAccount": f"CF{_digits(rng,4)}" if rng.random() < 0.3 else "",
-        "CreatedByUser": rng.choice(["CB9980000010", "CB9980000011", "CB9980000012"]),
-        "CreationDate": created,
-        "LastChangedByUser": rng.choice(["CB9980000010", "CB9980000013", "CB9980000014"]),
-        "LastChangeDate": changed,
-        "AccountIsMarkedForDeletion": "X" if rng.random() < 0.03 else "",
-        "IsBlockedForCreation": "X" if rng.random() < 0.04 else "",
-        "IsBlockedForPosting": "X" if rng.random() < 0.05 else "",
-        "IsBlockedForPlanning": "X" if rng.random() < 0.02 else "",
-        "IsOpenItemManaged": "X" if is_bs == "X" and rng.random() < 0.35 else "",
-        "IsLineItemDisplayed": "X" if rng.random() < 0.6 else "",
-        "LineItemTaxDisplayOnly": "X" if rng.random() < 0.08 else "",
-        "ReconciliationAccountIsReqd": "X" if is_bs == "X" and rng.random() < 0.15 else "",
-        "ReconciliationAccountType": rng.choice(["D", "K", "A", ""]) if is_bs == "X" else "",
-        "OpenItemClrngIsUsed": "X" if rng.random() < 0.25 else "",
-        "SortKey": rng.choice(["001", "002", "003", "004", ""]),
-        "FieldStatusGroup": rng.choice(["G001", "Y001", "Y010", ""]),
-        "PostAutomaticallyOnly": "X" if rng.random() < 0.08 else "",
-        "TaxCategory": rng.choice(["*", "+", "-", ""]) if pl_type in {"X", "E"} else "",
-        "TaxCodeRequired": "X" if pl_type in {"X", "E"} and rng.random() < 0.2 else "",
-        "CostElement": gl if rng.random() < 0.5 else "",
-        "CostElementCategory": rng.choice(["1", "11", "12", "90", ""]) if rng.random() < 0.55 else "",
-        "ControllingArea": rng.choice(["0001", "A000", ""]),
-        "DefaultProfitCenter": rng.choice(["PC-1000", "PC-2000", "PC-3000", ""]),
-        "DefaultCostCenter": rng.choice(["CC1000", "CC2000", "CC3000", ""]),
-        "HouseBank": rng.choice(["HB01", "HB02", ""]) if rng.random() < 0.15 else "",
-        "HouseBankAccount": rng.choice(["ACC01", "ACC02", ""]) if rng.random() < 0.15 else "",
-        "AccountManagedInExtSystem": "X" if rng.random() < 0.03 else "",
-        "AuthorizationGroup": rng.choice(["F01", "F02", "F03", ""]),
-        "MinorityInterestAccount": "X" if rng.random() < 0.01 else "",
-        "PartnerCompany": rng.choice(["BR01", "US10", "DE10", "FR01", "UK01", ""]),
-        "IsNonOperatingExpenseOrIncome": "X" if pl_type == "N" and rng.random() < 0.4 else "",
-        "IsProfitAndLossAccount": is_pl,
+        "GLAccountName": name,
+        "GLAccountGroup": group,
+        "GLAccountType": gl_type,
+        "IsBalanceSheetAccount": "X" if (gl in {"BP", "1", "2", "3"} or (gl[:1] in {"1", "2", "3"} and len(gl) == 6)) else "",
+        "ParentAccount": parent,
     }
+
+
+def _leaf(gl: str, name: str, group: str, gl_type: str, parent: str) -> dict[str, str]:
+    return {
+        "GLAccount": gl,
+        "GLAccountName": name,
+        "GLAccountGroup": group,
+        "GLAccountType": gl_type,
+        "IsBalanceSheetAccount": "X" if gl[:1] in {"1", "2", "3"} else "",
+        "ParentAccount": parent,
+    }
+
+
+BASE_NODES: list[dict[str, str]] = [
+    _node("ALL", "Plano de Contas Corporativo", "ROOT", "N", ""),
+    _node("BP", "Balanco Patrimonial", "BAL", "X", "ALL"),
+    _node("DRE", "Demonstracao do Resultado", "REV", "P", "ALL"),
+    _node("1", "Ativo", "BAL", "X", "BP"),
+    _node("2", "Passivo", "BAL", "X", "BP"),
+    _node("3", "Patrimonio Liquido", "BAL", "X", "BP"),
+    _node("4", "Receitas", "REV", "P", "DRE"),
+    _node("5", "Custos", "EXP", "P", "DRE"),
+    _node("6", "Despesas Operacionais", "EXP", "P", "DRE"),
+]
+
+# Nivel 3 (contas sinteticas como nos)
+LEVEL3_NODES: list[dict[str, str]] = [
+    _node("110000", "Disponibilidades", "BAL", "X", "1"),
+    _node("120000", "Contas a Receber", "BAL", "X", "1"),
+    _node("130000", "Estoques", "MAT", "X", "1"),
+    _node("140000", "Tributos a Recuperar", "BAL", "X", "1"),
+    _node("160000", "Imobilizado", "BAL", "X", "1"),
+    _node("170000", "Intangivel", "BAL", "X", "1"),
+    _node("210000", "Fornecedores a Pagar", "BAL", "X", "2"),
+    _node("220000", "Obrigações Trabalhistas", "BAL", "X", "2"),
+    _node("230000", "Emprestimos e Financiamentos", "BAL", "X", "2"),
+    _node("240000", "Tributos a Recolher", "BAL", "X", "2"),
+    _node("250000", "Receitas Diferidas", "BAL", "X", "2"),
+    _node("310000", "Capital e Reservas", "BAL", "X", "3"),
+    _node("410000", "Receita de Vendas", "REV", "P", "4"),
+    _node("420000", "Receita de Servicos", "REV", "P", "4"),
+    _node("430000", "Receitas Financeiras", "REV", "N", "4"),
+    _node("510000", "Custo dos Produtos Vendidos", "EXP", "P", "5"),
+    _node("520000", "Custo de Servicos Prestados", "EXP", "P", "5"),
+    _node("530000", "Custos Logísticos", "EXP", "P", "5"),
+    _node("610000", "Despesas com Pessoal", "EXP", "P", "6"),
+    _node("620000", "Despesas Administrativas", "EXP", "P", "6"),
+    _node("630000", "Despesas de TI", "EXP", "P", "6"),
+    _node("640000", "Despesas de Marketing", "EXP", "P", "6"),
+    _node("650000", "Despesas Comerciais", "EXP", "P", "6"),
+]
+
+# Nivel 4 (sub-nos analiticos) + contas filhas
+LEVEL4_NODES: list[dict[str, str]] = [
+    _node("110100", "Caixa e Numerarios", "BAL", "X", "110000"),
+    _node("110200", "Bancos", "BAL", "X", "110000"),
+    _node("110300", "Aplicações Financeiras", "BAL", "X", "110000"),
+    _node("120100", "Clientes Nacionais", "BAL", "X", "120000"),
+    _node("120200", "Clientes Estrangeiros", "BAL", "X", "120000"),
+    _node("120300", "Intercompany a Receber", "BAL", "X", "120000"),
+    _node("130100", "Estoque de Matéria Prima", "MAT", "X", "130000"),
+    _node("130200", "Estoque de Produto Acabado", "MAT", "X", "130000"),
+    _node("130300", "Estoque de Mercadoria Revenda", "MAT", "X", "130000"),
+    _node("160100", "Terrenos e Edificios", "BAL", "X", "160000"),
+    _node("160200", "Maquinas e Equipamentos", "BAL", "X", "160000"),
+    _node("160300", "Veiculos", "BAL", "X", "160000"),
+    _node("210100", "Fornecedores Nacionais", "BAL", "X", "210000"),
+    _node("210200", "Fornecedores Estrangeiros", "BAL", "X", "210000"),
+    _node("210300", "Fornecedores Intercompany", "BAL", "X", "210000"),
+    _node("220100", "Salarios a Pagar", "BAL", "X", "220000"),
+    _node("220200", "Encargos e Beneficios", "BAL", "X", "220000"),
+    _node("410100", "Receita de Produtos", "REV", "P", "410000"),
+    _node("410200", "Receita de Software", "REV", "P", "410000"),
+    _node("410300", "Receita de Hardware", "REV", "P", "410000"),
+    _node("420100", "Receita de Consultoria", "REV", "P", "420000"),
+    _node("420200", "Receita de Suporte", "REV", "P", "420000"),
+    _node("510100", "CPV Material Direto", "MAT", "P", "510000"),
+    _node("510200", "CPV Mao de Obra Direta", "EXP", "P", "510000"),
+    _node("610100", "Salarios e Prolabore", "EXP", "P", "610000"),
+    _node("610200", "Ferias e 13 Salario", "EXP", "P", "610000"),
+    _node("630100", "Infraestrutura TI", "EXP", "P", "630000"),
+    _node("630200", "Softwares e Licenças", "EXP", "P", "630000"),
+    _node("640100", "Publicidade e Midia", "EXP", "P", "640000"),
+    _node("640200", "Eventos e Campanhas", "EXP", "P", "640000"),
+]
+
+FINAL_ACCOUNTS: list[dict[str, str]] = [
+    _leaf("110101", "Caixa Matriz", "BAL", "X", "110100"),
+    _leaf("110102", "Caixa Filial", "BAL", "X", "110100"),
+    _leaf("110201", "Banco do Brasil Conta Corrente", "BAL", "X", "110200"),
+    _leaf("110202", "Itau Conta Corrente", "BAL", "X", "110200"),
+    _leaf("110203", "Santander Conta Corrente", "BAL", "X", "110200"),
+    _leaf("110301", "Aplicacao CDB Curto Prazo", "BAL", "X", "110300"),
+    _leaf("110302", "Aplicacao Fundo DI", "BAL", "X", "110300"),
+    _leaf("120101", "Clientes Varejo Nacional", "BAL", "X", "120100"),
+    _leaf("120102", "Clientes Atacado Nacional", "BAL", "X", "120100"),
+    _leaf("120201", "Clientes Americas", "BAL", "X", "120200"),
+    _leaf("120202", "Clientes Europa", "BAL", "X", "120200"),
+    _leaf("120301", "Intercompany BR01", "BAL", "X", "120300"),
+    _leaf("120302", "Intercompany US10", "BAL", "X", "120300"),
+    _leaf("130101", "Aco e Ligas Metálicas", "MAT", "X", "130100"),
+    _leaf("130102", "Resinas e Polimeros", "MAT", "X", "130100"),
+    _leaf("130201", "Produtos Acabados Linha A", "MAT", "X", "130200"),
+    _leaf("130202", "Produtos Acabados Linha B", "MAT", "X", "130200"),
+    _leaf("130301", "Mercadorias Revenda Nacional", "MAT", "X", "130300"),
+    _leaf("130302", "Mercadorias Revenda Importada", "MAT", "X", "130300"),
+    _leaf("140101", "ICMS a Recuperar", "BAL", "X", "140000"),
+    _leaf("140102", "PIS COFINS a Recuperar", "BAL", "X", "140000"),
+    _leaf("160101", "Terrenos Industriais", "BAL", "X", "160100"),
+    _leaf("160102", "Edificios Administrativos", "BAL", "X", "160100"),
+    _leaf("160201", "Servidores e Storage", "BAL", "X", "160200"),
+    _leaf("160202", "Máquinas Produção", "BAL", "X", "160200"),
+    _leaf("160301", "Frota Comercial", "BAL", "X", "160300"),
+    _leaf("160302", "Frota Logistica", "BAL", "X", "160300"),
+    _leaf("170101", "Software ERP", "BAL", "X", "170000"),
+    _leaf("170102", "Licenças Industriais", "BAL", "X", "170000"),
+    _leaf("210101", "Fornecedores Nacionais MP", "BAL", "X", "210100"),
+    _leaf("210102", "Fornecedores Nacionais Serviços", "BAL", "X", "210100"),
+    _leaf("210201", "Fornecedores Estrangeiros USD", "BAL", "X", "210200"),
+    _leaf("210202", "Fornecedores Estrangeiros EUR", "BAL", "X", "210200"),
+    _leaf("210301", "Intercompany DE10", "BAL", "X", "210300"),
+    _leaf("210302", "Intercompany FR01", "BAL", "X", "210300"),
+    _leaf("220101", "Salarios Diretoria", "BAL", "X", "220100"),
+    _leaf("220102", "Salarios Administrativo", "BAL", "X", "220100"),
+    _leaf("220103", "Salarios Operacional", "BAL", "X", "220100"),
+    _leaf("220201", "Ferias a Pagar", "BAL", "X", "220200"),
+    _leaf("220202", "13 Salario a Pagar", "BAL", "X", "220200"),
+    _leaf("230101", "Emprestimo Bancario Capital Giro", "BAL", "X", "230000"),
+    _leaf("230102", "Financiamento BNDES", "BAL", "X", "230000"),
+    _leaf("240101", "ICMS a Recolher", "BAL", "X", "240000"),
+    _leaf("240102", "ISS a Recolher", "BAL", "X", "240000"),
+    _leaf("250101", "Receita Diferida de Contratos", "BAL", "X", "250000"),
+    _leaf("310101", "Capital Social Integralizado", "BAL", "X", "310000"),
+    _leaf("310102", "Reserva Legal", "BAL", "X", "310000"),
+    _leaf("410101", "Receita Produto Linha Software", "REV", "P", "410100"),
+    _leaf("410102", "Receita Produto Linha Hardware", "REV", "P", "410100"),
+    _leaf("410201", "Receita Software SaaS", "REV", "P", "410200"),
+    _leaf("410202", "Receita Licenciamento Perpetuo", "REV", "P", "410200"),
+    _leaf("410301", "Receita Hardware Nacional", "REV", "P", "410300"),
+    _leaf("410302", "Receita Hardware Importado", "REV", "P", "410300"),
+    _leaf("420101", "Receita Consultoria Implementação", "REV", "P", "420100"),
+    _leaf("420102", "Receita Consultoria Treinamento", "REV", "P", "420100"),
+    _leaf("420201", "Receita Suporte Mensal", "REV", "P", "420200"),
+    _leaf("420202", "Receita Suporte Premium", "REV", "P", "420200"),
+    _leaf("430101", "Rendimentos Aplicações Financeiras", "REV", "N", "430000"),
+    _leaf("430102", "Variação Cambial Ativa", "REV", "N", "430000"),
+    _leaf("510101", "Consumo Matéria Prima Nacional", "MAT", "P", "510100"),
+    _leaf("510102", "Consumo Matéria Prima Importada", "MAT", "P", "510100"),
+    _leaf("510201", "Mao de Obra Produção", "EXP", "P", "510200"),
+    _leaf("510202", "Encargos Produção", "EXP", "P", "510200"),
+    _leaf("520101", "Custo Consultoria Alocada", "EXP", "P", "520000"),
+    _leaf("520102", "Custo Suporte Técnico", "EXP", "P", "520000"),
+    _leaf("530101", "Frete sobre Entregas", "EXP", "P", "530000"),
+    _leaf("530102", "Armazenagem e Movimentação", "EXP", "P", "530000"),
+    _leaf("610101", "Salarios Diretoria", "EXP", "P", "610100"),
+    _leaf("610102", "Salarios Administrativo", "EXP", "P", "610100"),
+    _leaf("610103", "Salarios Operacional", "EXP", "P", "610100"),
+    _leaf("610201", "Provisao Ferias", "EXP", "P", "610200"),
+    _leaf("610202", "Provisao 13 Salario", "EXP", "P", "610200"),
+    _leaf("620101", "Aluguel Escritório", "EXP", "P", "620000"),
+    _leaf("620102", "Condominio e IPTU", "EXP", "P", "620000"),
+    _leaf("620103", "Energia Eletrica", "EXP", "P", "620000"),
+    _leaf("630101", "Hospedagem em Nuvem", "EXP", "P", "630100"),
+    _leaf("630102", "Infraestrutura Datacenter", "EXP", "P", "630100"),
+    _leaf("630201", "Licenças ERP", "EXP", "P", "630200"),
+    _leaf("630202", "Licenças BI e Analytics", "EXP", "P", "630200"),
+    _leaf("640101", "Mídia Digital", "EXP", "P", "640100"),
+    _leaf("640102", "Mídia Offline", "EXP", "P", "640100"),
+    _leaf("640201", "Eventos Corporativos", "EXP", "P", "640200"),
+    _leaf("640202", "Campanhas Promocionais", "EXP", "P", "640200"),
+    _leaf("650101", "Comissões de Vendas", "EXP", "P", "650000"),
+    _leaf("650102", "Viagens Comerciais", "EXP", "P", "650000"),
+    _leaf("660101", "Serviços Jurídicos", "EXP", "P", "660000"),
+    _leaf("660102", "Serviços Auditoria", "EXP", "P", "660000"),
+    _leaf("660103", "Serviços Consultoria Externa", "EXP", "P", "660000"),
+]
+
+
+def build_chart_of_accounts() -> list[dict[str, str]]:
+    merged = [*BASE_NODES, *LEVEL3_NODES, *LEVEL4_NODES, *FINAL_ACCOUNTS]
+    return [{"ChartOfAccounts": CHART_OF_ACCOUNTS, **row} for row in merged]
 
 
 def main() -> None:
     repo = Path(__file__).resolve().parent.parent
-    parser = argparse.ArgumentParser(description="Gera CSV sintetico tipo I_GLAccount.")
+    parser = argparse.ArgumentParser(description="Gera I_GLAccount.csv padronizado para SAP.")
     parser.add_argument("--output", type=Path, default=repo / "data" / "I_GLAccount.csv")
-    parser.add_argument(
-        "--rows",
-        type=int,
-        default=None,
-        metavar="N",
-        help=(
-            "Linhas sem header (opcional). Fora de --quick: ajustado ao intervalo "
-            f"[{I_GLACCOUNT_MIN_ROWS}, {I_GLACCOUNT_MAX_ROWS}]; sem este argumento usa {I_GLACCOUNT_DEFAULT_ROWS}."
-        ),
-    )
-    parser.add_argument(
-        "--quick",
-        action="store_true",
-        help=f"Teste rapido: gera exatamente {I_GLACCOUNT_QUICK_TEST_ROWS} linhas.",
-    )
-    parser.add_argument("--seed", type=int, default=SYNTHETIC_MASTER_SEED)
-    parser.add_argument(
-        "--client",
-        type=str,
-        default="",
-        help="Mandante fixo (3 chars). Vazio = um dos MASTER_CLIENT_IDS por linha, rotativo.",
-    )
+    parser.add_argument("--rows", type=int, default=None, metavar="N", help="Ignorado: plano de contas e fixo.")
+    parser.add_argument("--quick", action="store_true", help="Ignorado: plano de contas e fixo.")
     args = parser.parse_args()
 
-    if args.quick:
-        if args.rows is not None:
-            print("Aviso: --quick ignora --rows (usa volume de teste fixo).", file=sys.stderr)
-        args.rows = I_GLACCOUNT_QUICK_TEST_ROWS
-    else:
-        requested = args.rows if args.rows is not None else I_GLACCOUNT_DEFAULT_ROWS
-        if requested < I_GLACCOUNT_MIN_ROWS:
-            print(
-                f"Aviso: --rows={requested} abaixo do minimo; ajustado a {I_GLACCOUNT_MIN_ROWS}.",
-                file=sys.stderr,
-            )
-        if requested > I_GLACCOUNT_MAX_ROWS:
-            print(
-                f"Aviso: --rows={requested} acima do maximo; ajustado a {I_GLACCOUNT_MAX_ROWS}.",
-                file=sys.stderr,
-            )
-        args.rows = max(I_GLACCOUNT_MIN_ROWS, min(requested, I_GLACCOUNT_MAX_ROWS))
-
-    rng = random.Random(args.seed)
+    rows = build_chart_of_accounts()
     args.output.parent.mkdir(parents=True, exist_ok=True)
 
-    rows: list[dict[str, str]] = []
-    for i in range(args.rows):
-        m = MASTER_GL_ACCOUNTS[i % len(MASTER_GL_ACCOUNTS)]
-        client = args.client.strip()[:3] if args.client else MASTER_CLIENT_IDS[i % len(MASTER_CLIENT_IDS)]
-        rows.append(build_row(m, client, i, rng))
-
-    out_cols = [c for c in GLACCOUNT_COLUMNS if any(csv_cell_has_semantic_value(r.get(c)) for r in rows)]
     with args.output.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=out_cols)
+        writer = csv.DictWriter(f, fieldnames=GLACCOUNT_COLUMNS)
         writer.writeheader()
         for row in rows:
-            writer.writerow({k: row[k] for k in out_cols})
+            writer.writerow(row)
 
-    print(f"Escrito {args.rows} linhas ({len(out_cols)} colunas) em {args.output.resolve()}")
+    print(f"Escrito {len(rows)} linhas ({len(GLACCOUNT_COLUMNS)} colunas) em {args.output.resolve()}")
 
 
 if __name__ == "__main__":

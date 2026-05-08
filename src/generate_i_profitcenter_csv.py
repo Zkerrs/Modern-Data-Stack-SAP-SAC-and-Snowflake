@@ -53,6 +53,30 @@ _COMPANY_COUNTRY: dict[str, str] = {
 }
 
 _SEGMENTS: tuple[str, ...] = ("CORP01", "SEGM_RETBL", "SEGM_WOLS", "SVC_GRP01", "")
+_PC_AREA_NAMES: tuple[str, ...] = (
+    "Unidade Bens Consumo",
+    "Unidade Solucoes Industriais",
+    "Unidade Embalagens",
+    "Unidade Distribuicao",
+    "Unidade Servicos Tecnicos",
+    "Unidade Metalurgia",
+    "Unidade Materiais Especiais",
+    "Unidade Engenharia Aplicada",
+    "Unidade Pos-Venda",
+    "Unidade Exportacao",
+)
+_PC_AREA_NAMES_SHORT: tuple[str, ...] = (
+    "Bens Consumo",
+    "Solucoes Ind.",
+    "Embalagens",
+    "Distribuicao",
+    "Servicos Tec.",
+    "Metalurgia",
+    "Materiais Esp.",
+    "Engenharia Apl.",
+    "Pos-Venda",
+    "Exportacao",
+)
 
 _PROFITCENTER_COLUMNS: list[str] = [
     "Client",
@@ -150,8 +174,10 @@ def build_row(
     plant_key = list(MASTER_PLANT_NAMES.keys())[idx % len(MASTER_PLANT_NAMES)]
     plant_label = _normalize_text(MASTER_PLANT_NAMES.get(plant_key, plant_key))[:25]
 
-    name_short = _pad(f"PC {plant_key} /{idx % 899:03d}", 20)
-    name_long = _pad(f"Centro lucro {plant_label} area {idx % 80:02d}", 40)
+    area_name = _PC_AREA_NAMES[idx % len(_PC_AREA_NAMES)]
+    area_short = _PC_AREA_NAMES_SHORT[idx % len(_PC_AREA_NAMES_SHORT)]
+    name_short = _pad(_normalize_text(f"{area_short} {plant_key}"), 20)
+    name_long = _pad(_normalize_text(f"{area_name} - {plant_label}")[:40], 40)
 
     created = _sample_date_between(rng, datetime(2015, 1, 1), datetime(2026, 4, 1))
     valid_from = _sample_date_between(rng, datetime(2016, 1, 1), datetime(2021, 8, 1))
@@ -162,7 +188,7 @@ def build_row(
     person = _pad(fk.last_name().upper()[:1] + fk.first_name()[:18], 20)
 
     hier = _pad(f"YDPH-{controlling_area}", 12)
-    dept = _pad(f"PC-{plant_key}-{idx % 200:03d}", 12)
+    dept = _pad(_normalize_text(area_name.replace(" ", ""))[:12], 12)
 
     xf = rng.choice(["", "", "X"])
 
@@ -212,7 +238,7 @@ def build_row(
 
     form_address = rng.choice(["", "", "Firma", "0001"])
 
-    addr_name = _pad(f"{plant_label} PC"[:35], 35) if rng.random() > 0.22 else ""
+    addr_name = _pad(f"Unidade {plant_label}"[:35], 35) if rng.random() > 0.22 else ""
 
     seg = rng.choice(_SEGMENTS)
     additional = _pad(plant_label[:35], 35) if rng.random() < 0.45 else ""
