@@ -13,6 +13,7 @@ Regras:
 - Mantem os mesmos campos da CDS `ZI_DRE`.
 - Valores sao ficticios, mas coerentes com as dimensoes.
 - So amostra contas de **resultado** (exclui linhas com IsBalanceSheetAccount = X no I_GLAccount).
+- So amostra **folhas hierarquicas** (codigo GL que nunca e ParentAccount doutra linha) — compativel SAC "no final".
 - Remove apenas colunas 100% vazias em todas as linhas.
 - Fora de --quick, ajusta volume para faixa 120k-150k.
 """
@@ -20,6 +21,7 @@ Regras:
 from __future__ import annotations
 
 import argparse
+from typing import Iterable
 import csv
 import random
 import sys
@@ -116,6 +118,31 @@ def _gl_group_name(group: str) -> str:
     }.get(group or "", "")
 
 
+def _gl_codes_used_as_parent(rows: Iterable[dict[str, str]]) -> set[str]:
+    out: set[str] = set()
+    for g in rows:
+        p = (g.get("ParentAccount") or "").strip()
+        if p:
+            out.add(p)
+    return out
+
+
+def _gl_pl_leaf_candidates(gl_accounts: list[dict[str, str]]) -> list[dict[str, str]]:
+    """Contas resultado (sem balanco X) codigo 6 digitos que sao folha na hierarquia I_GLAccount."""
+    parents = _gl_codes_used_as_parent(gl_accounts)
+    cand: list[dict[str, str]] = []
+    for g in gl_accounts:
+        gl = g.get("GLAccount", "") or ""
+        if not gl.isdigit() or len(gl) != 6:
+            continue
+        if g.get("IsBalanceSheetAccount", "").strip().upper() == "X":
+            continue
+        if gl in parents:
+            continue
+        cand.append(g)
+    return cand
+
+
 def _build_rows(
     n_rows: int,
     companies: list[dict[str, str]],
@@ -127,15 +154,7 @@ def _build_rows(
     rng: random.Random,
 ) -> list[dict[str, str]]:
     rows: list[dict[str, str]] = []
-    gl_final_accounts = [
-        g
-        for g in gl_accounts
-        if (
-            g.get("GLAccount", "").isdigit()
-            and len(g.get("GLAccount", "")) == 6
-            and g.get("IsBalanceSheetAccount", "").strip().upper() != "X"
-        )
-    ]
+    gl_final_accounts = _gl_pl_leaf_candidates(gl_accounts)
     if not companies or not customers or not gl_final_accounts:
         return rows
 
