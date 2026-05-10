@@ -26,4 +26,5 @@ Se o utilizador **der por terminada** a sessão (“por hoje chega”, etc.), at
 
 ### Estado / histórico
 
+- *[2026-05-10]* **`I_GLAccount`** ficou bem mais denso (`LEVEL3` extra, rollup em **`src/_i_glaccount_rollups.txt`** e montagem em **`src/generate_i_glaccount_csv.py`** com cheque de contas duplicadas); **`MASTER_GL_ACCOUNTS`** alinhado ao YCOA. **`ZI_DRE`**: filtros já combinados (**só resultado** sem `IsBalanceSheetAccount=X`, **só folhas hierárquicas** — GL que não aparece como `ParentAccount` noutra linha) para o SAC não rejeitar mapeamentos “nó final”; `data/ZI_DRE.csv` regenerada (~120k). Próximo: validar import/modelo SAC; mais tarde facto journal único / Snowflake.
 - *[2026-05-06]* `.cursor/rules/` passou a estar **versionado no Git** (`.gitignore` ajustado: ignora `.cursor/*` mas **não** `rules/`). Criado este ficheiro para qualquer Cursor ler sempre o objetivo e o fluxo. Próximo: facto journal único alinhado aos `I_*` (planeado).
