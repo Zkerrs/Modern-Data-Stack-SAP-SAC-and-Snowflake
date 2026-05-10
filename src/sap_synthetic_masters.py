@@ -53,14 +53,14 @@ MASTER_PLANT_NAMES: dict[str, str] = {
 
 MASTER_PROFIT_CENTERS: tuple[str, ...] = ("PC-1000", "PC-2000", "PC-3000")
 
-# Contas usadas em custo / estoque de exemplo; expanda conforme CDS reais.
+# Contas alinhadas a data/I_GLAccount.csv (YCOA); expanda conforme CDS reais.
 MASTER_GL_ACCOUNTS: tuple[dict[str, str], ...] = (
-    {"GLAccount": "130100", "GLAccountName": "Estoque Prod. Acabado"},
-    {"GLAccount": "130200", "GLAccountName": "Estoque Matéria Prima"},
-    {"GLAccount": "130300", "GLAccountName": "Estoque Merc. Revenda"},
-    {"GLAccount": "003110100", "GLAccountName": "Faturamento bruto (ex. 31101)"},
-    {"GLAccount": "003120100", "GLAccountName": "Faturamento bruto (ex. 31201)"},
-    {"GLAccount": "003110200", "GLAccountName": "Deducoes / impostos (ex. 31102)"},
+    {"GLAccount": "130100", "GLAccountName": "Estoque de Matéria Prima"},
+    {"GLAccount": "130200", "GLAccountName": "Estoque de Produto Acabado"},
+    {"GLAccount": "130300", "GLAccountName": "Estoque de Mercadoria Revenda"},
+    {"GLAccount": "410101", "GLAccountName": "Receita Produto Linha Software"},
+    {"GLAccount": "410201", "GLAccountName": "Receita Software SaaS"},
+    {"GLAccount": "510101", "GLAccountName": "Consumo Matéria Prima Nacional"},
 )
 
 MASTER_CUSTOMER_ACCOUNT_GROUPS: tuple[str, ...] = (

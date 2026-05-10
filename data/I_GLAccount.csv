@@ -1,7 +1,7 @@
 ChartOfAccounts,GLAccount,GLAccountName,GLAccountGroup,GLAccountType,IsBalanceSheetAccount,ParentAccount
 YCOA,ALL,Plano de Contas Corporativo,ROOT,N,,
 YCOA,BP,Balanco Patrimonial,BAL,X,X,ALL
-YCOA,DRE,Demonstracao do Resultado,REV,P,,ALL
+YCOA,DRE,Demonstracao do Resultado,ROOT,N,,ALL
 YCOA,1,Ativo,BAL,X,X,BP
 YCOA,2,Passivo,BAL,X,X,BP
 YCOA,3,Patrimonio Liquido,BAL,X,X,BP
@@ -9,28 +9,86 @@ YCOA,4,Receitas,REV,P,,DRE
 YCOA,5,Custos,EXP,P,,DRE
 YCOA,6,Despesas Operacionais,EXP,P,,DRE
 YCOA,110000,Disponibilidades,BAL,X,X,1
+YCOA,115000,Aplicacoes e Titulos Liquidez Imediata,BAL,X,X,1
+YCOA,118000,Outras Disponibilidades,BAL,X,X,1
 YCOA,120000,Contas a Receber,BAL,X,X,1
+YCOA,125000,Cartoes Credito Debito POS,BAL,X,X,1
 YCOA,130000,Estoques,MAT,X,X,1
+YCOA,135000,Estoques em Transito Third Party,MAT,X,X,1
 YCOA,140000,Tributos a Recuperar,BAL,X,X,1
+YCOA,145000,Tributos Diferidos Ativo Circulante,BAL,X,X,1
+YCOA,150000,Adiantamentos e Outros Direitos Circulantes,BAL,X,X,1
+YCOA,155000,Credito Judicial e Fiscal Diferido,BAL,X,X,1
 YCOA,160000,Imobilizado,BAL,X,X,1
+YCOA,165000,Imobilizado em Andamento CPC,BAL,X,X,1
 YCOA,170000,Intangivel,BAL,X,X,1
+YCOA,175000,Investimento MEP Equivalente Patrimonio,BAL,X,X,1
+YCOA,180000,Outros Ativos Nao Circulantes,BAL,X,X,1
 YCOA,210000,Fornecedores a Pagar,BAL,X,X,2
+YCOA,215000,Obrigacoes Fiscais Diferidas LP,BAL,X,X,2
 YCOA,220000,Obrigações Trabalhistas,BAL,X,X,2
+YCOA,225000,Participacoes e Lucros a Distribuir,BAL,X,X,2
 YCOA,230000,Emprestimos e Financiamentos,BAL,X,X,2
+YCOA,235000,Debentures e Titulos Emitidos,BAL,X,X,2
 YCOA,240000,Tributos a Recolher,BAL,X,X,2
-YCOA,250000,Receitas Diferidas,BAL,X,X,2
+YCOA,245000,Obrigacoes Trabalhistas Fiscais Diversos,BAL,X,X,2
+YCOA,250000,Receitas Diferidas LP,BAL,X,X,2
+YCOA,260000,Provisões Judiciais e Trabalhistas,BAL,X,X,2
+YCOA,270000,Passivo Fiscal Diferido,BAL,X,X,2
+YCOA,275000,Outros Passivos Nao Circulantes,BAL,X,X,2
+YCOA,280000,Intercompany Consolidacao CPC,BAL,X,X,2
 YCOA,310000,Capital e Reservas,BAL,X,X,3
+YCOA,315000,Ajustes Avaliacao Patrimonial,BAL,X,X,3
+YCOA,320000,Lucros Prejuizos Retidos Movimento,BAL,X,X,3
+YCOA,325000,Dividendos JCP Provisionados PL,BAL,X,X,3
 YCOA,410000,Receita de Vendas,REV,P,,4
+YCOA,415000,Receita Prestacao Bundled Services,REV,P,,4
 YCOA,420000,Receita de Servicos,REV,P,,4
+YCOA,425000,Receita SaaS Contratos Multi Ano,REV,P,,4
 YCOA,430000,Receitas Financeiras,REV,N,,4
+YCOA,435000,Resultado Equivalence Patrimonial,REV,N,,4
+YCOA,438000,Outras Operacionais Credoras,REV,P,,4
+YCOA,440000,Deduções e Devolucões sobre Receitas,REV,P,,4
+YCOA,450000,Subvencoes e Incentivos Reconhecidos,REV,N,,4
 YCOA,510000,Custo dos Produtos Vendidos,EXP,P,,5
+YCOA,515000,Custo Indiretos Producao Alocados,EXP,P,,5
 YCOA,520000,Custo de Servicos Prestados,EXP,P,,5
+YCOA,522000,Custo Horas Tecnicas Outsourcing CO,EXP,P,,5
 YCOA,530000,Custos Logísticos,EXP,P,,5
+YCOA,535000,Garantias Tecnicas Warranty COGS,EXP,P,,5
+YCOA,540000,Tributos Incidentes sobre Vendas,EXP,P,,5
+YCOA,550000,Ajustes Inventario Baixa Impairment,EXP,P,,5
+YCOA,560000,Seguros Produção Fabrica CO,EXP,P,,5
 YCOA,610000,Despesas com Pessoal,EXP,P,,6
+YCOA,612000,Beneficios Vale Refeicao Transporte,EXP,P,,6
+YCOA,615000,Treinamento RH Desenvolvimento,EXP,P,,6
+YCOA,617000,Plano Saude Assistencia Medica,EXP,P,,6
+YCOA,618000,Previdência Complementar Boni,EXP,P,,6
 YCOA,620000,Despesas Administrativas,EXP,P,,6
+YCOA,622000,Seguros Corporativos Diversos,EXP,P,,6
+YCOA,624000,Despesas com Viagens Corporativas Gerais,EXP,P,,6
+YCOA,625000,Material Escritório Correspondências,EXP,P,,6
+YCOA,626000,Manut Predial Facilities,EXP,P,,6
 YCOA,630000,Despesas de TI,EXP,P,,6
+YCOA,632000,Ciberseguranca e Observabilidade SaaS,EXP,P,,6
+YCOA,634000,Data e Analytics Plataforma,EXP,P,,6
 YCOA,640000,Despesas de Marketing,EXP,P,,6
+YCOA,642000,Marketing Performance Partners,EXP,P,,6
+YCOA,645000,Branding Sponsorship,EXP,P,,6
 YCOA,650000,Despesas Comerciais,EXP,P,,6
+YCOA,652000,POS Merchandising Trade Marketing,EXP,P,,6
+YCOA,655000,Research Cliente VOC Programas,EXP,P,,6
+YCOA,660000,Despesas Gerais com Terceiros,EXP,P,,6
+YCOA,662000,Servicos Outsourcing SSC Financeiro RH,EXP,P,,6
+YCOA,665000,Tax Consulting Transfer Pricing,EXP,P,,6
+YCOA,668000,Seguros Credito Titulos Avalistas,EXP,P,,6
+YCOA,670000,Depreciação Amortização Exaustão,EXP,P,,6
+YCOA,675000,Arrendamentos IFRS CPC IFRS16,EXP,P,,6
+YCOA,680000,Despesas Financeiras,EXP,N,,6
+YCOA,685000,Resultado Monetario Fiscal Inflação,EXP,N,,6
+YCOA,690000,Tributos Lucro LP IRPJ CSLL,EXP,N,,6
+YCOA,692000,Contrib Social Lucro Liquido Parcelamentos,EXP,N,,6
+YCOA,695000,Outras Receitas Despesas Nao Operacionais,EXP,N,,6
 YCOA,110100,Caixa e Numerarios,BAL,X,X,110000
 YCOA,110200,Bancos,BAL,X,X,110000
 YCOA,110300,Aplicações Financeiras,BAL,X,X,110000
@@ -61,15 +119,101 @@ YCOA,630100,Infraestrutura TI,EXP,P,,630000
 YCOA,630200,Softwares e Licenças,EXP,P,,630000
 YCOA,640100,Publicidade e Midia,EXP,P,,640000
 YCOA,640200,Eventos e Campanhas,EXP,P,,640000
+YCOA,115110,Titulos publicos alta liquidez,BAL,X,X,115000
+YCOA,115120,Fundos aplicacoes curto MM,BAL,X,X,115000
+YCOA,118110,Numerario contingente e judicial,BAL,X,X,118000
+YCOA,118120,Liquidos em transito,BAL,X,X,118000
+YCOA,125110,Cartoes debito ecommerce,BAL,X,X,125000
+YCOA,125120,Cartoes cred bandeiras B2B,BAL,X,X,125000
+YCOA,135110,Estoque transito importacao,MAT,X,X,135000
+YCOA,135120,Servico terceiro estoque 3PL,MAT,X,X,135000
+YCOA,145110,PIS COFINS diferido corrente,BAL,X,X,145000
+YCOA,145120,ICMS IPI diferido ativo circ,BAL,X,X,145000
+YCOA,150110,Adiantamento fornecedor MP,BAL,X,X,150000
+YCOA,150120,Adiantamento salarial e viagem,BAL,X,X,150000
+YCOA,155110,IRRF CSLL compensacao judicial,BAL,X,X,155000
+YCOA,155120,Creditos fiscais contestados,BAL,X,X,155000
+YCOA,165110,Obras em curso imobilizado,BAL,X,X,165000
+YCOA,165120,Imobilizado andamento import,BAL,X,X,165000
+YCOA,175110,Participacao equivalente patrimonial,BAL,X,X,175000
+YCOA,175120,Investimentos avaliados custo,BAL,X,X,175000
+YCOA,180110,Garantias depositadas longo prazo,BAL,X,X,180000
+YCOA,180120,Ativo indenizavel sinistro,BAL,X,X,180000
+YCOA,215110,IRPJ CSLL diferido LP,BAL,X,X,215000
+YCOA,215120,INSS FGTS diferidos,BAL,X,X,215000
+YCOA,225110,Dividendos a pagar,BAL,X,X,225000
+YCOA,225120,Lucros retidos distribuicao,BAL,X,X,225000
+YCOA,235110,Debentures simples,BAL,X,X,235000
+YCOA,235120,Commercial paper notas,BAL,X,X,235000
+YCOA,245110,Obrigacoes rescisorias,BAL,X,X,245000
+YCOA,245120,Obrigacoes pericia e acordos,BAL,X,X,245000
+YCOA,260110,Provisao civil e ambiental,BAL,X,X,260000
+YCOA,260120,Provisao trabalhista,BAL,X,X,260000
+YCOA,270110,Passivo fiscal diferido LP,BAL,X,X,270000
+YCOA,275110,Arrendamento financeiro LP,BAL,X,X,275000
+YCOA,280110,Intercompany AP consolidacao,BAL,X,X,280000
+YCOA,280120,Intercompany AR eliminacoes,BAL,X,X,280000
+YCOA,315110,Ajuste avaliacao hedge PL,BAL,X,X,315000
+YCOA,320110,Lucros retidos movimento,BAL,X,X,320000
+YCOA,325110,Dividendo proposto PL,BAL,X,X,325000
+YCOA,415110,Bundle produto servico,REV,P,,415000
+YCOA,415120,Field service e instalacao,REV,P,,415000
+YCOA,425110,Contrato SaaS multi ano,REV,P,,425000
+YCOA,425120,Profissional services PS,REV,P,,425000
+YCOA,435110,Equivalencia patrimonial,REV,N,,435000
+YCOA,438110,Outras receitas operacionais,REV,P,,438000
+YCOA,440110,Devolucoes vendas,REV,P,,440000
+YCOA,440120,Descontos financeiros receita,REV,P,,440000
+YCOA,450110,Incentivos fiscais,REV,N,,450000
+YCOA,515110,CIP materiais alocados,MAT,P,,515000
+YCOA,515120,CIP MOD terceirizada,EXP,P,,515000
+YCOA,515130,CIP overhead fabrica,EXP,P,,515000
+YCOA,522110,Outsourcing cloud CO,EXP,P,,522000
+YCOA,535110,Garantia estendida COGS,EXP,P,,535000
+YCOA,540110,Tributos sobre vendas,EXP,P,,540000
+YCOA,550110,Perdas inventario,EXP,P,,550000
+YCOA,560110,Seguros producao fabrica,EXP,P,,560000
+YCOA,612110,Beneficios colaboradores,EXP,P,,612000
+YCOA,615110,Universidade corporativa,EXP,P,,615000
+YCOA,617110,Plano saude e odonto,EXP,P,,617000
+YCOA,618110,Prev complementar e boni,EXP,P,,618000
+YCOA,622110,Seguros corporativos,EXP,P,,622000
+YCOA,624110,Viagens corporativas,EXP,P,,624000
+YCOA,625110,Material escritorio,EXP,P,,625000
+YCOA,626110,Facilities manutencao,EXP,P,,626000
+YCOA,632110,Ciberseguranca,EXP,P,,632000
+YCOA,634110,Data e analytics,EXP,P,,634000
+YCOA,642110,Performance marketing,EXP,P,,642000
+YCOA,645110,Branding e patrocinio,EXP,P,,645000
+YCOA,652110,Trade e PDV,EXP,P,,652000
+YCOA,655110,Pesquisa cliente,EXP,P,,655000
+YCOA,662110,SSC terceiro,EXP,P,,662000
+YCOA,665110,Consultoria tributaria TP,EXP,P,,665000
+YCOA,668110,Seguros credito,EXP,P,,668000
+YCOA,670110,Depreciacao e amortizacao,EXP,P,,670000
+YCOA,675110,Arrendamento IFRS16,EXP,P,,675000
+YCOA,680110,Despesas financeiras,EXP,N,,680000
+YCOA,685110,Resultado monetario,EXP,N,,685000
+YCOA,690110,IRPJ e CSLL exercicio,EXP,N,,690000
+YCOA,692110,Parcelamentos e multas,EXP,N,,692000
+YCOA,695110,Outras nao operacionais,EXP,N,,695000
 YCOA,110101,Caixa Matriz,BAL,X,X,110100
 YCOA,110102,Caixa Filial,BAL,X,X,110100
 YCOA,110201,Banco do Brasil Conta Corrente,BAL,X,X,110200
 YCOA,110202,Itau Conta Corrente,BAL,X,X,110200
 YCOA,110203,Santander Conta Corrente,BAL,X,X,110200
+YCOA,110204,Bradesco PJ Conta Operacional,BAL,X,X,110200
+YCOA,110205,C6 Bank Liquidez D0,BAL,X,X,110200
+YCOA,110206,Exterior JP Morgan Cash US,BAL,X,X,110200
+YCOA,110103,Caixa PDV Marketplace,BAL,X,X,110100
+YCOA,110104,Numerario Custodia Overnight,BAL,X,X,110100
 YCOA,110301,Aplicacao CDB Curto Prazo,BAL,X,X,110300
 YCOA,110302,Aplicacao Fundo DI,BAL,X,X,110300
+YCOA,110303,CRI CRA Liquida D1 Custodia,BAL,X,X,110300
 YCOA,120101,Clientes Varejo Nacional,BAL,X,X,120100
 YCOA,120102,Clientes Atacado Nacional,BAL,X,X,120100
+YCOA,120103,Clientes Governo e Eletivas,BAL,X,X,120100
+YCOA,120104,Clientes Ecommerce Omnichannel,BAL,X,X,120100
 YCOA,120201,Clientes Americas,BAL,X,X,120200
 YCOA,120202,Clientes Europa,BAL,X,X,120200
 YCOA,120301,Intercompany BR01,BAL,X,X,120300
@@ -90,6 +234,8 @@ YCOA,160301,Frota Comercial,BAL,X,X,160300
 YCOA,160302,Frota Logistica,BAL,X,X,160300
 YCOA,170101,Software ERP,BAL,X,X,170000
 YCOA,170102,Licenças Industriais,BAL,X,X,170000
+YCOA,170103,Goodwill Consolidacao CPC,BAL,X,X,170000
+YCOA,170104,Software Capitalizado Agil Cust Dev,BAL,X,X,170000
 YCOA,210101,Fornecedores Nacionais MP,BAL,X,X,210100
 YCOA,210102,Fornecedores Nacionais Serviços,BAL,X,X,210100
 YCOA,210201,Fornecedores Estrangeiros USD,BAL,X,X,210200
@@ -149,3 +295,471 @@ YCOA,650102,Viagens Comerciais,EXP,P,,650000
 YCOA,660101,Serviços Jurídicos,EXP,P,,660000
 YCOA,660102,Serviços Auditoria,EXP,P,,660000
 YCOA,660103,Serviços Consultoria Externa,EXP,P,,660000
+YCOA,115111,LTN serie F referenciado,BAL,X,X,115110
+YCOA,115112,LTN serie B,BAL,X,X,115110
+YCOA,115113,LFT pre,BAL,X,X,115110
+YCOA,115114,Debent incentivada ICC,BAL,X,X,115110
+YCOA,115115,Titulo privado corp,BAL,X,X,115110
+YCOA,115116,Cupom caucao,BAL,X,X,115110
+YCOA,115121,Fundo RF DI,BAL,X,X,115120
+YCOA,115122,FIDC alta liquidez,BAL,X,X,115120
+YCOA,115123,Tesouro Selic,BAL,X,X,115120
+YCOA,115124,cra CPR curto,BAL,X,X,115120
+YCOA,115125,Acoes classe liquidez,BAL,X,X,115120
+YCOA,115126,Depositos overnight,BAL,X,X,115120
+YCOA,118111,Bloqueio judicial conta,BAL,X,X,118110
+YCOA,118112,Custodia garantia,BAL,X,X,118110
+YCOA,118113,credito autorizado bacen,BAL,X,X,118110
+YCOA,118114,restricao AML,BAL,X,X,118110
+YCOA,118115,saldo sub judice,BAL,X,X,118110
+YCOA,118116,deposito caucao cliente,BAL,X,X,118110
+YCOA,118121,TEC D0 TED agendadas,BAL,X,X,118120
+YCOA,118122,antecipacao recebivel,BAL,X,X,118120
+YCOA,118123,pix liquido,BAL,X,X,118120
+YCOA,118124,margem conta investimento,BAL,X,X,118120
+YCOA,118125,recebivel marketplace,BAL,X,X,118120
+YCOA,118126,clearing pendente settlement,BAL,X,X,118120
+YCOA,125111,Rede Mastercard D1,BAL,X,X,125110
+YCOA,125112,cielo visa D2,BAL,X,X,125110
+YCOA,125113,stripe USD receber,BAL,X,X,125110
+YCOA,125114,paypal split,BAL,X,X,125110
+YCOA,125115,antecipação cartão bandeira,BAL,X,X,125110
+YCOA,125116,débito recorrente,BAL,X,X,125110
+YCOA,125121,Amex corporate,BAL,X,X,125120
+YCOA,125122,Elo maquineta,BAL,X,X,125120
+YCOA,125123,hiper cred maquina,BAL,X,X,125120
+YCOA,125124,POS filial nordeste,BAL,X,X,125120
+YCOA,125125,chargeback estimado,BAL,X,X,125120
+YCOA,125126,taxa intercambio ajuste,BAL,X,X,125120
+YCOA,135111,AWB embarque aéreo,MAT,X,X,135110
+YCOA,135112,BL maritimo desembaraco,MAT,X,X,135110
+YCOA,135113,desalfandegamento pendente,MAT,X,X,135110
+YCOA,135114,consignacao terceiro,MAT,X,X,135110
+YCOA,135115,cross dock armazem,MAT,X,X,135110
+YCOA,135116,ajuste qualidade recebimento,MAT,X,X,135110
+YCOA,135121,WMS fulfillment Amazon,MAT,X,X,135120
+YCOA,135122,fulfillment magalu,MAT,X,X,135120
+YCOA,135123,consignado parceiro,MAT,X,X,135120
+YCOA,135124,kitting montagem,MAT,X,X,135120
+YCOA,135125,devolucao marketplace,MAT,X,X,135120
+YCOA,135126,perda transportador,MAT,X,X,135120
+YCOA,145111,PIS monofasico credito,BAL,X,X,145110
+YCOA,145112,COFINS nao cumulativo,BAL,X,X,145110
+YCOA,145113,ajuste escrituracao PIS,BAL,X,X,145110
+YCOA,145114,ajuste escrituracao COFINS,BAL,X,X,145110
+YCOA,145115,compensacao SPED,BAL,X,X,145110
+YCOA,145116,perdcomp parcial,BAL,X,X,145110
+YCOA,145121,ICMS ST credito,BAL,X,X,145120
+YCOA,145122,IPI nao aproveitado,BAL,X,X,145120
+YCOA,145123,FCP credito,BAL,X,X,145120
+YCOA,145124,DIFAL credito,BAL,X,X,145120
+YCOA,145125,ajuste apuracao ICMS,BAL,X,X,145120
+YCOA,145126,ajuste benef fiscal,BAL,X,X,145120
+YCOA,150111,Adto importacao L/C,BAL,X,X,150110
+YCOA,150112,Adto nacional contrato,BAL,X,X,150110
+YCOA,150113,Adto servico engenharia,BAL,X,X,150110
+YCOA,150114,Adto marketing evento,BAL,X,X,150110
+YCOA,150115,Adto utilidades publicas,BAL,X,X,150110
+YCOA,150116,Adto seguro patrimonio,BAL,X,X,150110
+YCOA,150121,Adto viagem internacional,BAL,X,X,150120
+YCOA,150122,Adto representante,BAL,X,X,150120
+YCOA,150123,Adto diretoria,BAL,X,X,150120
+YCOA,150124,Adto convenio hotel,BAL,X,X,150120
+YCOA,150125,Adto cartao corporativo,BAL,X,X,150120
+YCOA,150126,Adto evento feira,BAL,X,X,150120
+YCOA,155111,Compensacao ano base N-1,BAL,X,X,155110
+YCOA,155112,Compensacao ano base N-2,BAL,X,X,155110
+YCOA,155113,Deposito judicial IR,BAL,X,X,155110
+YCOA,155114,Deposito judicial CSLL,BAL,X,X,155110
+YCOA,155115,Multa autuacao compensada,BAL,X,X,155110
+YCOA,155116,Juros mora compensados,BAL,X,X,155110
+YCOA,155121,Malha fina SPED,BAL,X,X,155120
+YCOA,155122,Processo administrativo CARF,BAL,X,X,155120
+YCOA,155123,acordo confissoes,BAL,X,X,155120
+YCOA,155124,perdcomp definitivo,BAL,X,X,155120
+YCOA,155125,ressarcimento PIS credito,BAL,X,X,155120
+YCOA,155126,ressarcimento COFINS credito,BAL,X,X,155120
+YCOA,165111,Expansao planta SP,BAL,X,X,165110
+YCOA,165112,automacao linha 3,BAL,X,X,165110
+YCOA,165113,retrofit maquinas,BAL,X,X,165110
+YCOA,165114,civil armazem RJ,BAL,X,X,165110
+YCOA,165115,projeto lean fabrica,BAL,X,X,165110
+YCOA,165116,CAPEX TI edge datacenter,BAL,X,X,165110
+YCOA,165121,MAQ import desembaraco,BAL,X,X,165120
+YCOA,165122,container capitalizado,BAL,X,X,165120
+YCOA,165123,frete internacional capitalizado,BAL,X,X,165120
+YCOA,165124,seguro import capitalizado,BAL,X,X,165120
+YCOA,165125,MOI capitalizada obra,BAL,X,X,165120
+YCOA,165126,teste aceitacao fornecedor,BAL,X,X,165120
+YCOA,175111,Participacao Sub Software US,BAL,X,X,175110
+YCOA,175112,Participacao JV fabrica MX,BAL,X,X,175110
+YCOA,175113,Participacao startup sensor,BAL,X,X,175110
+YCOA,175114,Participacao hub logistica,BAL,X,X,175110
+YCOA,175115,Participacao fintech pagamentos,BAL,X,X,175110
+YCOA,175116,ajuste equity pickup,BAL,X,X,175110
+YCOA,175121,Debentures outra empresa,BAL,X,X,175120
+YCOA,175122,Nota comercial terceiro,BAL,X,X,175120
+YCOA,175123,cria fundo multimercado,BAL,X,X,175120
+YCOA,175124,FIDC recebiveis,BAL,X,X,175120
+YCOA,175125,Letra financeira,BAL,X,X,175120
+YCOA,175126,ajuste impairment participacao,BAL,X,X,175120
+YCOA,180111,Caução locacao armazem,BAL,X,X,180110
+YCOA,180112,Garantia contratual ANP,BAL,X,X,180110
+YCOA,180113,Garantia licitacao governo,BAL,X,X,180110
+YCOA,180114,fgts construtora reserva,BAL,X,X,180110
+YCOA,180115,Seguro garantia performance,BAL,X,X,180110
+YCOA,180116,Deposito judicial civil,BAL,X,X,180110
+YCOA,180121,Recebivel seguradora incendio,BAL,X,X,180120
+YCOA,180122,Recebivel sinistro transporte,BAL,X,X,180120
+YCOA,180123,Recebivel recall produto,BAL,X,X,180120
+YCOA,180124,Desconto titulo cartorio,BAL,X,X,180120
+YCOA,180125,Creditos precatorios,BAL,X,X,180120
+YCOA,180126,ativos nao operacionais venda,BAL,X,X,180120
+YCOA,215111,IRPJ temporario diferido,BAL,X,X,215110
+YCOA,215112,CSLL temporario diferido,BAL,X,X,215110
+YCOA,215113,Adicional IRPJ diferido,BAL,X,X,215110
+YCOA,215114,Base negativa futura,BAL,X,X,215110
+YCOA,215115,ajuste IFRS x BR,BAL,X,X,215110
+YCOA,215116,perda fiscal arrastada,BAL,X,X,215110
+YCOA,215121,INSS terceiros LP,BAL,X,X,215120
+YCOA,215122,FGTS rescisao futura,BAL,X,X,215120
+YCOA,215123,Contribuicao sindical LP,BAL,X,X,215120
+YCOA,215124,encargo convenio coletivo,BAL,X,X,215120
+YCOA,215125,multa rescisoria provisionada,BAL,X,X,215120
+YCOA,215126,honorarios pericia trabalhista,BAL,X,X,215120
+YCOA,225111,Dividendo minimo obrigatorio,BAL,X,X,225110
+YCOA,225112,Dividendo intercalario,BAL,X,X,225110
+YCOA,225113,Dividendo JCP misto,BAL,X,X,225110
+YCOA,225114,Dividendo preferencial,BAL,X,X,225110
+YCOA,225115,Dividendo treasury stock,BAL,X,X,225110
+YCOA,225116,ajuste conversao moeda,BAL,X,X,225110
+YCOA,225121,JCP provisionado assembleia,BAL,X,X,225120
+YCOA,225122,Reserva dividendos futuros,BAL,X,X,225120
+YCOA,225123,Conta transitoria SH,BAL,X,X,225120
+YCOA,225124,ajuste retencao exterior,BAL,X,X,225120
+YCOA,225125,ajuste consorcio,BAL,X,X,225120
+YCOA,225126,ajuste participacao minoritaria,BAL,X,X,225120
+YCOA,235111,Debenture serie A IPCA,BAL,X,X,235110
+YCOA,235112,Debenture serie B CDI,BAL,X,X,235110
+YCOA,235113,Debenture conversivel,BAL,X,X,235110
+YCOA,235114,Debenture incentivada infra,BAL,X,X,235110
+YCOA,235115,pu debenture ajuste,BAL,X,X,235110
+YCOA,235116,comissao colocacao debenture,BAL,X,X,235110
+YCOA,235121,CP classe 1 270 dias,BAL,X,X,235120
+YCOA,235122,CP classe 2 360 dias,BAL,X,X,235120
+YCOA,235123,Nota promissoria exportacao,BAL,X,X,235120
+YCOA,235124,ACC desconto banco,BAL,X,X,235120
+YCOA,235125,Desagio antecipacao,BAL,X,X,235120
+YCOA,235126,IOF financiamento curto,BAL,X,X,235120
+YCOA,245111,INSS rescisao complementar,BAL,X,X,245110
+YCOA,245112,FGTS multa 40,BAL,X,X,245110
+YCOA,245113,FGTS multa 20,BAL,X,X,245110
+YCOA,245114,ferias vencidas rescisao,BAL,X,X,245110
+YCOA,245115,13 rescisao proporcional,BAL,X,X,245110
+YCOA,245116,aviso previo indenizado,BAL,X,X,245110
+YCOA,245121,Acordo sindicato metal,BAL,X,X,245120
+YCOA,245122,Acordo carf fiscal,BAL,X,X,245120
+YCOA,245123,Acordo consumidor civil,BAL,X,X,245120
+YCOA,245124,Multa ambiental parcelada,BAL,X,X,245120
+YCOA,245125,Multa ANP,BAL,X,X,245120
+YCOA,245126,Multa CVM,BAL,X,X,245120
+YCOA,260111,Provisao processo consumidor,BAL,X,X,260110
+YCOA,260112,Provisao contrato fornecedor,BAL,X,X,260110
+YCOA,260113,Provisao licenca ambiental,BAL,X,X,260110
+YCOA,260114,Provisao recall produto,BAL,X,X,260110
+YCOA,260115,Provisao garantia estendida,BAL,X,X,260110
+YCOA,260116,Provisao litigio trabalhista coletivo,BAL,X,X,260110
+YCOA,260121,Provisao horas extras,BAL,X,X,260120
+YCOA,260122,Provisao insalubridade,BAL,X,X,260120
+YCOA,260123,Provisao periculosidade,BAL,X,X,260120
+YCOA,260124,Provisao equiparacao salarial,BAL,X,X,260120
+YCOA,260125,Provisao adicional noturno,BAL,X,X,260120
+YCOA,260126,Provisao verbas rescisorias,BAL,X,X,260120
+YCOA,270111,IRPJ diferido passivo,BAL,X,X,270110
+YCOA,270112,CSLL diferido passivo,BAL,X,X,270110
+YCOA,270113,PIS monofasico passivo,BAL,X,X,270110
+YCOA,270114,COFINS monofasico passivo,BAL,X,X,270110
+YCOA,270115,IPI diferido passivo,BAL,X,X,270110
+YCOA,270116,ajuste laudo big4,BAL,X,X,270110
+YCOA,275111,LP veiculos frota,BAL,X,X,275110
+YCOA,275112,LP maquinas CNC,BAL,X,X,275110
+YCOA,275113,LP predio matriz extensao,BAL,X,X,275110
+YCOA,275114,LP datacenter colo,BAL,X,X,275110
+YCOA,275115,LP software on prem legado,BAL,X,X,275110
+YCOA,275116,ajuste juros contrato LP,BAL,X,X,275110
+YCOA,280111,IC payable US10,BAL,X,X,280110
+YCOA,280112,IC payable DE10,BAL,X,X,280110
+YCOA,280113,IC payable UK01,BAL,X,X,280110
+YCOA,280114,IC payable FR01,BAL,X,X,280110
+YCOA,280115,IC tax transfer pricing,BAL,X,X,280110
+YCOA,280116,IC cash pool sweep,BAL,X,X,280110
+YCOA,280121,IC invest eliminacao,BAL,X,X,280120
+YCOA,280122,IC dividendos eliminacao,BAL,X,X,280120
+YCOA,280123,IC lucro nao realizado estoque,BAL,X,X,280120
+YCOA,280124,IC tax equalization,BAL,X,X,280120
+YCOA,280125,IC hedge intercompany,BAL,X,X,280120
+YCOA,280126,IC ajuste FX eliminacao,BAL,X,X,280120
+YCOA,315111,Hedge accounting cash flow,BAL,X,X,315110
+YCOA,315112,Hedge accounting fair value,BAL,X,X,315110
+YCOA,315113,CVA DVA instrumento,BAL,X,X,315110
+YCOA,315114,Basis swap OCI,BAL,X,X,315110
+YCOA,315115,ajuste taxa forward,BAL,X,X,315110
+YCOA,315116,reciclagem OCI resultado,BAL,X,X,315110
+YCOA,320111,Lucro exercicio corrente,BAL,X,X,320110
+YCOA,320112,Prejuizo exercicio corrente,BAL,X,X,320110
+YCOA,320113,Destinacao reserva expansao,BAL,X,X,320110
+YCOA,320114,Destinacao reserva contingencia,BAL,X,X,320110
+YCOA,320115,ajuste retroativo política,BAL,X,X,320110
+YCOA,320116,ajuste mudanca moeda funcional,BAL,X,X,320110
+YCOA,325111,Dividendo proposto trimestre,BAL,X,X,325110
+YCOA,325112,JCP proposto trimestre,BAL,X,X,325110
+YCOA,325113,Reserva investimento PDI,BAL,X,X,325110
+YCOA,325114,Reserva compliance risco,BAL,X,X,325110
+YCOA,325115,Reserva ESG,BAL,X,X,325110
+YCOA,325116,Reserva M&A alvo,BAL,X,X,325110
+YCOA,415111,Pack hardware suporte 36m,REV,P,,415110
+YCOA,415112,Bundle cloud camera IOT,REV,P,,415110
+YCOA,415113,Contrato EPC manutencao,REV,P,,415110
+YCOA,415114,Contrato licenca fonte,REV,P,,415110
+YCOA,415115,Cross sell treinamento,REV,P,,415110
+YCOA,415116,Upsell warranty premium,REV,P,,415110
+YCOA,415121,Instalacao nationwide,REV,P,,415120
+YCOA,415122,Manutencao preventiva contrato,REV,P,,415120
+YCOA,415123,Manutencao corretiva ticket,REV,P,,415120
+YCOA,415124,SLA premium onsite,REV,P,,415120
+YCOA,415125,Deslocamento tecnico,REV,P,,415120
+YCOA,415126,pecas faturadas separado,REV,P,,415120
+YCOA,425111,ARR contrato 12m,REV,P,,425110
+YCOA,425112,ARR contrato 36m,REV,P,,425110
+YCOA,425113,ARR upsell seats,REV,P,,425110
+YCOA,425114,ARR consumo API overage,REV,P,,425110
+YCOA,425115,ARR storage dinamico,REV,P,,425110
+YCOA,425116,ARR support enterprise,REV,P,,425110
+YCOA,425121,PS implementacao fase1,REV,P,,425120
+YCOA,425122,PS implementacao fase2,REV,P,,425120
+YCOA,425123,PS health check,REV,P,,425120
+YCOA,425124,PS managed service 24x7,REV,P,,425120
+YCOA,425125,PS custom dev T&M,REV,P,,425120
+YCOA,425126,PS treinamento certificacao,REV,P,,425120
+YCOA,435111,Resultado positivo equidade,REV,N,,435110
+YCOA,435112,Resultado negativo equidade,REV,N,,435110
+YCOA,435113,Dividendos recebidos equity,REV,N,,435110
+YCOA,435114,ajuste diluicao participacao,REV,N,,435110
+YCOA,435115,ajuste conversao debenture,REV,N,,435110
+YCOA,435116,ajuste variação just value,REV,N,,435110
+YCOA,438111,Aluguel area industrial,REV,P,,438110
+YCOA,438112,royalty marca licenciada,REV,P,,438110
+YCOA,438113,sub-receita logistica 3PL,REV,P,,438110
+YCOA,438114,receita scrap revenda,REV,P,,438110
+YCOA,438115,receita energia excedente,REV,P,,438110
+YCOA,438116,receita bonus volume fornecedor,REV,P,,438110
+YCOA,440111,Devolucao B2B nota credito,REV,P,,440110
+YCOA,440112,Devolucao B2C marketplace,REV,P,,440110
+YCOA,440113,Devolucao export DI,REV,P,,440110
+YCOA,440114,desc comercial incondicional,REV,P,,440110
+YCOA,440115,desc volume contrato,REV,P,,440110
+YCOA,440116,bonificacao produto marketing,REV,P,,440110
+YCOA,440121,Desconto antecipacao duplicata,REV,P,,440120
+YCOA,440122,Desconto pix antecipado,REV,P,,440120
+YCOA,440123,Desconto cartao antecipado,REV,P,,440120
+YCOA,440124,Desconto nota promissoria,REV,P,,440120
+YCOA,440125,Desconto early payment supply chain,REV,P,,440120
+YCOA,440126,ajuste programa fidelidade,REV,P,,440120
+YCOA,450111,Prodepe Pernambuco,REV,N,,450110
+YCOA,450112,Lei da Informatica,REV,N,,450110
+YCOA,450113,PADIS,REV,N,,450110
+YCOA,450114,REPORTO,REV,N,,450110
+YCOA,450115,ZPE exportacao,REV,N,,450110
+YCOA,450116,subvencao pesquisa ANEEL,REV,N,,450110
+YCOA,515111,CIP polimeros planta A,MAT,P,,515110
+YCOA,515112,CIP metalurgia planta B,MAT,P,,515110
+YCOA,515113,CIP subconjunto importado,MAT,P,,515110
+YCOA,515114,CIP embalagem copack,MAT,P,,515110
+YCOA,515115,CIP energia alocada OP,MAT,P,,515110
+YCOA,515116,CIP manutencao OP,MAT,P,,515110
+YCOA,515121,CIP mao obra temp agencia,EXP,P,,515120
+YCOA,515122,CIP hora tecnica parceiro,EXP,P,,515120
+YCOA,515123,CIP turno extra OP,EXP,P,,515120
+YCOA,515124,CIP treinamento linha,EXP,P,,515120
+YCOA,515125,CIP setup troca molde,EXP,P,,515120
+YCOA,515126,CIP inspecao qualidade inline,EXP,P,,515120
+YCOA,515131,CIP depreciacao OP,EXP,P,,515130
+YCOA,515132,CIP aluguel galpao OP,EXP,P,,515130
+YCOA,515133,CIP supervisor fabrica,EXP,P,,515130
+YCOA,515134,CIP seguro patrimonio OP,EXP,P,,515130
+YCOA,515135,CIP utilidades OP,EXP,P,,515130
+YCOA,515136,CIP consumiveis OP,EXP,P,,515130
+YCOA,522111,Infra customer tenant,EXP,P,,522110
+YCOA,522112,DBaaS custo repassado,EXP,P,,522110
+YCOA,522113,Observability custo client,EXP,P,,522110
+YCOA,522114,Kubernetes shared cost,EXP,P,,522110
+YCOA,522115,CDN traffic burst,EXP,P,,522110
+YCOA,522116,Support L3 billable,EXP,P,,522110
+YCOA,535111,Reposicao peca garantia,EXP,P,,535110
+YCOA,535112,Mao obra campo garantia,EXP,P,,535110
+YCOA,535113,Frete RMA cliente,EXP,P,,535110
+YCOA,535114,Call center warranty,EXP,P,,535110
+YCOA,535115,Software patch OTA,EXP,P,,535110
+YCOA,535116,Campanha recall fornecedor,EXP,P,,535110
+YCOA,540111,ICMS saida interestadual,EXP,P,,540110
+YCOA,540112,ICMS ST saida,EXP,P,,540110
+YCOA,540113,PIS faturamento,EXP,P,,540110
+YCOA,540114,COFINS faturamento,EXP,P,,540110
+YCOA,540115,IPI industrial,EXP,P,,540110
+YCOA,540116,ISS servico field,EXP,P,,540110
+YCOA,550111,Quebra ciclico contagens,EXP,P,,550110
+YCOA,550112,Avaria umidade,EXP,P,,550110
+YCOA,550113,Avaria transporte obsolescencia,EXP,P,,550110
+YCOA,550114,furto seguranca,EXP,P,,550110
+YCOA,550115,Shrinkage RFID delta,EXP,P,,550110
+YCOA,550116,ajuizamento recuperacao,EXP,P,,550110
+YCOA,560111,Equipamento producao APC,EXP,P,,560110
+YCOA,560112,Predio fabrica florestal,EXP,P,,560110
+YCOA,560113,Veiculos internos planta,EXP,P,,560110
+YCOA,560114,RC operacional LINHA,EXP,P,,560110
+YCOA,560115,risco ambiental tac,EXP,P,,560110
+YCOA,560116,interrupcao BI,EXP,P,,560110
+YCOA,612111,Vale refeicao,EXP,P,,612110
+YCOA,612112,Vale alimentacao,EXP,P,,612110
+YCOA,612113,Vale transporte,EXP,P,,612110
+YCOA,612114,Auxilio creche,EXP,P,,612110
+YCOA,612115,Auxilio farmacia,EXP,P,,612110
+YCOA,612116,reembolso home office utility,EXP,P,,612110
+YCOA,615111,MBA parceria,EXP,P,,615110
+YCOA,615112,Certificacao cloud,EXP,P,,615110
+YCOA,615113,Bootcamp dados,EXP,P,,615110
+YCOA,615114,Palestrante externo,EXP,P,,615110
+YCOA,615115,Plataforma e-learning Seats,EXP,P,,615110
+YCOA,615116,livros e periodicos especializacao,EXP,P,,615110
+YCOA,617111,Plano empresarial nivel1,EXP,P,,617110
+YCOA,617112,nivel premium executivos,EXP,P,,617110
+YCOA,617113,Odonto basico,EXP,P,,617110
+YCOA,617114,reembolso psicologia,EXP,P,,617110
+YCOA,617115,reembolso nutricionista,EXP,P,,617110
+YCOA,617116,telemedicina assinatura,EXP,P,,617110
+YCOA,618111,PGBL patrocinado empresa,EXP,P,,618110
+YCOA,618112,Stock options expense,EXP,P,,618110
+YCOA,618113,Bonus anual provisionado,EXP,P,,618110
+YCOA,618114,PLR participacao,EXP,P,,618110
+YCOA,618115,Bônio meta sustentabilidade,EXP,P,,618110
+YCOA,618116,comissao tecnica engenharia,EXP,P,,618110
+YCOA,622111,D&O diretores,EXP,P,,622110
+YCOA,622112,E&O servico profissional,EXP,P,,622110
+YCOA,622113,RC produto export,EXP,P,,622110
+YCOA,622114,Cyber insurance policy,EXP,P,,622110
+YCOA,622115,All risk escritorio,EXP,P,,622110
+YCOA,622116,Marine cargo import,EXP,P,,622110
+YCOA,624111,Passagem aerea nacional,EXP,P,,624110
+YCOA,624112,Passagem internacional,EXP,P,,624110
+YCOA,624113,Hotel booking corporate,EXP,P,,624110
+YCOA,624114,Uber corporativo,EXP,P,,624110
+YCOA,624115,Diarias per diem USD,EXP,P,,624110
+YCOA,624116,bagagem despachada policy,EXP,P,,624110
+YCOA,625111,Papel e toner,EXP,P,,625110
+YCOA,625112,Material higiene,EXP,P,,625110
+YCOA,625113,Correios SEDEX,EXP,P,,625110
+YCOA,625114,Courier internacional DHL,EXP,P,,625110
+YCOA,625115,Material treinamento impresso,EXP,P,,625110
+YCOA,625116,suprimentos cozinha,EXP,P,,625110
+YCOA,626111,Manut elevador predio,EXP,P,,626110
+YCOA,626112,Manut HVAC chiller,EXP,P,,626110
+YCOA,626113,Dedetizacao contrato,EXP,P,,626110
+YCOA,626114,Paisagismo condomino,EXP,P,,626110
+YCOA,626115,Chaveiro e copias,EXP,P,,626110
+YCOA,626116,limpeza terceirizada noturna,EXP,P,,626110
+YCOA,632111,SIEM cloud licenca,EXP,P,,632110
+YCOA,632112,SOC 24x7 terceiro,EXP,P,,632110
+YCOA,632113,Bug bounty programa,EXP,P,,632110
+YCOA,632114,Pentest anual,EXP,P,,632110
+YCOA,632115,WAF CDN rules,EXP,P,,632110
+YCOA,632116,MDM endpoint protection,EXP,P,,632110
+YCOA,634111,Snowflake compute,EXP,P,,634110
+YCOA,634112,Databricks jobs,EXP,P,,634110
+YCOA,634113,dbt cloud seats,EXP,P,,634110
+YCOA,634114,ETL Fivetran conectores,EXP,P,,634110
+YCOA,634115,Catalogo coluna lineage,EXP,P,,634110
+YCOA,634116,ML feature store horas,EXP,P,,634110
+YCOA,642111,Google Ads search,EXP,P,,642110
+YCOA,642112,Meta ads conversao,EXP,P,,642110
+YCOA,642113,LinkedIn demand gen,EXP,P,,642110
+YCOA,642114,Programatica display,EXP,P,,642110
+YCOA,642115,afiliados CPA,EXP,P,,642110
+YCOA,642116,influencer midia paga,EXP,P,,642110
+YCOA,645111,Patrocinio esporte local,EXP,P,,645110
+YCOA,645112,Patrocinio festival cultura,EXP,P,,645110
+YCOA,645113,Merchandise corporativo,EXP,P,,645110
+YCOA,645114,DOOH aeroporto,EXP,P,,645110
+YCOA,645115,documentario marca,EXP,P,,645110
+YCOA,645116,stand feira internacional,EXP,P,,645110
+YCOA,652111,Display gondola,EXP,P,,652110
+YCOA,652112,degustacao loja,EXP,P,,652110
+YCOA,652113,promotor PDV temporada,EXP,P,,652110
+YCOA,652114,gift card campanha,EXP,P,,652110
+YCOA,652115,material POP loja,EXP,P,,652110
+YCOA,652116,mystery shopper programa,EXP,P,,652110
+YCOA,655111,NPS transactional survey,EXP,P,,655110
+YCOA,655112,Painel usuarios SaaS deep interview,EXP,P,,655110
+YCOA,655113,benchmark precos mystery,EXP,P,,655110
+YCOA,655114,voc painel distribuidor,EXP,P,,655110
+YCOA,655115,research UX novo app,EXP,P,,655110
+YCOA,655116,pricing research Van Westendorp,EXP,P,,655110
+YCOA,662111,BPO accounts payable,EXP,P,,662110
+YCOA,662112,BPO payroll,EXP,P,,662110
+YCOA,662113,BPO benefits admin,EXP,P,,662110
+YCOA,662114,SSC travel desk outsourced,EXP,P,,662110
+YCOA,662115,SSC helpdesk RH tier1,EXP,P,,662110
+YCOA,662116,knowledge base atualizacao externa,EXP,P,,662110
+YCOA,665111,Study transfer pricing,EXP,P,,665110
+YCOA,665112,Local file elaboracao,EXP,P,,665110
+YCOA,665113,CBCR masterfile,EXP,P,,665110
+YCOA,665114,APA precos,EXP,P,,665110
+YCOA,665115,benchmark TNMM,EXP,P,,665110
+YCOA,665116,litigio fiscal consultoria externa,EXP,P,,665110
+YCOA,668111,Seguro duplicata,EXP,P,,668110
+YCOA,668112,Seguro garantia LIC,EXP,P,,668110
+YCOA,668113,Titulos aval,EXP,P,,668110
+YCOA,668114,Fiança bancaria contrato,EXP,P,,668110
+YCOA,668115,Protesto cartorio taxa,EXP,P,,668110
+YCOA,668116,spread antecipacao fato,EXP,P,,668110
+YCOA,670111,Deprec edificio admin,EXP,P,,670110
+YCOA,670112,Deprec maquinas,EXP,P,,670110
+YCOA,670113,Deprec veiculos,EXP,P,,670110
+YCOA,670114,Deprec mobiliario,EXP,P,,670110
+YCOA,670115,Amort intangivel software,EXP,P,,670110
+YCOA,670116,Amort intangivel marca,EXP,P,,670110
+YCOA,675111,Curto prazo escritorios,EXP,P,,675110
+YCOA,675112,LP predio matriz,EXP,P,,675110
+YCOA,675113,LP veiculos frota,EXP,P,,675110
+YCOA,675114,LP maquinas sale leaseback,EXP,P,,675110
+YCOA,675115,LP datacenter,EXP,P,,675110
+YCOA,675116,taxa implicita ajuste,EXP,P,,675110
+YCOA,680111,Juros emprestimo CP,EXP,N,,680110
+YCOA,680112,Juros emprestimo LP,EXP,N,,680110
+YCOA,680113,IOF credito,EXP,N,,680110
+YCOA,680114,Desconto duplicata,EXP,N,,680110
+YCOA,680115,Tarifa bancaria internacional,EXP,N,,680110
+YCOA,680116,CMF spread linha,EXP,N,,680110
+YCOA,685111,Variacao monetaria ativa,EXP,N,,685110
+YCOA,685112,Variacao monetaria passiva,EXP,N,,685110
+YCOA,685113,PCC taxa legal,EXP,N,,685110
+YCOA,685114,ajuste indexador contrato,EXP,N,,685110
+YCOA,685115,ajuste contrato moeda FX,EXP,N,,685110
+YCOA,685116,permuta ativo financeiro,EXP,N,,685110
+YCOA,690111,IRPJ lucro real,EXP,N,,690110
+YCOA,690112,CSLL lucro real,EXP,N,,690110
+YCOA,690113,Adicional IRPJ,EXP,N,,690110
+YCOA,690114,IRPJ estimativa,EXP,N,,690110
+YCOA,690115,CSLL estimativa,EXP,N,,690110
+YCOA,690116,ajuste Malha eCAC,EXP,N,,690110
+YCOA,692111,PARCS federal,EXP,N,,692110
+YCOA,692112,PARCS estadual,EXP,N,,692110
+YCOA,692113,Multa INSS atraso,EXP,N,,692110
+YCOA,692114,Multa FGTS,EXP,N,,692110
+YCOA,692115,Juros SELIC parcelamento,EXP,N,,692110
+YCOA,692116,honorarios adv fiscal,EXP,N,,692110
+YCOA,695111,Multa ambiental nova,EXP,N,,695110
+YCOA,695112,multa CVM insider,EXP,N,,695110
+YCOA,695113,multa LGPD,EXP,N,,695110
+YCOA,695114,dacao fundacao,EXP,N,,695110
+YCOA,695115,Doacoes politica proibidas ajuste,EXP,N,,695110
+YCOA,695116,perda alienacao equipamento NBV,EXP,N,,695110

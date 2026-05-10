@@ -12,6 +12,7 @@ Fonte principal:
 Regras:
 - Mantem os mesmos campos da CDS `ZI_DRE`.
 - Valores sao ficticios, mas coerentes com as dimensoes.
+- So amostra contas de **resultado** (exclui linhas com IsBalanceSheetAccount = X no I_GLAccount).
 - Remove apenas colunas 100% vazias em todas as linhas.
 - Fora de --quick, ajusta volume para faixa 120k-150k.
 """
@@ -126,7 +127,15 @@ def _build_rows(
     rng: random.Random,
 ) -> list[dict[str, str]]:
     rows: list[dict[str, str]] = []
-    gl_final_accounts = [g for g in gl_accounts if (g.get("GLAccount", "").isdigit() and len(g.get("GLAccount", "")) == 6)]
+    gl_final_accounts = [
+        g
+        for g in gl_accounts
+        if (
+            g.get("GLAccount", "").isdigit()
+            and len(g.get("GLAccount", "")) == 6
+            and g.get("IsBalanceSheetAccount", "").strip().upper() != "X"
+        )
+    ]
     if not companies or not customers or not gl_final_accounts:
         return rows
 

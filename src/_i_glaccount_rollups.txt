@@ -1,0 +1,89 @@
+# Expansão analítica: root|titulo nivel4|AccountGroup|GLAccountType|P1;P2;P3;P4;P5;P6
+
+# --- Ativo ---
+115|Titulos publicos alta liquidez|BAL|X|LTN serie F referenciado;LTN serie B;LFT pre;Debent incentivada ICC;Titulo privado corp;Cupom caucao
+115|Fundos aplicacoes curto MM|BAL|X|Fundo RF DI;FIDC alta liquidez;Tesouro Selic;cra CPR curto;Acoes classe liquidez;Depositos overnight
+118|Numerario contingente e judicial|BAL|X|Bloqueio judicial conta;Custodia garantia;credito autorizado bacen;restricao AML;saldo sub judice;deposito caucao cliente
+118|Liquidos em transito|BAL|X|TEC D0 TED agendadas;antecipacao recebivel;pix liquido;margem conta investimento;recebivel marketplace;clearing pendente settlement
+125|Cartoes debito ecommerce|BAL|X|Rede Mastercard D1;cielo visa D2;stripe USD receber;paypal split;antecipação cartão bandeira;débito recorrente
+125|Cartoes cred bandeiras B2B|BAL|X|Amex corporate;Elo maquineta;hiper cred maquina;POS filial nordeste;chargeback estimado;taxa intercambio ajuste
+135|Estoque transito importacao|MAT|X|AWB embarque aéreo;BL maritimo desembaraco;desalfandegamento pendente;consignacao terceiro;cross dock armazem;ajuste qualidade recebimento
+135|Servico terceiro estoque 3PL|MAT|X|WMS fulfillment Amazon;fulfillment magalu;consignado parceiro;kitting montagem;devolucao marketplace;perda transportador
+145|PIS COFINS diferido corrente|BAL|X|PIS monofasico credito;COFINS nao cumulativo;ajuste escrituracao PIS;ajuste escrituracao COFINS;compensacao SPED;perdcomp parcial
+145|ICMS IPI diferido ativo circ|BAL|X|ICMS ST credito;IPI nao aproveitado;FCP credito;DIFAL credito;ajuste apuracao ICMS;ajuste benef fiscal
+150|Adiantamento fornecedor MP|BAL|X|Adto importacao L/C;Adto nacional contrato;Adto servico engenharia;Adto marketing evento;Adto utilidades publicas;Adto seguro patrimonio
+150|Adiantamento salarial e viagem|BAL|X|Adto viagem internacional;Adto representante;Adto diretoria;Adto convenio hotel;Adto cartao corporativo;Adto evento feira
+155|IRRF CSLL compensacao judicial|BAL|X|Compensacao ano base N-1;Compensacao ano base N-2;Deposito judicial IR;Deposito judicial CSLL;Multa autuacao compensada;Juros mora compensados
+155|Creditos fiscais contestados|BAL|X|Malha fina SPED;Processo administrativo CARF;acordo confissoes;perdcomp definitivo;ressarcimento PIS credito;ressarcimento COFINS credito
+165|Obras em curso imobilizado|BAL|X|Expansao planta SP;automacao linha 3;retrofit maquinas;civil armazem RJ;projeto lean fabrica;CAPEX TI edge datacenter
+165|Imobilizado andamento import|BAL|X|MAQ import desembaraco;container capitalizado;frete internacional capitalizado;seguro import capitalizado;MOI capitalizada obra;teste aceitacao fornecedor
+175|Participacao equivalente patrimonial|BAL|X|Participacao Sub Software US;Participacao JV fabrica MX;Participacao startup sensor;Participacao hub logistica;Participacao fintech pagamentos;ajuste equity pickup
+175|Investimentos avaliados custo|BAL|X|Debentures outra empresa;Nota comercial terceiro;cria fundo multimercado;FIDC recebiveis;Letra financeira;ajuste impairment participacao
+180|Garantias depositadas longo prazo|BAL|X|Caução locacao armazem;Garantia contratual ANP;Garantia licitacao governo;fgts construtora reserva;Seguro garantia performance;Deposito judicial civil
+180|Ativo indenizavel sinistro|BAL|X|Recebivel seguradora incendio;Recebivel sinistro transporte;Recebivel recall produto;Desconto titulo cartorio;Creditos precatorios;ativos nao operacionais venda
+
+# --- Passivo / PL ---
+215|IRPJ CSLL diferido LP|BAL|X|IRPJ temporario diferido;CSLL temporario diferido;Adicional IRPJ diferido;Base negativa futura;ajuste IFRS x BR;perda fiscal arrastada
+215|INSS FGTS diferidos|BAL|X|INSS terceiros LP;FGTS rescisao futura;Contribuicao sindical LP;encargo convenio coletivo;multa rescisoria provisionada;honorarios pericia trabalhista
+225|Dividendos a pagar|BAL|X|Dividendo minimo obrigatorio;Dividendo intercalario;Dividendo JCP misto;Dividendo preferencial;Dividendo treasury stock;ajuste conversao moeda
+225|Lucros retidos distribuicao|BAL|X|JCP provisionado assembleia;Reserva dividendos futuros;Conta transitoria SH;ajuste retencao exterior;ajuste consorcio;ajuste participacao minoritaria
+235|Debentures simples|BAL|X|Debenture serie A IPCA;Debenture serie B CDI;Debenture conversivel;Debenture incentivada infra;pu debenture ajuste;comissao colocacao debenture
+235|Commercial paper notas|BAL|X|CP classe 1 270 dias;CP classe 2 360 dias;Nota promissoria exportacao;ACC desconto banco;Desagio antecipacao;IOF financiamento curto
+245|Obrigacoes rescisorias|BAL|X|INSS rescisao complementar;FGTS multa 40;FGTS multa 20;ferias vencidas rescisao;13 rescisao proporcional;aviso previo indenizado
+245|Obrigacoes pericia e acordos|BAL|X|Acordo sindicato metal;Acordo carf fiscal;Acordo consumidor civil;Multa ambiental parcelada;Multa ANP;Multa CVM
+260|Provisao civil e ambiental|BAL|X|Provisao processo consumidor;Provisao contrato fornecedor;Provisao licenca ambiental;Provisao recall produto;Provisao garantia estendida;Provisao litigio trabalhista coletivo
+260|Provisao trabalhista|BAL|X|Provisao horas extras;Provisao insalubridade;Provisao periculosidade;Provisao equiparacao salarial;Provisao adicional noturno;Provisao verbas rescisorias
+270|Passivo fiscal diferido LP|BAL|X|IRPJ diferido passivo;CSLL diferido passivo;PIS monofasico passivo;COFINS monofasico passivo;IPI diferido passivo;ajuste laudo big4
+275|Arrendamento financeiro LP|BAL|X|LP veiculos frota;LP maquinas CNC;LP predio matriz extensao;LP datacenter colo;LP software on prem legado;ajuste juros contrato LP
+280|Intercompany AP consolidacao|BAL|X|IC payable US10;IC payable DE10;IC payable UK01;IC payable FR01;IC tax transfer pricing;IC cash pool sweep
+280|Intercompany AR eliminacoes|BAL|X|IC invest eliminacao;IC dividendos eliminacao;IC lucro nao realizado estoque;IC tax equalization;IC hedge intercompany;IC ajuste FX eliminacao
+315|Ajuste avaliacao hedge PL|BAL|X|Hedge accounting cash flow;Hedge accounting fair value;CVA DVA instrumento;Basis swap OCI;ajuste taxa forward;reciclagem OCI resultado
+320|Lucros retidos movimento|BAL|X|Lucro exercicio corrente;Prejuizo exercicio corrente;Destinacao reserva expansao;Destinacao reserva contingencia;ajuste retroativo política;ajuste mudanca moeda funcional
+325|Dividendo proposto PL|BAL|X|Dividendo proposto trimestre;JCP proposto trimestre;Reserva investimento PDI;Reserva compliance risco;Reserva ESG;Reserva M&A alvo
+
+# --- Receitas / contras ---
+415|Bundle produto servico|REV|P|Pack hardware suporte 36m;Bundle cloud camera IOT;Contrato EPC manutencao;Contrato licenca fonte;Cross sell treinamento;Upsell warranty premium
+415|Field service e instalacao|REV|P|Instalacao nationwide;Manutencao preventiva contrato;Manutencao corretiva ticket;SLA premium onsite;Deslocamento tecnico;pecas faturadas separado
+425|Contrato SaaS multi ano|REV|P|ARR contrato 12m;ARR contrato 36m;ARR upsell seats;ARR consumo API overage;ARR storage dinamico;ARR support enterprise
+425|Profissional services PS|REV|P|PS implementacao fase1;PS implementacao fase2;PS health check;PS managed service 24x7;PS custom dev T&M;PS treinamento certificacao
+435|Equivalencia patrimonial|REV|N|Resultado positivo equidade;Resultado negativo equidade;Dividendos recebidos equity;ajuste diluicao participacao;ajuste conversao debenture;ajuste variação just value
+438|Outras receitas operacionais|REV|P|Aluguel area industrial;royalty marca licenciada;sub-receita logistica 3PL;receita scrap revenda;receita energia excedente;receita bonus volume fornecedor
+440|Devolucoes vendas|REV|P|Devolucao B2B nota credito;Devolucao B2C marketplace;Devolucao export DI;desc comercial incondicional;desc volume contrato;bonificacao produto marketing
+440|Descontos financeiros receita|REV|P|Desconto antecipacao duplicata;Desconto pix antecipado;Desconto cartao antecipado;Desconto nota promissoria;Desconto early payment supply chain;ajuste programa fidelidade
+450|Incentivos fiscais|REV|N|Prodepe Pernambuco;Lei da Informatica;PADIS;REPORTO;ZPE exportacao;subvencao pesquisa ANEEL
+
+# --- Custos COGS / logistica ---
+515|CIP materiais alocados|MAT|P|CIP polimeros planta A;CIP metalurgia planta B;CIP subconjunto importado;CIP embalagem copack;CIP energia alocada OP;CIP manutencao OP
+515|CIP MOD terceirizada|EXP|P|CIP mao obra temp agencia;CIP hora tecnica parceiro;CIP turno extra OP;CIP treinamento linha;CIP setup troca molde;CIP inspecao qualidade inline
+515|CIP overhead fabrica|EXP|P|CIP depreciacao OP;CIP aluguel galpao OP;CIP supervisor fabrica;CIP seguro patrimonio OP;CIP utilidades OP;CIP consumiveis OP
+522|Outsourcing cloud CO|EXP|P|Infra customer tenant;DBaaS custo repassado;Observability custo client;Kubernetes shared cost;CDN traffic burst;Support L3 billable
+535|Garantia estendida COGS|EXP|P|Reposicao peca garantia;Mao obra campo garantia;Frete RMA cliente;Call center warranty;Software patch OTA;Campanha recall fornecedor
+540|Tributos sobre vendas|EXP|P|ICMS saida interestadual;ICMS ST saida;PIS faturamento;COFINS faturamento;IPI industrial;ISS servico field
+550|Perdas inventario|EXP|P|Quebra ciclico contagens;Avaria umidade;Avaria transporte obsolescencia;furto seguranca;Shrinkage RFID delta;ajuizamento recuperacao
+560|Seguros producao fabrica|EXP|P|Equipamento producao APC;Predio fabrica florestal;Veiculos internos planta;RC operacional LINHA;risco ambiental tac;interrupcao BI
+
+# --- Folha benefícios outros OPEX ---
+612|Beneficios colaboradores|EXP|P|Vale refeicao;Vale alimentacao;Vale transporte;Auxilio creche;Auxilio farmacia;reembolso home office utility
+615|Universidade corporativa|EXP|P|MBA parceria;Certificacao cloud;Bootcamp dados;Palestrante externo;Plataforma e-learning Seats;livros e periodicos especializacao
+617|Plano saude e odonto|EXP|P|Plano empresarial nivel1;nivel premium executivos;Odonto basico;reembolso psicologia;reembolso nutricionista;telemedicina assinatura
+618|Prev complementar e boni|EXP|P|PGBL patrocinado empresa;Stock options expense;Bonus anual provisionado;PLR participacao;Bônio meta sustentabilidade;comissao tecnica engenharia
+622|Seguros corporativos|EXP|P|D&O diretores;E&O servico profissional;RC produto export;Cyber insurance policy;All risk escritorio;Marine cargo import
+624|Viagens corporativas|EXP|P|Passagem aerea nacional;Passagem internacional;Hotel booking corporate;Uber corporativo;Diarias per diem USD;bagagem despachada policy
+625|Material escritorio|EXP|P|Papel e toner;Material higiene;Correios SEDEX;Courier internacional DHL;Material treinamento impresso;suprimentos cozinha
+626|Facilities manutencao|EXP|P|Manut elevador predio;Manut HVAC chiller;Dedetizacao contrato;Paisagismo condomino;Chaveiro e copias;limpeza terceirizada noturna
+632|Ciberseguranca|EXP|P|SIEM cloud licenca;SOC 24x7 terceiro;Bug bounty programa;Pentest anual;WAF CDN rules;MDM endpoint protection
+634|Data e analytics|EXP|P|Snowflake compute;Databricks jobs;dbt cloud seats;ETL Fivetran conectores;Catalogo coluna lineage;ML feature store horas
+642|Performance marketing|EXP|P|Google Ads search;Meta ads conversao;LinkedIn demand gen;Programatica display;afiliados CPA;influencer midia paga
+645|Branding e patrocinio|EXP|P|Patrocinio esporte local;Patrocinio festival cultura;Merchandise corporativo;DOOH aeroporto;documentario marca;stand feira internacional
+652|Trade e PDV|EXP|P|Display gondola;degustacao loja;promotor PDV temporada;gift card campanha;material POP loja;mystery shopper programa
+655|Pesquisa cliente|EXP|P|NPS transactional survey;Painel usuarios SaaS deep interview;benchmark precos mystery;voc painel distribuidor;research UX novo app;pricing research Van Westendorp
+662|SSC terceiro|EXP|P|BPO accounts payable;BPO payroll;BPO benefits admin;SSC travel desk outsourced;SSC helpdesk RH tier1;knowledge base atualizacao externa
+665|Consultoria tributaria TP|EXP|P|Study transfer pricing;Local file elaboracao;CBCR masterfile;APA precos;benchmark TNMM;litigio fiscal consultoria externa
+668|Seguros credito|EXP|P|Seguro duplicata;Seguro garantia LIC;Titulos aval;Fiança bancaria contrato;Protesto cartorio taxa;spread antecipacao fato
+670|Depreciacao e amortizacao|EXP|P|Deprec edificio admin;Deprec maquinas;Deprec veiculos;Deprec mobiliario;Amort intangivel software;Amort intangivel marca
+675|Arrendamento IFRS16|EXP|P|Curto prazo escritorios;LP predio matriz;LP veiculos frota;LP maquinas sale leaseback;LP datacenter;taxa implicita ajuste
+680|Despesas financeiras|EXP|N|Juros emprestimo CP;Juros emprestimo LP;IOF credito;Desconto duplicata;Tarifa bancaria internacional;CMF spread linha
+685|Resultado monetario|EXP|N|Variacao monetaria ativa;Variacao monetaria passiva;PCC taxa legal;ajuste indexador contrato;ajuste contrato moeda FX;permuta ativo financeiro
+690|IRPJ e CSLL exercicio|EXP|N|IRPJ lucro real;CSLL lucro real;Adicional IRPJ;IRPJ estimativa;CSLL estimativa;ajuste Malha eCAC
+692|Parcelamentos e multas|EXP|N|PARCS federal;PARCS estadual;Multa INSS atraso;Multa FGTS;Juros SELIC parcelamento;honorarios adv fiscal
+695|Outras nao operacionais|EXP|N|Multa ambiental nova;multa CVM insider;multa LGPD;dacao fundacao;Doacoes politica proibidas ajuste;perda alienacao equipamento NBV
